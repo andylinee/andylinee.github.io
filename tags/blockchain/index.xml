@@ -8,22 +8,7 @@
     <language>en-us</language>
     <lastBuildDate>Sun, 09 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://andylinee.github.io/tags/blockchain/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>以樂高積木來認識 DeFi</title>
-      <link>https://andylinee.github.io/2023/04/09/defi-lego-intro/</link>
-      <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://andylinee.github.io/2023/04/09/defi-lego-intro/</guid>
-      <description>&amp;ldquo;本文發表於 2020/09/02，有部分服務及數字已不合時宜，請讀者注意及包涵。&amp;rdquo;
-DeFi 是什麼 DeFi（Decentralized Finance）指的是以分散管理權、資訊透明、基於區塊鏈的方式來提供金融服務，常被翻譯成「去中心化金融」，但筆者認為「分散式金融」能更貼切的描述其運作方式。DeFi 相較於傳統金融產業，其改善了交易速度慢、成本高、易遭駭客攻擊或被政府濫用等問題。目前的 DeFi 服務種類包含了穩定幣、交易所、借貸平台、合成資產、衍生性商品等，而這些資產、智慧合約和協議能像樂高一樣被自由組合，也因此被稱為「DeFi 樂高」。
-此文將以這篇論文所提出的 DeFi 樂高架構來分析到底什麼是 DeFi？以及上述提到的各種 DeFi 服務。
-DeFi 樂高 在這篇論文中，作者將目前 DeFi 的各種服務分成上圖的五層架構，由最底層至最上層分別為：結算層（Settlement Layer）、資產層（Asset Layer）、協議層（Protocol Layer）、應用層（Application Layer）、聚合層（Aggregation Layer）。最底層的結算層為區塊鏈及其原生的協議資產，在 DeFi 領域主要是以太坊 Ethereum 為主；在清算層之上發行的代幣即為資產層，除了區塊鏈原生協議代幣如以太幣 ETH，還有可分割代幣（Fungible Token，如 ERC-20）及不可分割代幣（Non-fungible Token，如 ERC-721）等不同性質及用途的代幣種類；位於資產層上方的協議層則為特定使用案例提供標準協議，如去中心化交易所、債市、衍生性商品、鏈上資產管理等；在協議層之上則是連接到個別協議並以用戶為導向的應用程式組成的應用層；而在最上層的聚合層則作為應用層的擴充，提供各項聚合服務。
-資產代幣化 在此架構中位於最底下的兩層主要就是由 Ethereum 為主的區塊鏈及在其之上所發行之代幣所組成，而提到代幣就必須先來介紹資產代幣化（Asset Tokenization），用一句話來說明，就是將任何資產放上區塊鏈。除了原生於以太坊的以太幣 ETH，還有發行基礎為提供支付利息、股利或提供貨物商品等承諾的代幣，這類型的代幣又可再依照其抵押資產的型態分為鏈下抵押、鏈上抵押及無抵押。鏈下抵押的意思是代幣的標的資產被儲存在託管服務中，例如錨定美元的穩定幣 USDT 及 USDC、以黃金價格支撐的 DGX 或是可在以太坊上交易比特幣的 WBTC，鏈下抵押代幣的問題在於需要透過額外的審查及預防來確保標的資產可以隨時被取得，但這樣會造成高成本及非完全透明的缺點。鏈上抵押的意思則是資產被鎖在區塊鏈上，通常是放在智慧合約裡，如 Maker 的 DAI 穩定幣，其優點是高度透明、規則由智慧合約保護且被半自動執行，缺點則是容易受到抵押資產的價格波動所影響。而無抵押代幣的交易對手風險則是最高的。
-去中心化交易所協議（Decentralized Exchange Protocol） 過去大部分的加密貨幣交易都是透過中心化交易所來完成，然而中心化交易所存在著一些問題，我們必須先將資產存入交易所才能在中心化交易所進行交易，如此便需要信任交易所不會為非作歹，若遇到不誠實或是不夠專業的交易所，則可能造成用戶資產損失。因此有了去中心化交易所的出現，不需再將資產存到交易所中，交易直接透過智慧合約來原子執行（atomic execution）。而去中心化交易所也有各種不同的協議，以下分別介紹：
-去中心化掛單簿交易所（Decentralized Order book Exchange） 以智慧合約為基礎的流動池（Smart Contract-based Liquidity Pools） 以智慧合約為基礎的儲備聚合（Smart Contract-based Reserve Aggregation） P2P 及場外交易（OTC） 去中心化掛單簿交易所和傳統股市交易一樣使用掛單簿來撮合交易，可分為鏈上掛單簿（on-chain order book）及鏈下掛單簿（off-chain order book）。鏈上掛單簿是將每筆掛單都放上智慧合約，不需要第三方 host，但每筆動作（結算、創建掛單、取消掛單）都需要上鏈手續費，且需等待時間確認。鏈下掛單簿則由中繼器 Relayer 收集掛單並維護掛單簿，以提供報價，但不會負責媒合及交易，而 Relayer 會依照協議（e.</description>
-    </item>
-    
-    <item>
-      <title>以樂高積木來認識 DeFi</title>
+      <title>DeFi 是金錢樂高，而 NFTs 則是媒體樂高</title>
       <link>https://andylinee.github.io/2023/04/09/defi-lego-intro/</link>
       <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
       
@@ -39,6 +24,21 @@ NFTs 也將成為媒體樂高，讓開發者在可程式化的內容庫之上打
 這些想法也可以在這篇由我當時的共同創辦人 Denis Nazarov 寫的舊文中看到。
 &amp;hellip;
 本文為筆者對 Jesse Walden 的英文 tweet 進行翻譯，若有錯誤，請見諒並不吝給予指正，謝謝：）</description>
+    </item>
+    
+    <item>
+      <title>以樂高積木來認識 DeFi</title>
+      <link>https://andylinee.github.io/2023/04/09/defi-lego-intro/</link>
+      <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://andylinee.github.io/2023/04/09/defi-lego-intro/</guid>
+      <description>&amp;ldquo;本文發表於 2020/09/02，有部分服務及數字已不合時宜，請讀者注意及包涵。&amp;rdquo;
+DeFi 是什麼 DeFi（Decentralized Finance）指的是以分散管理權、資訊透明、基於區塊鏈的方式來提供金融服務，常被翻譯成「去中心化金融」，但筆者認為「分散式金融」能更貼切的描述其運作方式。DeFi 相較於傳統金融產業，其改善了交易速度慢、成本高、易遭駭客攻擊或被政府濫用等問題。目前的 DeFi 服務種類包含了穩定幣、交易所、借貸平台、合成資產、衍生性商品等，而這些資產、智慧合約和協議能像樂高一樣被自由組合，也因此被稱為「DeFi 樂高」。
+此文將以這篇論文所提出的 DeFi 樂高架構來分析到底什麼是 DeFi？以及上述提到的各種 DeFi 服務。
+DeFi 樂高 在這篇論文中，作者將目前 DeFi 的各種服務分成上圖的五層架構，由最底層至最上層分別為：結算層（Settlement Layer）、資產層（Asset Layer）、協議層（Protocol Layer）、應用層（Application Layer）、聚合層（Aggregation Layer）。最底層的結算層為區塊鏈及其原生的協議資產，在 DeFi 領域主要是以太坊 Ethereum 為主；在清算層之上發行的代幣即為資產層，除了區塊鏈原生協議代幣如以太幣 ETH，還有可分割代幣（Fungible Token，如 ERC-20）及不可分割代幣（Non-fungible Token，如 ERC-721）等不同性質及用途的代幣種類；位於資產層上方的協議層則為特定使用案例提供標準協議，如去中心化交易所、債市、衍生性商品、鏈上資產管理等；在協議層之上則是連接到個別協議並以用戶為導向的應用程式組成的應用層；而在最上層的聚合層則作為應用層的擴充，提供各項聚合服務。
+資產代幣化 在此架構中位於最底下的兩層主要就是由 Ethereum 為主的區塊鏈及在其之上所發行之代幣所組成，而提到代幣就必須先來介紹資產代幣化（Asset Tokenization），用一句話來說明，就是將任何資產放上區塊鏈。除了原生於以太坊的以太幣 ETH，還有發行基礎為提供支付利息、股利或提供貨物商品等承諾的代幣，這類型的代幣又可再依照其抵押資產的型態分為鏈下抵押、鏈上抵押及無抵押。鏈下抵押的意思是代幣的標的資產被儲存在託管服務中，例如錨定美元的穩定幣 USDT 及 USDC、以黃金價格支撐的 DGX 或是可在以太坊上交易比特幣的 WBTC，鏈下抵押代幣的問題在於需要透過額外的審查及預防來確保標的資產可以隨時被取得，但這樣會造成高成本及非完全透明的缺點。鏈上抵押的意思則是資產被鎖在區塊鏈上，通常是放在智慧合約裡，如 Maker 的 DAI 穩定幣，其優點是高度透明、規則由智慧合約保護且被半自動執行，缺點則是容易受到抵押資產的價格波動所影響。而無抵押代幣的交易對手風險則是最高的。
+去中心化交易所協議（Decentralized Exchange Protocol） 過去大部分的加密貨幣交易都是透過中心化交易所來完成，然而中心化交易所存在著一些問題，我們必須先將資產存入交易所才能在中心化交易所進行交易，如此便需要信任交易所不會為非作歹，若遇到不誠實或是不夠專業的交易所，則可能造成用戶資產損失。因此有了去中心化交易所的出現，不需再將資產存到交易所中，交易直接透過智慧合約來原子執行（atomic execution）。而去中心化交易所也有各種不同的協議，以下分別介紹：
+去中心化掛單簿交易所（Decentralized Order book Exchange） 以智慧合約為基礎的流動池（Smart Contract-based Liquidity Pools） 以智慧合約為基礎的儲備聚合（Smart Contract-based Reserve Aggregation） P2P 及場外交易（OTC） 去中心化掛單簿交易所和傳統股市交易一樣使用掛單簿來撮合交易，可分為鏈上掛單簿（on-chain order book）及鏈下掛單簿（off-chain order book）。鏈上掛單簿是將每筆掛單都放上智慧合約，不需要第三方 host，但每筆動作（結算、創建掛單、取消掛單）都需要上鏈手續費，且需等待時間確認。鏈下掛單簿則由中繼器 Relayer 收集掛單並維護掛單簿，以提供報價，但不會負責媒合及交易，而 Relayer 會依照協議（e.</description>
     </item>
     
   </channel>
