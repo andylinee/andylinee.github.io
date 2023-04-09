@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pivot the life</title>
-    <link>http://andylinee.github.io/</link>
+    <link>https://andylinee.github.io/</link>
     <description>Recent content on Pivot the life</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://andylinee.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://andylinee.github.io/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
