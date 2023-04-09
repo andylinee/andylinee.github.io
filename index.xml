@@ -23,6 +23,25 @@ DeFi 樂高 在這篇論文中，作者將目前 DeFi 的各種服務分成上�
     </item>
     
     <item>
+      <title>以樂高積木來認識 DeFi</title>
+      <link>https://andylinee.github.io/2023/04/09/defi-lego-intro/</link>
+      <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://andylinee.github.io/2023/04/09/defi-lego-intro/</guid>
+      <description>&amp;ldquo;本文發表於 2020/09/07，有部分內容可能已不合時宜，請讀者注意及包涵。&amp;rdquo;
+近日在區塊鏈及加密貨幣領域裡最夯的題目非 DeFi 莫屬，但已有數年發展歷史的 NFT（Non-Fungible Token, 非同質化代幣）也再度受到市場矚目。之前創辦區塊鏈公司 Mediachain（於 2017 年被 Spotify 收購）、現為加密貨幣產業創投公司 Variant Fund 創辦人的 JesseWalden 近日在 Twitter 上發表對於 NFT 的看法，認為相對於「DeFi 是金錢樂高」，NFT 則會是「媒體樂高」，本文為這則推文的繁體中文翻譯。
+&amp;hellip;
+我常說我上一家新創公司 Mediachain 的許多目標現在都透過 NFTs 被實現。在內部，我們把 Mediachain 視為一個「標準內容註冊管理機構」，每一個獨一無二的作品都會得到一個可以附加元資料上去的標準 ID。
+元資料可能是創作者、內容簡介、上線歷史資料、發行機構等著作資料。開發者可以使用這項資訊來打造更豐富的媒體體驗，也讓更多的價值（財務上及情境上）流向創作者及消費者。
+元資料可能是創作者、內容簡介、上線歷史資料、發行機構等著作資料。開發者可以使用這項資訊來打造更豐富的媒體體驗，也讓更多的價值（財務上及情境上）流向創作者及消費者。
+就像代幣及智慧合約作為金錢樂高，讓開發者可以隨意的組建及重新混合。
+NFTs 也將成為媒體樂高，讓開發者在可程式化的內容庫之上打造下一個 Spotify 或 Netflix，為創作者保護其版權及價值。
+這些想法也可以在這篇由我當時的共同創辦人 Denis Nazarov 寫的舊文中看到。
+&amp;hellip;
+本文為筆者對 Jesse Walden 的英文 tweet 進行翻譯，若有錯誤，請見諒並不吝給予指正，謝謝：）</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://andylinee.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
