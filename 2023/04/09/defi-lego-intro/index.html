@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Pivot the life">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://andylinee.github.io//img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://andylinee.github.io//img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="以樂高積木來認識 DeFi" />
+    <meta property="og:title" content="以樂高積木來認識 DeFi" />
+    <meta property="twitter:title" content="以樂高積木來認識 DeFi" />
+    
+
+    
+    <meta name="description" content="Andylinee_description">
+    <meta property="og:description" content="Andylinee_description" />
+    <meta property="twitter:description" content="Andylinee_description" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Andylinee_keyword">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>以樂高積木來認識 DeFi | Pivot the Life</title>
+
+    <link rel="canonical" href="/2023/04/09/defi-lego-intro/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Pivot the life</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/archive//">ARCHIVE</a></li>
+                    
+                        <li><a href="/notes//">NOTES</a></li>
+                    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/defi" title="DeFi">
+                            DeFi
+                        </a>
+                        
+                        <a class="tag" href="/tags/crypto" title="Crypto">
+                            Crypto
+                        </a>
+                        
+                        <a class="tag" href="/tags/blockchain" title="Blockchain">
+                            Blockchain
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96%E9%87%91%E8%9E%8D" title="去中心化金融">
+                            去中心化金融
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3" title="加密貨幣">
+                            加密貨幣
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E5%8D%80%E5%A1%8A%E9%8F%88" title="區塊鏈">
+                            區塊鏈
+                        </a>
+                        
+                    </div>
+                    <h1>以樂高積木來認識 DeFi</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Andylinee
+                             
+                            on 
+                            Sunday, April 9, 2023
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <blockquote>
+<p>&ldquo;本文發表於 2020/09/02，有部分服務及數字已不合時宜，請讀者注意及包涵。&rdquo;</p>
+</blockquote>
+<h2 id="defi-是什麼">DeFi 是什麼</h2>
+<p>DeFi（Decentralized Finance）指的是以分散管理權、資訊透明、基於區塊鏈的方式來提供金融服務，常被翻譯成「去中心化金融」，但筆者認為「分散式金融」能更貼切的描述其運作方式。DeFi 相較於傳統金融產業，其改善了交易速度慢、成本高、易遭駭客攻擊或被政府濫用等問題。目前的 DeFi 服務種類包含了穩定幣、交易所、借貸平台、合成資產、衍生性商品等，而這些資產、智慧合約和協議能像樂高一樣被自由組合，也因此被稱為「DeFi 樂高」。</p>
+<p>
+  <img src="/img/2023-04-09-defi-lego/defi-pulse.png" alt="DeFi Pulse">
+
+</p>
+<p>此文將以<a href="https://www.researchgate.net/publication/340061422_Decentralized_Finance_On_Blockchain-_and_Smart_Contract-based_Financial_Markets">這篇論文</a>所提出的 DeFi 樂高架構來分析到底什麼是 DeFi？以及上述提到的各種 DeFi 服務。</p>
+<h2 id="defi-樂高">DeFi 樂高</h2>
+<p>
+  <img src="/img/2023-04-09-defi-lego/defi-lego.png" alt="DeFi lego">
+
+
+在這篇論文中，作者將目前 DeFi 的各種服務分成上圖的五層架構，由最底層至最上層分別為：<strong>結算層（Settlement Layer）</strong>、<strong>資產層（Asset Layer）</strong>、<strong>協議層（Protocol Layer）</strong>、<strong>應用層（Application Layer）</strong>、<strong>聚合層（Aggregation Layer）</strong>。最底層的結算層為區塊鏈及其原生的協議資產，在 DeFi 領域主要是以太坊 Ethereum 為主；在清算層之上發行的代幣即為資產層，除了區塊鏈原生協議代幣如以太幣 ETH，還有可分割代幣（Fungible Token，如 ERC-20）及不可分割代幣（Non-fungible Token，如 ERC-721）等不同性質及用途的代幣種類；位於資產層上方的協議層則為特定使用案例提供標準協議，如去中心化交易所、債市、衍生性商品、鏈上資產管理等；在協議層之上則是連接到個別協議並以用戶為導向的應用程式組成的應用層；而在最上層的聚合層則作為應用層的擴充，提供各項聚合服務。</p>
+<h2 id="資產代幣化">資產代幣化</h2>
+<p>在此架構中位於最底下的兩層主要就是由 Ethereum 為主的區塊鏈及在其之上所發行之代幣所組成，而提到代幣就必須先來介紹資產代幣化（Asset Tokenization），用一句話來說明，就是將任何資產放上區塊鏈。除了原生於以太坊的以太幣 ETH，還有發行基礎為提供支付利息、股利或提供貨物商品等承諾的代幣，這類型的代幣又可再依照其抵押資產的型態分為鏈下抵押、鏈上抵押及無抵押。鏈下抵押的意思是代幣的標的資產被儲存在託管服務中，例如錨定美元的穩定幣 USDT 及 USDC、以黃金價格支撐的 DGX 或是可在以太坊上交易比特幣的 WBTC，鏈下抵押代幣的問題在於需要透過額外的審查及預防來確保標的資產可以隨時被取得，但這樣會造成高成本及非完全透明的缺點。鏈上抵押的意思則是資產被鎖在區塊鏈上，通常是放在智慧合約裡，如 Maker 的 DAI 穩定幣，其優點是高度透明、規則由智慧合約保護且被半自動執行，缺點則是容易受到抵押資產的價格波動所影響。而無抵押代幣的交易對手風險則是最高的。</p>
+<p>
+  <img src="/img/2023-04-09-defi-lego/defi-pulse-top-10.png" alt="Top 10 asset locked by Defi Pulse">
+
+</p>
+<h2 id="去中心化交易所協議decentralized-exchange-protocol">去中心化交易所協議（Decentralized Exchange Protocol）</h2>
+<p>過去大部分的加密貨幣交易都是透過中心化交易所來完成，然而中心化交易所存在著一些問題，我們必須先將資產存入交易所才能在中心化交易所進行交易，如此便需要信任交易所不會為非作歹，若遇到不誠實或是不夠專業的交易所，則可能造成用戶資產損失。因此有了去中心化交易所的出現，不需再將資產存到交易所中，交易直接透過智慧合約來原子執行（atomic execution）。而去中心化交易所也有各種不同的協議，以下分別介紹：</p>
+<ul>
+<li>去中心化掛單簿交易所（Decentralized Order book Exchange）</li>
+<li>以智慧合約為基礎的流動池（Smart Contract-based Liquidity Pools）</li>
+<li>以智慧合約為基礎的儲備聚合（Smart Contract-based Reserve Aggregation）</li>
+<li>P2P 及場外交易（OTC）
+去中心化掛單簿交易所和傳統股市交易一樣使用掛單簿來撮合交易，可分為<strong>鏈上掛單簿（on-chain order book）<strong>及</strong>鏈下掛單簿（off-chain order book）</strong>。鏈上掛單簿是將每筆掛單都放上智慧合約，不需要第三方 host，但每筆動作（結算、創建掛單、取消掛單）都需要上鏈手續費，且需等待時間確認。鏈下掛單簿則由中繼器 Relayer 收集掛單並維護掛單簿，以提供報價，但不會負責媒合及交易，而 Relayer 會依照協議（e.g. <a href="https://0x.org/">0x</a>）來互相競爭，收取資訊提供手續費。</li>
+</ul>
+<p>另一種協議則是透過以智慧合約為基礎的流動池來讓用戶存幣或提幣，不需依賴預言機（Oracle）來定價，而是透過<strong>自動做市商（Automated Market Maker, AMM）<strong>機制來定價，如</strong>恆定儲備比例模型（Constant Reserve Ratio model, CRR）<strong>及</strong>恆定乘積市場造市者模型（Constant Product Market-maker model, CPM）</strong>。恆定儲備比例模型是依據代幣的總供給量、儲備量及儲備比例來算出價格，如 <a href="https://www.bancor.network/">Bancor</a> V1 是以下圖的 CRR 公式來定價；而恆定乘積市場造市者模型則是依據流動池中的儲備量來定價，如 <a href="https://uniswap.org/">UniSwap</a> 就是以 X*Y=k 的公式來定價。其他也有如 <a href="https://www.curve.fi/">Curve</a> 提出專為穩定幣交易而生的 <a href="https://www.curve.fi/stableswap-paper.pdf">StableSwap</a> 算法、 <a href="https://balancer.finance/">Balancer</a> 提出的 CPM 通用化版本的定價模式、台灣團隊 <a href="https://alpha.blackholeswap.com/swap">Blackholeswap</a> 提出利用其它借貸協議的供應來處理超額流動性池交易的 AMM 機制以及台灣團隊 <a href="https://perp.fi/">Perpetual Protocol</a> 提出的 <a href="https://medium.com/@perpetualprotocol/a-deep-dive-into-our-virtual-amm-vamm-40345c522eeb">vAMM</a> 模型。</p>
+<p>
+  <img src="/img/2023-04-09-defi-lego/crr-cpm.png" alt="CRR&amp;amp;CPM model">
+
+</p>
+<p>另外也有以智慧合約為基礎的儲備聚合協議，在交易者和流動量提供者之間扮演閘道的角色，透過智慧合約來匯集流動性儲備，並比較所有流動量提供者的匯率，選擇對交易者最有利的匯率來執行交易，這類型協議的定價匯率是由流動量提供者所提供，如 <a href="https://kyber.network/?__cf_chl_jschl_tk__=fa80f93c422101d2813ae0114d5e0e00442b817c-1598947110-0-ATQsOYJn1yngPYVsUkBJ7K_G331wtaS7bm_hisurLLx8em2y4qpsuGBw4HcRrJf4522qt8lrDYIG3Nd9eRsDVlK2dL3BbOgII3ib-rZ2ycsz-t0iI0g39QpWptpJVCRrE_NmKZDEaKT1R90_8e2r3XqR9H9LLvc9ato_nduxcVMx7ozlsDeaKvu-jA45XKZqvzfWAjblYIsRk1DcLdL78nQHb59GI2QXZOvf2jFLmlAYJYaaNNKOvB-X0rDmbXtj913pFqtRZhxWzMta4WE2Lsjb9mKT2CROOE9BKnSqPk1rSlSGlrmElwjLqAGgll92yZnVnml1PQRtDz-RfecK00M">Kyber Network</a>。</p>
+<p>最後一種協議是 P2P/OTC 的方式，交易者找到特定交易的對手方並與其議價，待雙方確認後才執行智慧合約上的幣幣交換，如 <a href="https://www.airswap.io/">AirSwap</a>。</p>
+<h2 id="去中心化借貸平台decentralized-lending-platform">去中心化借貸平台（Decentralized Lending Platform）</h2>
+<p>去中心化借貸平台依照有無抵押品分為：</p>
+<ul>
+<li>抵押式債務倉位（CDP, Collateralized Debt Position）</li>
+<li>抵押式債務市集（CDM, Collateralized Debt Market）</li>
+<li>無抵押的閃電貸（Flash Loan）</li>
+</ul>
+<p>抵押式債務倉位和抵押式債務市集都是將代幣抵押到智慧合約中，借出另一種代幣，差別在於抵押式債務倉位借出的是新鑄造的代幣，例如可以在 <a href="https://makerdao.com/en/">MakerDAO</a> 或 <a href="https://compound.finance/">Compound</a> 上抵押 ETH 來借出 DAI；而抵押式債務市集借出的是已經存在的代幣，例如可以藉由抵押 ETH 來借出 USDT。而不需抵押品的閃電貸的特性是借貸和還款的行為都在一個交易內原子執行（atomic execution），若借款人無法償還貸款，那麼整個交易就會回滾，常見的有 <a href="https://aave.com/">Aave</a>, <a href="https://bzx.network/">bZx</a>。</p>
+<h2 id="去中心化衍生性商品decentralized-derivatives">去中心化衍生性商品（Decentralized Derivatives）</h2>
+<p>去中心化衍生性商品則分為：</p>
+<ul>
+<li>以資產為基礎的衍生性代幣（Asset-based Derivative Token）</li>
+<li>以事件為基礎的衍生性代幣（Event-based Derivative Token）</li>
+</ul>
+<p>這類型衍生性商品通常都需要預言機來提供價格或事件資訊，也因此產生相依性和中心化的問題。以資產為基礎的衍生性代幣是上述抵押式債務倉位的延伸應用，透過抵押代幣如 ETH，可借出新鑄造的合成幣（synthetix），和抵押式債務倉位不同的是，合成幣是跟隨各種資產的價格波動，例如一單位對應特定一組資產價值（e.g. BTC — 黃金價格），常見的有 <a href="https://www.synthetix.io/">Synthetix</a>。以事件為基礎的衍生性代幣可將外部關聯事件的發生結果拿來對賭，例如可以在 <a href="https://augur.net/">Augur</a> 上預測未來事件，但這類協議通常有外部（鏈下）關聯性，需要有適當的機制才得以取得正確的關聯結果。</p>
+<p>
+  <img src="/img/2023-04-09-defi-lego/angur.png" alt="Angur">
+
+</p>
+<h2 id="鏈上資產管理on-chain-asset-management">鏈上資產管理（On-chain Asset Management）</h2>
+<p>最後則是鏈上資產的管理協議，透過發行相當於基金憑證的資產代幣，讓投資人可以投資由各種資產組合成的一籃子資產，而這些資產是鎖在智慧合約裡，投資人擁有提領或清算等資產主控權，投資組合再平衡及交易策略都是預先設定好，並且公開透明的。<a href="https://www.setprotocol.com/">SetProtocol</a>, <a href="https://melonprotocol.com/">Melon</a> 及 <a href="https://betoken.fund/">BeToken</a> 都是讓使用者可以主動或是被動的管理資產的鏈上資產管理協議。</p>
+<p>
+  <img src="/img/2023-04-09-defi-lego/melon.png" alt="Melon">
+
+</p>
+<h2 id="defi-的優點">DeFi 的優點</h2>
+<h3 id="高效率efficiency">高效率（Efficiency）</h3>
+<p>交易雙方的兩筆交易都會被原子結算， 也就是說兩筆交易只有兩種結果：都被執行或都沒有被執行。如此降低了交易對手方的信用風險，也減少了監管壓力和第三方審查的需求。</p>
+<h3 id="透明性transparency">透明性（Transparency）</h3>
+<p>所有的交易都可以被公開檢視，智慧合約也能在鏈上被分析。歷史資料的可取得性對於虧損事件的預防及處理也有所幫助。</p>
+<h3 id="可用性accessibility">可用性（Accessibility）</h3>
+<p>預設上，DeFi 協議可以被任何人使用。當像是 STO（Security Token Offering, 證券型代幣發行）需要限制使用門檻時，不需要在完整性（integrity）和區塊鏈結算層的去中心化特性之間妥協，只需要在代幣合約中去實作這項限制就好。</p>
+<h3 id="互操作性interoperability">互操作性（Interoperability）</h3>
+<p>這項特性也是把 DeFi 比喻為樂高的原因，因為共享結算層，讓在其之上的不同資產、協議及應用能有高度的互操作性，這也為開放金融工程領域創造了更大的可能性及吸引力。</p>
+<h2 id="defi-的風險">DeFi 的風險</h2>
+<h3 id="智慧合約執行風險smart-contract-execution">智慧合約執行風險（Smart Contract Execution）</h3>
+<p>由於 DeFi 領域裡的交易都是透過智慧合約來執行，若智慧合約程式碼中存在漏洞，則可能遭受攻擊導致用戶資產虧損，許多知名項目也都曾因為智慧合約的漏洞而遭到攻擊，如 <a href="https://www.chainnews.com/zh-hant/articles/032876086204.htm">Balancer</a>, <a href="https://www.chainnews.com/zh-hant/news/252214368541.htm?fbclid=IwAR2GehMKOSwxP85Pgum70JOcAXdTlGkNdJk4hzKfkCvJWdDtUDh6WJaCKyY">Curve</a> 及 <a href="https://www.chainnews.com/zh-hant/articles/389569084970.htm">YAM</a>。因此，在 DeFi 領域裡智慧合約的審計更顯得重要。</p>
+<h3 id="營運安全operational-security-opsec">營運安全（Operational security, OpSec）</h3>
+<p>有些 DeFi 協議或應用的團隊會使用管理金鑰（Admin Key）來讓核心成員更新智慧合約或是緊急關閉，但這樣一來就會造成某種程度上的中心化管理，有違 DeFi 的精神，而且這些管理金鑰必須被安存的保存，才不會被惡意第三方取走造成難以挽回的損害。</p>
+<p>有些項目採用了多重簽名（MultiSig）技術來降低系統單點故障的風險，也會使用時間鎖（timelock）的技術來防止惡意或意外的規則修改，從而降低營運安全上的風險。</p>
+<h3 id="相依性dependency">相依性（Dependency）</h3>
+<p>由於 DeFi 系統的開放性及互操作性，讓不同的智慧合約及 DApps 都能夠彼此互動，並在各種組合的基礎上提供新的服務。然而，這樣的這樣的高度互動也產生了嚴重的相依性。若其中有個智慧合約發生問題，將會許多與其直接或間接相關的協議及應用。而穩定幣或是 ETH 的價格震盪，也會對整個 DeFi 生態系造成連帶影響。另外，有許多協議會依賴預言機傳入外部資訊，為了避免因為預言機而產生的中心化問題，許多項目會採用大型預言機網路來分散資訊來源，以提升資訊來源的可信度。</p>
+<hr>
+<h2 id="defi-的未來">DeFi 的未來</h2>
+<p>在今年這波 DeFi 熱潮興起後，有許多「DeFi 是未來」、「DeFi 正在吞噬金融世界」等豪語出現，如同本文所提及 DeFi 樂高的高組合性及互操作性，讓開發者可以更自由地在現有基礎上開發新的服務，用戶也可以在 DeFi 生態系中依自身需求找到最適合自己的投資工具及策略。然而，區塊鏈產業仍在初期階段，更不用說 DeFi 是個才剛起步的領域，除了有許多新的商業可能性和技術突破還尚未被開發，DeFi 仍存在著許多風險，不論是開發者在開發新服務時需要考量平台技術層面的風險，用戶在使用各種 DeFi 服務時，也必需要格外注意平台服務的安全性以及高報酬背後隱藏的高風險。如同 Bill Gates 說過 ”Banking is necessary, Banks are NOT.”，意即金融服務是必要的，但銀行未必是。」，在區塊鏈世界裡，不論是中心化的交易所，或是這幾年應運而生的去中心化協議，在未來都不見得會持續存在，但開放式金融（decentralized finance）或其他具有開放精神的服務勢必會繼續存在著。</p>
+
+
+                
+
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:andylin0404@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Pivot the life" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Pivot the life 2023
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
