@@ -6,7 +6,21 @@
     <description>Recent content in Posts on Pivot the life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://andylinee.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://andylinee.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>胡一天演講筆記：《低流動性資產的微證券化與分佈式金融科技》</title>
+      <link>https://andylinee.github.io/2023/04/10/thomas-hu-lecture/</link>
+      <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://andylinee.github.io/2023/04/10/thomas-hu-lecture/</guid>
+      <description>上週六下午到台大管院參加一場由源鉑資本（Kyber Capital）執行長胡一天的專題演講《低流動性資產的微證券化與分佈式金融科技》，身為一名從 2017 年就開始拜讀其專欄文章的粉絲，必須把握難得的公開演說場合親睹風采。
+胡執行長在這場不到一小時的演講中從特殊狀況投資（Special Situations Investing）、美國商用房地產市場情況，再到區塊鏈技術、DeFi 中的 AMM 及 Lending Pool，最後以對央行數位貨幣 CBDC的看法收尾。
+雖然在提到特殊狀況投資及商用房地產交易的部分，有許多專業知識當下無法直接理解，但也讓自己更加瞭解到金融市場是如此盤根錯節。前情提要之後，胡執行長接著分享其對於將商用房地產這類的低流動性資產透過區塊鏈技術進行證券化的可能性，將房地產交易的模式轉換成智能合約語言，再結合傳統金融的交易模式，打造出能夠讓更多人參與投資的全新房地產交易平台。
+最後胡執行長分享其對於 CBDC 的看法，由於一但政府發行 CBDC，相當於所有人都能直接向央行開戶，此時不論大眾或法人對於銀行存款的忠誠度將會下降，銀行存款將不再是銀行業者的穩定募資管道，將會改變銀行業的融資結構，因此，胡執行長認為在能夠推出有效因應措施之前，美國發展 CBDC 的速度應該不會太快。
+&amp;ldquo;胡一天：區塊鏈是一種新的「資產證券化」的工具。&amp;rdquo;
+在會後的 Q&amp;amp;A 環節中，有位官股金控的風控長問到 STO 相關的問題，也提到國泰金控正在申請 STO 相關的執照（在昨天的其他場活動中國泰區塊鏈團隊負責人也有提到），而胡執行長認為區塊鏈是一種新的「資產證券化」的工具，不論是 DeFi、NFT、STO，都帶來全新的營銷方法以及風險分銷手段的進化，但也提醒到，過去在傳統金融中推行資產證券化的過程中曾發生許多風險，未來在區塊鏈的發展過程中應該要提前規避掉相關風險，避免重蹈覆測。</description>
+    </item>
+    
     <item>
       <title>DeFi 是金錢樂高，而 NFTs 則是媒體樂高</title>
       <link>https://andylinee.github.io/2023/04/09/nft-is-media-lego/</link>
