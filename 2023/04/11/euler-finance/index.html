@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Pivot the life">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://andylinee.github.io//img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://andylinee.github.io//img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="開放式 DeFi 借貸協議：Euler Finance" />
+    <meta property="og:title" content="開放式 DeFi 借貸協議：Euler Finance" />
+    <meta property="twitter:title" content="開放式 DeFi 借貸協議：Euler Finance" />
+    
+
+    
+    <meta name="description" content="在 2020 年 DeFi Summer 開啟去中心化金融（Decentralized Finance, DeFi）熱潮之前，DeFi 的應用主要以借貸協議為主，包含 DeFi 元老級項目 Maker、Compound 等以主流幣與穩定幣為主的放貸協議，以及後起之秀 Aave 及 Curve。然而，項目方或社群想要將某個代幣上架到放貸協議需要透過許可制的上市機制，藉此來降低用戶資產的安全風險。開發團隊 Euler XYZ 則推出了開放式借貸協議 Euler，只要在 Uniswap V3 有 WETH 交易對的代幣都能上架到借貸市場，並透過一系列機制提升流動性且降低風險，目前 Euler 已於 2021/12/13 於主網上線。本文將會以官方白皮書為基礎，跟各位介紹全新的開放式借貸協議 Euler 的運作。">
+    <meta property="og:description" content="在 2020 年 DeFi Summer 開啟去中心化金融（Decentralized Finance, DeFi）熱潮之前，DeFi 的應用主要以借貸協議為主，包含 DeFi 元老級項目 Maker、Compound 等以主流幣與穩定幣為主的放貸協議，以及後起之秀 Aave 及 Curve。然而，項目方或社群想要將某個代幣上架到放貸協議需要透過許可制的上市機制，藉此來降低用戶資產的安全風險。開發團隊 Euler XYZ 則推出了開放式借貸協議 Euler，只要在 Uniswap V3 有 WETH 交易對的代幣都能上架到借貸市場，並透過一系列機制提升流動性且降低風險，目前 Euler 已於 2021/12/13 於主網上線。本文將會以官方白皮書為基礎，跟各位介紹全新的開放式借貸協議 Euler 的運作。" />
+    <meta property="twitter:description" content="在 2020 年 DeFi Summer 開啟去中心化金融（Decentralized Finance, DeFi）熱潮之前，DeFi 的應用主要以借貸協議為主，包含 DeFi 元老級項目 Maker、Compound 等以主流幣與穩定幣為主的放貸協議，以及後起之秀 Aave 及 Curve。然而，項目方或社群想要將某個代幣上架到放貸協議需要透過許可制的上市機制，藉此來降低用戶資產的安全風險。開發團隊 Euler XYZ 則推出了開放式借貸協議 Euler，只要在 Uniswap V3 有 WETH 交易對的代幣都能上架到借貸市場，並透過一系列機制提升流動性且降低風險，目前 Euler 已於 2021/12/13 於主網上線。本文將會以官方白皮書為基礎，跟各位介紹全新的開放式借貸協議 Euler 的運作。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Andylinee_keyword">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>開放式 DeFi 借貸協議：Euler Finance | Pivot the Life</title>
+
+    <link rel="canonical" href="/2023/04/11/euler-finance/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Pivot the life</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/archive//">ARCHIVE</a></li>
+                    
+                        <li><a href="/notes//">NOTES</a></li>
+                    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/defi" title="DeFi">
+                            DeFi
+                        </a>
+                        
+                        <a class="tag" href="/tags/crypto" title="Crypto">
+                            Crypto
+                        </a>
+                        
+                        <a class="tag" href="/tags/blockchain" title="Blockchain">
+                            Blockchain
+                        </a>
+                        
+                        <a class="tag" href="/tags/lending-platform" title="Lending Platform">
+                            Lending Platform
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3" title="加密貨幣">
+                            加密貨幣
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E5%8D%80%E5%A1%8A%E9%8F%88" title="區塊鏈">
+                            區塊鏈
+                        </a>
+                        
+                    </div>
+                    <h1>開放式 DeFi 借貸協議：Euler Finance</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Andylinee
+                             
+                            on 
+                            Tuesday, April 11, 2023
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <blockquote>
+<p>&ldquo;本文發表於 2021/12/29，有部分服務及數字已不合時宜，請讀者注意及包涵。&rdquo;</p>
+</blockquote>
+<p>
+  <img src="/img/2023-04-11-euler-finance/dashboard.png" alt="Euler Dapp">
+
+
+在 2020 年 DeFi Summer 開啟去中心化金融（Decentralized Finance, DeFi）熱潮之前，DeFi 的應用主要以借貸協議為主，包含 DeFi 元老級項目 Maker、Compound 等以主流幣與穩定幣為主的放貸協議，以及後起之秀 Aave 及 Curve。然而，項目方或社群想要將某個代幣上架到放貸協議需要透過許可制的上市機制，藉此來降低用戶資產的安全風險。開發團隊 Euler XYZ 則推出了<strong>開放式借貸協議 <a href="https://www.euler.finance/#/">Euler</a></strong>，只要在 Uniswap V3 有 WETH 交易對的代幣都能上架到借貸市場，並透過一系列機制提升流動性且降低風險，目前 Euler 已於 2021/12/13 於主網上線。本文將會以<a href="https://docs.euler.finance/getting-started/white-paper">官方白皮書</a>為基礎，跟各位介紹全新的開放式借貸協議 Euler 的運作。</p>
+<h1 id="團隊簡介">團隊簡介</h1>
+<p>Euler Finance 是由 Euler XYZ 團隊所開發的開放式借貸協議，共同創辦人有三位，CEO 是曾在英國牛津大學擔任演化生物學家的 <a href="https://twitter.com/euler_mab">Michael Bentley</a>；另外兩位分別是 <a href="https://hoytech.com/">Doug Hoyte</a> 及 <a href="https://www.linkedin.com/in/jack-prior-0b36a942/">Jack Prior</a>，目前也是 Euler XYZ 團隊的開發者；此外，團隊的顧問 <a href="https://twitter.com/MickdeG010">Mick de Graaf</a> 為 Ethereum 鏈上去中心化資產管理平台 DEFIED.io 的共同創辦人，也曾在鏈上指數基金 <a href="https://www.piedao.org/">PieDAO</a> 擔任首席開發者。</p>
+<p>Euler 也在今年（2021）8 月完成由 <a href="https://www.paradigm.xyz/">Paradigm</a> 領投的 800 萬美元 A 輪融資，其他參投方包含 Lemniscap 及來自區塊鏈知名項目的個人投資者，如 The Daily Gwei、Bankless、Synthetix、Coinbase、Product Hunt 等項目的創辦人及 CEO。</p>
+<h1 id="六大創新特點">六大創新特點</h1>
+<p>Euler 和傳統 DeFi 借貸協議相比有許多創新的特性，以下介紹 Euler 的六大特性，讓各位能對 Euler 有更深的認識。
+
+  <img src="/img/2023-04-11-euler-finance/difference.png" alt="Euler 的六大創新特點">
+
+</p>
+<h2 id="permissionless-listing無許可上市機制">Permissionless listing（無許可上市機制）</h2>
+<p>Euler Protocol 讓用戶自行決定哪些資產可以被上架到借貸協議中，用戶可以添加任何在 Uniswap v3 上有 WETH 交易對的資產，到 Euler 借貸協議中。並透過下列介紹的多層資產分級機制，來降低用戶的資產風險。</p>
+<h2 id="asset-tiers多層資產等級">Asset tiers（多層資產等級）</h2>
+<p>然而透過無許可上市機制讓用戶自行添加資產到借貸協議，會造成很大的系統風險。因此，Euler 推出了多層資產等級的設計，依照資產的風險來分級，以保護 Euler 協議及用戶。</p>
+<ul>
+<li>隔離層（Isolation-tier）資產：隔離層資產可以被用於一般借貸，但無法作為抵押品來借入其他資產。隔離層資產不能和其他資產一起使用同一個抵押品的池子來進行借貸。舉例來說，有個用戶擁有 USDC 及 DAI 作為抵押品，想要借入（borrow）隔離層資產 ABC，那就只能借入 ABC。如果之後想再借入另一個代幣 XYZ，則需要使用則需要使用 Euler 上的另一個帳戶來操作。</li>
+<li>跨層（Cross-tier）資產：跨層資產可被用於一般借貸，同樣也無法作為抵押品來借入其他資產。但與隔離層資產不同的是，可以跨層資產可以和其他資產一起被借出。舉例來說，有個用戶擁有 USDC 及 DAI 作為抵押品，想要借入（borrow）跨層資產 ABC 及 XYZ，可以使用 Euler 上的同一個帳戶來操作。</li>
+<li>抵押層（Collateral-tier）資產：抵押層資產可被用於一般借貸及交叉借貸，也可以作為抵押品使用。舉例來說，有個用戶存入抵押層資產 USDC 及 DAI，並使用它們來借入（borrow）抵押層資產 UNI 及 LINK，且使用同一個 Euler 帳戶來操作。</li>
+</ul>
+<p>Euler 協議的原生治理代幣 EUL 的持有人可以透過投票將資產從隔離層解放，並透過治理機制將其提升到跨層資產或抵押層資產。將資產向上提升層級有助於提高 Euler 的資本效率，但也可能讓用戶面臨更大的風險。平衡這些考量因素將有助於最大化 EUL 持有者的利益。</p>
+<h2 id="reactive-interest-rates響應式利率">Reactive interest rates（響應式利率）</h2>
+<p>在 Compound 和 Aave 中，都使用靜態線性（或或分段線性）利率模型來影響協議的借貸成本。廣義上來說，當資金池中借貸的需求增加或供應減少時，利率就會上升；反之，當供應增加或借貸需求減少時，利率就會下降。而靜態模型若能事先進行合適的參數化，效果會很好。但如果但如果參數化不正確，就會產生借貸成本過高或過低的問題。</p>
+<p>為了避免要對每個借貸市場選擇正確的參數的問題，Euler 使用 PID 控制器來放大（抑制）利率高於（低於）目標利用率水準時的利率變化率。這就產生了響應式的利率，即時適應標的資產的市場情況，而無需透過持續的治理來干預。</p>
+<h2 id="mev-resistant-liquidations抗-mev-的清算機制">MEV-resistant liquidations（抗 MEV 的清算機制）</h2>
+<p>在 Compound 及 Aave 中，資產清算是透過以固定百分比（通常為 5–10%）折價向清算人提供借款人的抵押品來激勵清算。潛在的清算人時常只能透過「Priority Gas Auction」（PGA）的機制來獲得清算獎金，這使得清算獎金暴露為所謂的 <strong>「礦工可提取價值」（MEV）</strong>。這種機制對大額借款人不友善，也無法激勵小額清算。</p>
+<p>為了改善以上的問題，Euler 不採用固定的折價百分比，而是採用荷蘭式拍賣及為流動性提供者的折價加速的機制。Euler 允許在借款人風險調整後的負債價值超過抵押品價值後，清算人能夠獲得的折價會隨著上述的差價變大而隨之增加。此外，Euler 也為流動性提供者提供折價加速機制（discount booster），讓流動性提供者能在礦工和搶跑者（front-runner）之前於荷蘭式拍賣中獲利。</p>
+<h2 id="protected-collateral-受保護的抵押品">Protected collateral （受保護的抵押品）</h2>
+<p>在 Compound 及 Aave 中，存入借貸協議的抵押品總是可以被借出。但在 Euler 協議，可以選擇允許抵押品被存入，但不能被用於借出。這種抵押品是「受保護的」，這些受保護的抵押品不會為用戶賺取利息，但將不存在借款人違約的風險，可以隨時領取抵押品資產，且有助於防止借款人使用代幣來影響治理決策或採取空頭倉位。</p>
+<h3 id="multi-collateral-stability-pools多抵押品的穩定池">Multi-collateral stability pools（多抵押品的穩定池）</h3>
+<p>在其他借貸協議中，清算的來源通常來自外部流動性，也就是說，清算人一般會從第三方交易獲取借款資產的還款額度，償還貸款並取得抵押品和清算獎金。這種方式的其中一個缺點是，用來確定借款人清算價格的價格來源並無法一直準確反應外部市場的匯率，這也代表清算人無法都以該價格進行清算。造成這種情況的原因包括滑價、swap 手續費、極端波動、使用價格平滑演算法（如 Euler 上的 TWAP）及新價格的延遲發布。</p>
+<p>為了解決這個問題，Euler 讓放款人可以透過向與每個借貸市場相關的穩定池提供流動性來支持清算。穩定池中的流動性提供者在等待清算被執行時，存入 eTokens 並賺取利息。一個 unstaking 期間防止流動性提供者透過將資產移入或移出，來試圖操弄系統。當清算被處理時，清算人使用穩定池的流動性來取消借款人的債務，並將折價的抵押品歸還給穩定池（扣除手續費後，剩下的為清算人所有）。穩定池的流動性提供者最終將他們的 eTokens 兌換成抵押資產的折價指數。</p>
+<p>這種方法可以被視為 Liquidity 協議開創的穩定池理念所延伸的多抵押形式。使用穩定池的主要優點是，在協議認為借款人違約時，可以使用內部流動性立即處理清算，而清算人不需要自己從第三方交易所獲取資產。</p>
+<h1 id="結論">結論</h1>
+<p>以上介紹了 Euler 創新的六大特點，以借貸雙方及清算人的立場出發，透過無許可上市機制、優化的清算機制、響應式利率等特性，來滿足借貸市場中不同角色的需求。並透過多抵押品穩定池，讓放款人最終能將其 eTokens 全部被動兌換成清算抵押資產。</p>
+<p>雖然以上的創新特性為借貸協議領域開啟新的視角，但 Uniswap 有 WETH 對的長尾資產的低流動性以及 Euler 運作機制的可行性，都還值得值續觀察。此外，Euler 也即將發行協議原生治理代幣 EUL，可用來投票決定協議上的資產層級、抵押率及借款率等參數。</p>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://docs.euler.finance/getting-started/white-paper">Euler Finance White Paper</a></li>
+<li><a href="https://blog.euler.finance/series-a-led-by-paradigm-62004afe3bf6">Euler｜Series A Led by Paradigm</a></li>
+<li><a href="https://www.coindesk.com/business/2021/12/13/euler-finance-launches-new-defi-lending-platform-in-crowded-market/">CoinDesk｜Euler Finance Launches New DeFi Lending Platform in Crowded Market</a></li>
+</ul>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2023/04/10/thomas-hu-lecture/" data-toggle="tooltip" data-placement="top" title="胡一天演講筆記：《低流動性資產的微證券化與分佈式金融科技》">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:andylin0404@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    <li>
+                        <a href="https://twitter.com/andylinee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Pivot the life" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Pivot the life 2023
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

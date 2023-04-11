@@ -6,7 +6,19 @@
     <description>Recent content on Pivot the life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://andylinee.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://andylinee.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>開放式 DeFi 借貸協議：Euler Finance</title>
+      <link>https://andylinee.github.io/2023/04/11/euler-finance/</link>
+      <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://andylinee.github.io/2023/04/11/euler-finance/</guid>
+      <description>&amp;ldquo;本文發表於 2021/12/29，有部分服務及數字已不合時宜，請讀者注意及包涵。&amp;rdquo;
+在 2020 年 DeFi Summer 開啟去中心化金融（Decentralized Finance, DeFi）熱潮之前，DeFi 的應用主要以借貸協議為主，包含 DeFi 元老級項目 Maker、Compound 等以主流幣與穩定幣為主的放貸協議，以及後起之秀 Aave 及 Curve。然而，項目方或社群想要將某個代幣上架到放貸協議需要透過許可制的上市機制，藉此來降低用戶資產的安全風險。開發團隊 Euler XYZ 則推出了開放式借貸協議 Euler，只要在 Uniswap V3 有 WETH 交易對的代幣都能上架到借貸市場，並透過一系列機制提升流動性且降低風險，目前 Euler 已於 2021/12/13 於主網上線。本文將會以官方白皮書為基礎，跟各位介紹全新的開放式借貸協議 Euler 的運作。
+團隊簡介 Euler Finance 是由 Euler XYZ 團隊所開發的開放式借貸協議，共同創辦人有三位，CEO 是曾在英國牛津大學擔任演化生物學家的 Michael Bentley；另外兩位分別是 Doug Hoyte 及 Jack Prior，目前也是 Euler XYZ 團隊的開發者；此外，團隊的顧問 Mick de Graaf 為 Ethereum 鏈上去中心化資產管理平台 DEFIED.io 的共同創辦人，也曾在鏈上指數基金 PieDAO 擔任首席開發者。
+Euler 也在今年（2021）8 月完成由 Paradigm 領投的 800 萬美元 A 輪融資，其他參投方包含 Lemniscap 及來自區塊鏈知名項目的個人投資者，如 The Daily Gwei、Bankless、Synthetix、Coinbase、Product Hunt 等項目的創辦人及 CEO。</description>
+    </item>
+    
     <item>
       <title>胡一天演講筆記：《低流動性資產的微證券化與分佈式金融科技》</title>
       <link>https://andylinee.github.io/2023/04/10/thomas-hu-lecture/</link>
