@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Pivot the life">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://andylinee.github.io//img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://andylinee.github.io//img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="《The Effective Engineer》 作者於 Google 演講的筆記" />
+    <meta property="og:title" content="《The Effective Engineer》 作者於 Google 演講的筆記" />
+    <meta property="twitter:title" content="《The Effective Engineer》 作者於 Google 演講的筆記" />
+    
+
+    
+    <meta name="description" content="《The Effective Engineer》 的作者 Edward Lau 在這場於 Google 的演講中分享如何成為更有效率的工程師。講者提出了五個高效活動：優化學習、投資工具、專注高影響力項目、有效協作和發展領導技能。講者強調，努力不一定等於影響力，工程師應該專注於高影響力活動，以最大化其影響力。此外還討論了其他策略，例如優化調試流程、積極迭代驗證想法、簡化程式碼、系統和產品複雜度，以及建立優秀的工程文化。透過專注於這些策略，工程師可以有更好的生產力，並對其組織產生更大的影響。">
+    <meta property="og:description" content="《The Effective Engineer》 的作者 Edward Lau 在這場於 Google 的演講中分享如何成為更有效率的工程師。講者提出了五個高效活動：優化學習、投資工具、專注高影響力項目、有效協作和發展領導技能。講者強調，努力不一定等於影響力，工程師應該專注於高影響力活動，以最大化其影響力。此外還討論了其他策略，例如優化調試流程、積極迭代驗證想法、簡化程式碼、系統和產品複雜度，以及建立優秀的工程文化。透過專注於這些策略，工程師可以有更好的生產力，並對其組織產生更大的影響。" />
+    <meta property="twitter:description" content="《The Effective Engineer》 的作者 Edward Lau 在這場於 Google 的演講中分享如何成為更有效率的工程師。講者提出了五個高效活動：優化學習、投資工具、專注高影響力項目、有效協作和發展領導技能。講者強調，努力不一定等於影響力，工程師應該專注於高影響力活動，以最大化其影響力。此外還討論了其他策略，例如優化調試流程、積極迭代驗證想法、簡化程式碼、系統和產品複雜度，以及建立優秀的工程文化。透過專注於這些策略，工程師可以有更好的生產力，並對其組織產生更大的影響。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Andylinee_keyword">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>《The Effective Engineer》 作者於 Google 演講的筆記 | Pivot the Life</title>
+
+    <link rel="canonical" href="/2023/05/14/the-effective-engineer/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Pivot the life</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/ai/">ai</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/software-engineering/">software-engineering</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/archive//">ARCHIVE</a></li>
+                    
+                        <li><a href="/notes//">NOTES</a></li>
+                    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/software-engineer" title="Software Engineer">
+                            Software Engineer
+                        </a>
+                        
+                        <a class="tag" href="/tags/software-engineering" title="Software Engineering">
+                            Software Engineering
+                        </a>
+                        
+                    </div>
+                    <h1>《The Effective Engineer》 作者於 Google 演講的筆記</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Andylinee
+                             
+                            on 
+                            Sunday, May 14, 2023
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>
+  <img src="/img/2023-05-14-the-effective-engineer/cover.png" alt="Talks at Google">
+
+</p>
+<blockquote>
+<p>&ldquo;註：本文是透過 YouTube &amp; Article Summary powered by ChatGPT 及 OpenAI API 來進行影片摘要及翻譯而產生。&rdquo;</p>
+</blockquote>
+<p><a href="http://www.effectiveengineer.com/">《The Effective Engineer》</a>的作者 Edward Lau 在這場於 Google 的<a href="https://www.youtube.com/watch?v=BnIz7H5ruy0">演講</a>中分享如何成為更有效率的工程師。講者提出了五個高效活動：優化學習、投資工具、專注高影響力項目、有效協作和發展領導技能。講者強調，努力不一定等於影響力，工程師應該專注於高影響力活動，以最大化其影響力。此外還討論了其他策略，例如優化調試流程、積極迭代驗證想法、簡化程式碼、系統和產品複雜度，以及建立優秀的工程文化。透過專注於這些策略，工程師可以有更好的生產力，並對其組織產生更大的影響。</p>
+<p>
+  <img src="/img/2023-05-14-the-effective-engineer/topic.png" alt="Topic">
+
+</p>
+<hr>
+<h1 id="高槓桿活動優化學習投資工具專注高影響力項目有效協作和發展領導技能">高槓桿活動：優化學習、投資工具、專注高影響力項目、有效協作和發展領導技能</h1>
+<p>在今天快節奏和不斷變化的世界中，工程師們不斷尋找提高工作效率和效率的方法。在這場於 Google 的演講中，曾經在谷歌和各種新創公司工作過的經驗豐富的工程師 Edward Lau 分享了他如何成為更有效的工程師的見解。他首先問聽眾是否曾長時間工作、在周末工作或參與與未啟動或沒有影響的項目。然後，他介紹了 <strong>槓桿（leverage）</strong> 的概念，即為所投入的時間產生的影響。他認為，努力並不一定取決於影響力，工程師應特別注意高槓桿的活動，以最大程度地改變他們的影響力。Edward 介紹了工程師的五個高槓桿活動，分別是 <strong>優化學習</strong>、<strong>投資工具</strong>、<strong>專注高影響力項目</strong>、<strong>有效協作</strong> 和 <strong>發展領導技能</strong>。</p>
+<p>
+  <img src="/img/2023-05-14-the-effective-engineer/leverage.png" alt="leverage">
+
+</p>
+<h2 id="優化學習">優化學習</h2>
+<p>第一個是優化學習，Edward 認為這是一項 <strong>複利投資</strong>，可以隨著時間的推移帶來顯著的收益。他建議工程師透過閱讀書籍、參加課程、開展副業和參加演講來獲得自己的學習和成長。透過投資自己的學習，工程師可以變得更加學問淵博和熟練，從而可以進行更高影響力的工作。</p>
+<h2 id="投資工具">投資工具</h2>
+<p>第二個高槓桿活動是 <strong>投資於增加迭代速度的工具</strong>。Edward 認為，即使是迭代速度的微小改進也可以對生產力產生重大影響。他建議工程師投資於可以自動化手動任務和加速開發流程的工具。透過減少完成任務所需的時間，工程師可以專注於更高影響力的工作，並在更短的時間內產生更多的產出。</p>
+<h2 id="專注高影響力項目">專注高影響力項目</h2>
+<p>第三個高槓桿活動是專注於高影響力的項目。Edward 認為，工程師應該 <strong>優先考慮具有潛在產生重大影響的項目</strong>，並避免那些不太可能產生影響的項目。他建議工程師問自己是否在項目上花費的時間值得，以及項目是否具有高槓桿。透過專注於高影響力的項目，工程師可以產生更有意義的工作，並對組織產生更大的影響。</p>
+<h2 id="有效協作">有效協作</h2>
+<p>第四個高槓桿活動是有效地與他人合作。Edward 認為，有效的合作可以帶來更好的結果和更高的影響力。他建議工程師清晰地溝通、積極傾聽並與同事建立良好的關係。透過與他人良好地合作，工程師可以有更高的生產力，並對組織產生更大的影響。</p>
+<h2 id="發展領導技能">發展領導技能</h2>
+<p>第五個也是最後一個高槓桿活動是發展領導技能。Edward 認為，領導技能對於想要對組織產生重大影響的工程師至關重要。他建議工程師 <strong>發展溝通、授權和決策等技能</strong>，成為有效的領導者。透過發展領導技能，工程師可以提升工作效率，並對組織產生更大的影響。</p>
+<hr>
+<h1 id="其他策略">其他策略</h1>
+<p>除了這五個高槓桿活動外，演講者還討論了其他可以使工程師更有效的策略。其中一種策略是 <strong>優化自己的 debug 流程</strong>，以提高迭代速度。透過簡化 debug 過程，工程師可以減少修復錯誤所需的時間，並在更短的時間內產生更多的產出。</p>
+<p>另一種策略是 <strong>積極迭代驗證想法</strong>。Edward 以 Etsy 在其搜尋結果頁面上實現無限滾動的失敗嘗試為例。透過將假設分解為更小的可測試假設，Etsy 能夠對其理論建立信心，並成功地重新設計了其產品頁面。透過積極迭代地驗證想法，工程師可以產生更好的工作，並對組織產生更大的影響。</p>
+<p>Edward 還強調了透過簡化程式碼、系統和產品複雜性來最小化操作負擔的重要性。透過減少他們工作的複雜性，工程師可以在更短的時間內產生更多的產出，並對組織產生更大的影響。</p>
+<p>最後，Edward 討論了 <strong>建立優秀的工程文化</strong> 的重要性。優秀的工程文化對於吸引和留住重視高槓桿活動、學習機會和專注於構建新功能而不是維護舊功能的優秀工程師至關重要。透過建立優秀的工程文化，組織可以吸引和留住頂尖人才，並產生更好的工作。</p>
+<hr>
+<h1 id="總結">總結</h1>
+<p>總之，要成為更有效的工程師需要專注於高槓桿活動，例如優化學習、投資工具、專注於高影響力的項目、有效合作和發展領導技能。此外，工程師可以透過優化自己的 debug 流程、積極迭代驗證想法、最小化操作負擔和建立優秀的工程文化來提升效率。透過專注於這些策略，工程師可以產生更好的工作，並對組織產生更大的影響。</p>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2023/04/29/chatgpt-prompt-engineering/" data-toggle="tooltip" data-placement="top" title="為開發者開設的 ChatGPT Prompt Engineering 線上課程">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:andylin0404@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    <li>
+                        <a href="https://twitter.com/andylinee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://medium.com/@andylinee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Pivot the life" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Pivot the life 2023
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
