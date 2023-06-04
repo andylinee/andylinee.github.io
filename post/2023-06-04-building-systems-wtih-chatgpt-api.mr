@@ -1,0 +1,62 @@
+---
+layout: post
+title: "《使用 ChatGPT API 開發系統》課程筆記"
+subtitle: ""
+description: "繼4月底上線「ChatGPT Prompt Engineering for Developers」課程之後，Andrew Ng 所創辦的 DeepLearning.AI 和 OpneAI 再次共同推出《Building Systems with the ChatGPT API》的線上課程，講解使用 ChatGPT API 開發系統的心法，課程長度約為1小時。"
+date: 2023-06-04
+author: "Andylinee"
+image: ""
+published: true
+tags: 
+    - ChatGPT
+    - AI
+    - Deep Learning
+    - LLM
+    - 人工智慧
+    - 深度學習
+URL: "2023/06/04/building-systems-with-chatgpt-api/"
+categories: [ AI ]
+---
+
+在 4 月底上線的「ChatGPT Prompt Engineering for Developers」課程中，DeepLearning.AI 創辦人吳恩達 Andrew Ng 和 OpenAI 的 Isa Fulford 分享了如何正確且有效的對 ChatGPT 進行「提示」（prompt）。然而，要開發一個系統會需要由許多 prompts 組成並對大型語言模型（LLM）進行多次調用。 因此，在這次新推出的《Building Systems with the ChatGPT API》的課程中，將會分享如何使用 LLM 來開發複雜的應用程式，並以打造一個全流程的客服輔助系統作為範例來進行講解。
+
+這堂「Building Systems with the ChatGPTAPI」線上課程，在 DeepLearning.AI [網站](https://learn.deeplearning.ai/chatgpt-building-system?_gl=1*ifi9oa*_ga*MTkxMzAwODM4MC4xNjgyNjYwODQz*_ga_PZF1GBS1R1*MTY4NTg1NzQxOC45LjAuMTY4NTg1NzQxOS41OS4wLjA.)上免費提供給想要使用 ChatGPT API 的打造系統的開發者學習，瞭解使用 ChatGPT API 打造系統服務時需要注意的細節及實作方式，課程搭配 Jupyter notebook 提供範例程式碼讓學員能即時驗證。
+
+
+這堂長度為1小時左右的課程內容涵蓋了以下幾個部分：
+- 評估輸入：分類（Classification）、審查（Moderation）
+- 處理輸入：思想鏈推理（Chain of Thought Reasoning）、提示鏈（Chaining Prompts）
+- 檢查輸出
+- 打造一個全流程的系統
+- 評估（Evaluation）
+
+以下為筆者整理的課堂筆記，推薦有興趣的讀者撥出一小時去看完整的課程，肯定會有不少收穫。
+
+---
+
+# 大型語言模型、API 格式、Token
+在課程開頭，先簡單介紹了監督式學習（Supervised Learning）和大型語言模型（LLM）。
+## 監督式學習
+在訓練監督式學習的模型主要有三大步驟：
+1. 取得標記資料
+2. 在該資料上訓練 AI 模型
+3. 部署並調用模型
+語言模型就是透過監督式學習來不斷預測下一個字詞，如下圖：
+![Supervised Learning](/img/2023-06-04-building-systems-with-chatgpt-api/supervised-learning.png)
+
+
+
+-----
+
+# 課程總結
+在這堂一小時的課程中，主要介紹了以下幾個重點：
+- Prompt 的原則
+- 迭代的 prompt 開發流程
+- ChatGPT 的能力
+- 使用 ChatGPT 打造 Chatbot
+內容雖然不多，但對於想要更近一步了解 ChatGPT 的使用方式，甚至透過串接 API 來整合服務的開發者來說，都是非常推薦的學習資源，這篇筆記內容有限，歡迎有興趣了解更多的讀者前往觀看課程及閱讀官方文件。
+
+-----
+
+# 《DTW 數位科技週報》
+如果想要每週獲得最新的數位科技、區塊鏈及人工智慧新聞整理，歡迎訂閱免費電子報：[《DTW 數位科技週報》](https://digitaltechweekly.substack.com/)
