@@ -3,30 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://andylinee.github.io/categories/</loc>
-    <lastmod>2023-06-05T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andylinee.github.io/tags/coding/</loc>
-    <lastmod>2023-06-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://andylinee.github.io/tags/nasa/</loc>
-    <lastmod>2023-06-05T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andylinee.github.io/</loc>
-    <lastmod>2023-06-05T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andylinee.github.io/post/</loc>
-    <lastmod>2023-06-05T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andylinee.github.io/tags/programming/</loc>
-    <lastmod>2023-06-05T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andylinee.github.io/tags/python/</loc>
+    <lastmod>2023-08-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andylinee.github.io/tags/software-engineering/</loc>
-    <lastmod>2023-06-05T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andylinee.github.io/categories/software-engineering/</loc>
-    <lastmod>2023-06-05T00:00:00+00:00</lastmod>
+    <lastmod>2023-08-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andylinee.github.io/tags/</loc>
+    <lastmod>2023-08-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andylinee.github.io/tags/type-hints/</loc>
+    <lastmod>2023-08-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andylinee.github.io/2023/08/07/python-typing/</loc>
+    <lastmod>2023-08-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://andylinee.github.io/tags/nasa/</loc>
     <lastmod>2023-06-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://andylinee.github.io/2023/06/05/how-nasa-writes-space-proof-code/</loc>

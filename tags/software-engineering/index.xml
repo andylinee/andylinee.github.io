@@ -6,7 +6,19 @@
     <description>Recent content in Software Engineering on Pivot the life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://andylinee.github.io/tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://andylinee.github.io/tags/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>深入淺出 Python 中的 typing 模組 - 強化型別提示與依賴注入</title>
+      <link>https://andylinee.github.io/2023/08/07/python-typing/</link>
+      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://andylinee.github.io/2023/08/07/python-typing/</guid>
+      <description>Python 作為一種動態語言，優雅簡潔的語法使得開發者可以快速地撰寫程式碼。然而，在大型專案或團隊合作中，強化程式碼的可讀性、可維護性和錯誤檢測是至關重要的。Python 的 typing 模組在這方面扮演了重要的角色，它允許我們為 Python 程式碼添加靜態型別提示（Type Hints），讓 IDE 和靜態類型檢查工具能更容易協助開發者發現錯誤和改進程式碼。
+什麼是 typing 模組？ typing 模組是 Python 3.5 以後加入的內建模組，它提供了一組用於指定變數、函式回傳值、函式參數等型別提示的工具。儘管 Python 依然是動態型別的語言，typing 模組能夠為我們的程式碼帶來更豐富的型別資訊，讓開發者在撰寫程式碼時更容易瞭解資料的形式與用途。
+使用 Type Hints 增強型別提示 在 Python 中，型別提示是指在變數、函式參數和回傳值等地方添加型別資訊，以便在開發過程中更容易理解程式碼的意圖。typing 模組中的 Type Hints 提供了各種內建型別（如 int、str、list 等）以及用於創建自定義型別的工具。以下是一些 Type Hints 的常見用法和案例：
+基本型別提示 from typing import List def get_square_root(number: float) -&amp;gt; float: return number ** 0.5 # Usage numbers_list: List[int] = [1, 4, 9, 16] result = get_square_root(25) print(result) # Output：5.0 在這個例子中，我們使用 float 和 List[int] 等 Type Hints 指定了函式參數和變數的型別，讓開發者知道這些資料的類型，提高程式碼的可讀性。</description>
+    </item>
+    
     <item>
       <title>編寫安全可靠的程式碼：NASA「十個原則」的經驗教訓</title>
       <link>https://andylinee.github.io/2023/06/05/how-nasa-writes-space-proof-code/</link>

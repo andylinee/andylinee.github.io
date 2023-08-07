@@ -6,13 +6,49 @@
     <description>Recent content in Tags on Pivot the life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://andylinee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://andylinee.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coding</title>
       <link>https://andylinee.github.io/tags/coding/</link>
-      <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
       
       <guid>https://andylinee.github.io/tags/coding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://andylinee.github.io/tags/programming/</link>
+      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://andylinee.github.io/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://andylinee.github.io/tags/python/</link>
+      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://andylinee.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Engineering</title>
+      <link>https://andylinee.github.io/tags/software-engineering/</link>
+      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://andylinee.github.io/tags/software-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Type Hints</title>
+      <link>https://andylinee.github.io/tags/type-hints/</link>
+      <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://andylinee.github.io/tags/type-hints/</guid>
       <description></description>
     </item>
     
@@ -22,24 +58,6 @@
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://andylinee.github.io/tags/nasa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>https://andylinee.github.io/tags/programming/</link>
-      <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://andylinee.github.io/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software Engineering</title>
-      <link>https://andylinee.github.io/tags/software-engineering/</link>
-      <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://andylinee.github.io/tags/software-engineering/</guid>
       <description></description>
     </item>
     
