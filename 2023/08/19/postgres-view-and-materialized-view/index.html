@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Pivot the life">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://andylinee.github.io//img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://andylinee.github.io//img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="淺談 PostgreSQL 資料庫中的 View 及 Materialized View" />
+    <meta property="og:title" content="淺談 PostgreSQL 資料庫中的 View 及 Materialized View" />
+    <meta property="twitter:title" content="淺談 PostgreSQL 資料庫中的 View 及 Materialized View" />
+    
+
+    
+    <meta name="description" content="在PostgreSQL中，了解「View」和「Materialized View」的差異與使用方式將能優化資料的使用及操作。本文將淺談這兩種資料庫檢視表，並搭配實際 SQL 語法說明使用案例。">
+    <meta property="og:description" content="在PostgreSQL中，了解「View」和「Materialized View」的差異與使用方式將能優化資料的使用及操作。本文將淺談這兩種資料庫檢視表，並搭配實際 SQL 語法說明使用案例。" />
+    <meta property="twitter:description" content="在PostgreSQL中，了解「View」和「Materialized View」的差異與使用方式將能優化資料的使用及操作。本文將淺談這兩種資料庫檢視表，並搭配實際 SQL 語法說明使用案例。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Andylinee_keyword">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>淺談 PostgreSQL 資料庫中的 View 及 Materialized View | Pivot the Life</title>
+
+    <link rel="canonical" href="/2023/08/19/postgres-view-and-materialized-view/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Pivot the life</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/ai/">ai</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/software-engineering/">software-engineering</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/archive//">ARCHIVE</a></li>
+                    
+                        <li><a href="/notes//">NOTES</a></li>
+                    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/database" title="Database">
+                            Database
+                        </a>
+                        
+                        <a class="tag" href="/tags/postgresql" title="PostgreSQL">
+                            PostgreSQL
+                        </a>
+                        
+                        <a class="tag" href="/tags/software-engineering" title="Software Engineering">
+                            Software Engineering
+                        </a>
+                        
+                        <a class="tag" href="/tags/data-engineering" title="Data Engineering">
+                            Data Engineering
+                        </a>
+                        
+                    </div>
+                    <h1>淺談 PostgreSQL 資料庫中的 View 及 Materialized View</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Andylinee
+                             
+                            on 
+                            Saturday, August 19, 2023
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>在 PostgreSQL 資料庫中，<strong>View</strong> 和 <strong>Materialized View</strong> 是非常有用的工具，它們能夠幫助開發者更加靈活地處理資料並優化查詢效能。現在讓我們透過一些具體的 SQL 語法案例，了解如何在 PostgreSQL 中使用這兩種資料庫檢視表。</p>
+<h1 id="view">View</h1>
+<p>在 PostgreSQL 中，View 是透過 <code>SELECT</code> 語句定義的虛擬表。它本身不儲存任何資料，而是作為保存的查詢，可以像正常的表一樣引用它。每次查詢 view 時，都會執行底層的 <code>SELECT</code> 語句，並且結果會以表格呈現。</p>
+<p>View 在簡化複雜查詢、封裝業務邏輯和為資料提供更友善的界面有很大的好處。然而，View 也可能會對性能造成影響，尤其是對於複雜查詢或大型資料集，因為每次使用 view 時都會執行查詢。</p>
+<p>假設我們有一張資料表 <code>employees</code>，包含了員工的資料，包括姓名、部門、職位和薪水。現在我們想要創建一個 view，只顯示部門為 <code>Sales</code> 的員工資料：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#6272a4">-- 創建名稱為 sales_employees 的 view
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">CREATE</span> <span style="color:#ff79c6">VIEW</span> sales_employees <span style="color:#ff79c6">AS</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">SELECT</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">FROM</span> employees
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">WHERE</span> department <span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">&#39;Sales&#39;</span>;
+</span></span></code></pre></div><p>現在，我們可以透過以下方式查詢 <code>sales_employees</code> view，來獲取所有部門為 <code>Sales</code> 的員工資料：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#ff79c6">SELECT</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">FROM</span> sales_employees;
+</span></span></code></pre></div><hr>
+<h1 id="materialized-view">Materialized View</h1>
+<p>在 PostgreSQL 中，Materialized View 和一般的 View 類似，但 Materialized View 還將底層 <code>SELECT</code> 語句的結果集作為實際資料儲存在硬碟上。這代表只有在創建或更新 Materialized View 時才會執行查詢，並且因為資料被儲存起來，會讓後續的查詢速度更快。</p>
+<p>Materialized View 適用於需要預先計算和儲存複雜查詢結果以提高查詢性能的情況。雖然擁有儲存資料的優勢，但在重新更新 Materialized View 之前可能會保存了過時的資料。</p>
+<p>現在，假設我們有一張資料表 <code>order_items</code>，儲存了每個訂單的商品資訊，包括產品編號、訂單日期和銷售量。我們希望創建一個 Materialized View，計算每個產品的月度銷售總量，以提高查詢效能：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#6272a4">-- 創建名稱為 monthly_product_sales 的 Materialized View
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">CREATE</span> MATERIALIZED <span style="color:#ff79c6">VIEW</span> monthly_product_sales <span style="color:#ff79c6">AS</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">SELECT</span> product_id, 
+</span></span><span style="display:flex;"><span>       DATE_TRUNC(<span style="color:#f1fa8c">&#39;month&#39;</span>, order_date) <span style="color:#ff79c6">AS</span> sales_month,
+</span></span><span style="display:flex;"><span>       <span style="color:#ff79c6">SUM</span>(quantity) <span style="color:#ff79c6">AS</span> total_sales
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">FROM</span> order_items
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">GROUP</span> <span style="color:#ff79c6">BY</span> product_id, sales_month
+</span></span></code></pre></div><p>現在，我們可以透過以下方式查詢 <code>monthly_product_sales</code> 這個 Materialized View，來獲取每個產品的月度銷售總量：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#ff79c6">SELECT</span> <span style="color:#ff79c6">*</span> <span style="color:#ff79c6">FROM</span> monthly_product_sales;
+</span></span></code></pre></div><hr>
+<h1 id="view-vs-materialized-view">View vs. Materialized View</h1>
+<p>現在，讓我們通過以下表格比較一下這兩種數據庫對象的區別和使用時機：</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>View</th>
+<th>Materialized View</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>數據儲存</td>
+<td>不儲存實際資料</td>
+<td>儲存實際查詢結果</td>
+</tr>
+<tr>
+<td>效能</td>
+<td>執行時計算查詢</td>
+<td>儲存計算後的查詢結果</td>
+</tr>
+<tr>
+<td>查詢速度</td>
+<td>受底層查詢性能影響</td>
+<td>快速查詢</td>
+</tr>
+<tr>
+<td>資料更新</td>
+<td>不適用於資料更新</td>
+<td>可透過 refresh 來更新資料</td>
+</tr>
+<tr>
+<td>適用場景</td>
+<td>簡化查詢、封裝邏輯</td>
+<td>提高查詢性能</td>
+</tr>
+</tbody>
+</table>
+<p>整體而言，在 PostgreSQL 中，View 和 Materialized View 都是優化查詢和提高資料處理彈性的有效工具。View 適用於簡化複雜查詢和封裝業務邏輯，而 Materialized View 適用於需要提高查詢性能並預先計算複雜查詢結果的情況。根據實際需求和性能要求，選擇適合的資料庫對象將有助於優化資料庫操作。</p>
+<hr>
+<h1 id="dtw-數位科技週報">《DTW 數位科技週報》</h1>
+<p>如果想要每週獲得最新的數位科技、區塊鏈及人工智慧新聞整理，歡迎訂閱免費電子報：<a href="https://digitaltechweekly.substack.com/">《DTW 數位科技週報》</a></p>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2023/08/07/python-typing/" data-toggle="tooltip" data-placement="top" title="初探 Python 中的 typing 模組 - 強化型別提示與依賴注入">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:andylin0404@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    <li>
+                        <a href="https://twitter.com/andylinee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://medium.com/@andylinee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Pivot the life" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Pivot the life 2023
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
