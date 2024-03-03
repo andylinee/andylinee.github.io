@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="What is Ethereum Gas Fee?" />
-    <meta property="og:title" content="What is Ethereum Gas Fee?" />
-    <meta property="twitter:title" content="What is Ethereum Gas Fee?" />
+    <meta name="title" content="Understanding call, staticcall and delegatecall in Solidity" />
+    <meta property="og:title" content="Understanding call, staticcall and delegatecall in Solidity" />
+    <meta property="twitter:title" content="Understanding call, staticcall and delegatecall in Solidity" />
     
 
     
-    <meta name="description" content="The article provides an introduction to Ethereum gas fees, explaining the calculation formula: Total Fee = Gas Price * Gas Used. It discusses the changes in fee calculation post the London Upgrade, where Gas Price comprises Base Fee and Priority Fee. Users set a Max Fee Per Gas to simplify transaction fee settings, limiting the cost per gas unit. Transactions require the Max Fee to exceed the sum of Base Fee and Priority Fee for successful execution, with any excess refunded to the sender post-transaction.">
-    <meta property="og:description" content="The article provides an introduction to Ethereum gas fees, explaining the calculation formula: Total Fee = Gas Price * Gas Used. It discusses the changes in fee calculation post the London Upgrade, where Gas Price comprises Base Fee and Priority Fee. Users set a Max Fee Per Gas to simplify transaction fee settings, limiting the cost per gas unit. Transactions require the Max Fee to exceed the sum of Base Fee and Priority Fee for successful execution, with any excess refunded to the sender post-transaction." />
-    <meta property="twitter:description" content="The article provides an introduction to Ethereum gas fees, explaining the calculation formula: Total Fee = Gas Price * Gas Used. It discusses the changes in fee calculation post the London Upgrade, where Gas Price comprises Base Fee and Priority Fee. Users set a Max Fee Per Gas to simplify transaction fee settings, limiting the cost per gas unit. Transactions require the Max Fee to exceed the sum of Base Fee and Priority Fee for successful execution, with any excess refunded to the sender post-transaction." />
+    <meta name="description" content="call, staticcall, and delegatecall are all low-level ways to call functions in another contract. They all allow adjusting the gas limit (compared to transfer and send, which have a fixed limit of 2300 gas) and do not throw exceptions when a call error occurs; instead, they return false.">
+    <meta property="og:description" content="call, staticcall, and delegatecall are all low-level ways to call functions in another contract. They all allow adjusting the gas limit (compared to transfer and send, which have a fixed limit of 2300 gas) and do not throw exceptions when a call error occurs; instead, they return false." />
+    <meta property="twitter:description" content="call, staticcall, and delegatecall are all low-level ways to call functions in another contract. They all allow adjusting the gas limit (compared to transfer and send, which have a fixed limit of 2300 gas) and do not throw exceptions when a call error occurs; instead, they return false." />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Andylinee_keyword">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>What is Ethereum Gas Fee? | Pivot the Life</title>
+    <title>Understanding call, staticcall and delegatecall in Solidity | Pivot the Life</title>
 
-    <link rel="canonical" href="/2024/01/10/ethereum-gas-fee/">
+    <link rel="canonical" href="/2024/01/20/call-staticcall-delegatecall/">
 
     
     
@@ -190,8 +190,12 @@
                             Blockchain
                         </a>
                         
+                        <a class="tag" href="/tags/solidity" title="Solidity">
+                            Solidity
+                        </a>
+                        
                     </div>
-                    <h1>What is Ethereum Gas Fee?</h1>
+                    <h1>Understanding call, staticcall and delegatecall in Solidity</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -200,7 +204,7 @@
                                 Andylinee
                              
                             on 
-                            Wednesday, January 10, 2024
+                            Saturday, January 20, 2024
                             
                             
                             
@@ -226,29 +230,100 @@
                 post-container">
 
                 
-                <h1 id="introduction-to-gas">Introduction to Gas</h1>
-<p>On Ethereum, all transactions involve executing specific operations that change the state of the network, such as transferring account balances, deploying new contracts, or interacting with existing contracts. These operations consume computational resources, leading to a cost known as &ldquo;Gas.&rdquo; Users initiating transactions on Ethereum need to pay a fee for these computational resources in the form of Gas. Gas measures the amount of computational resources required to execute a transaction.</p>
-<p>Each operation in a transaction consumes a certain amount of Gas, with more complex operations requiring higher computational resources, thus necessitating more Gas. This design ensures that contract transactions can be halted, preventing endless consumption of computational resources. Through Gas, Ethereum transactions can be controlled and prevented from consuming resources indefinitely.</p>
+                <p><strong>call</strong>, <strong>staticcall</strong>, and <strong>delegatecall</strong> are all low-level ways to call functions in another contract. They all allow adjusting the gas limit (compared to transfer and send, which have a fixed limit of 2300 gas) and do not throw exceptions when a call error occurs; instead, they return false.
+The main differences between these three calling methods are as follows:</p>
+<ul>
+<li><strong>call</strong>: Can call functions in other contracts (which can change the state of the called contract, the calling function cannot be view), can be used for transfers (parameter value), and can adjust gas settings.</li>
+<li><strong>delegatecall</strong>: Similar to call but cannot be used for transfers (parameter value).</li>
+<li><strong>staticcall</strong>: Similar to call but cannot change any state in the contract; thus, delegatecall can only call functions that do not modify state (functions decorated with pure or view). The calling function can be view.
+In a scenario where a transaction is initiated by an EOA, calling contract A which then calls contract B (EOA -&gt; Contract A -&gt; Contract B), Contract B determines roles using the following table.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Call Type</th>
+<th>msg.sender</th>
+<th>Context</th>
+<th>Update State</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>call</td>
+<td>A</td>
+<td>B</td>
+<td>V</td>
+<td>Update state (Write)</td>
+</tr>
+<tr>
+<td>delegatecall</td>
+<td>A&rsquo;s msg.sender</td>
+<td>A</td>
+<td>V</td>
+<td>Connect library</td>
+</tr>
+<tr>
+<td>staticcall</td>
+<td>A</td>
+<td>B</td>
+<td>X</td>
+<td>Check state (View)</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h1 id="formula-to-calculate-ethereum-gas-fee">Formula to calculate Ethereum Gas Fee</h1>
-<p>In Ethereum, the transaction fee (Gas Fee) can be expressed by the following formula:
-<code>Total Fee = Gas Price * Gas Used</code></p>
-<p>After the London Upgrade on Ethereum, the calculation method for transaction fees changed. The Gas Price now consists of a Base Fee and a Priority Fee.</p>
-<h3 id="base-fee">Base Fee</h3>
-<p>Each block has a base fee, and when a sender initiates a transaction, the set base fee cannot be lower than the base fee of that blockchain. The base fee of a block is related to the gas consumed in the previous block. Once a transaction is included in a block, its base fee is directly burned:
-<code>Burned Gas Fee = Base Fee * Gas Used</code></p>
-<h3 id="priority-fee">Priority Fee</h3>
-<p>In Ethereum, if every transaction pays the same unit fee, they need to queue up for processing. However, users can pay miners a tip to prioritize their transactions. This tip is known as the Priority Fee. Unlike the base fee, all fees generated by the priority fee go to miners:
-<code>Miner Tip = Priority Fee * Gas Used</code>
-Therefore, the total fee can be rewritten as:
-<code>Total Fee = (Base Fee + Priority Fee) * Gas Used</code></p>
-<h3 id="max-fee">Max Fee</h3>
-<p>For users, setting the base fee and priority fee for each transaction can be cumbersome. Hence, the concept of &ldquo;Max Fee Per Gas&rdquo; emerged. Since users cannot determine the base fee set by the previous block, they can directly set a &ldquo;Max Fee Per Gas&rdquo; (masFeePerGas) to limit the cost they are willing to pay per unit of gas during transaction execution. To ensure a transaction&rsquo;s successful execution, the Max Fee must exceed the sum of the Base Fee and Priority Fee. Any excess amount beyond this sum will be refunded to the transaction sender after the transaction is execute</p>
+<h1 id="call">call</h1>
+<p>
+  <img src="/img/2024-01-20-call-staticcall-delegatecall/call.png" alt="call">
+
+
+call is a low-level function used to interact with other contracts, and has the following three main usage scenarios:</p>
+<ul>
+<li><strong>Calling functions in other contracts</strong>: <code>&lt;address&gt;.call(bytes memory) returns (bool, bytes memory)</code>
+<ul>
+<li>Similar to send, if the call fails, it will not stop, but will return false.</li>
+</ul>
+</li>
+<li><strong>Transfer</strong>: <code>&lt;address&gt;.call{value: amount}(bytes memory)</code>
+<ul>
+<li>Similar to transfer, it will transfer amount tokens from the contract to <!-- raw HTML omitted -->.</li>
+</ul>
+</li>
+<li><strong>Adjust gas limit</strong>: <code>&lt;address&gt;.call{gas: amount}(bytes memory)</code>
+<ul>
+<li>It will return a bool value.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="staticcall">staticcall</h1>
+<p>
+  <img src="/img/2024-01-20-call-staticcall-delegatecall/staticcall-1.png" alt="staticcall">
+
+
+The difference in usage between <strong>call</strong> and <strong>staticcall</strong> can be seen through the following code.
+
+  <img src="/img/2024-01-20-call-staticcall-delegatecall/staticcall-2.png" alt="staticcall code">
+
+</p>
+<hr>
+<h1 id="delegatecall">delegatecall</h1>
+<p>
+  <img src="/img/2024-01-20-call-staticcall-delegatecall/delegatecall.png" alt="delegatecall">
+
+
+In the example above, when user S uses delegatecall through contract A to call contract B, the function executed is from contract B, but the context remains that of contract A (if call is used, the context would be that of contract B). This means that msg.sender is the address of user S, and any changes to State Variables will affect the variables in contract A.
+Delegate means to entrust. Through the explanation above, delegatecall can be understood as follows: it is like an investor (user S) entrusting their assets (State Variables of contract A) to an asset management company (contract B) to handle, executing the strategies of the management company (functions of contract B), but changing the state of the assets (variables of contract A).
+Delegatecall is commonly used in Proxy Contracts, where smart contracts separate storage contracts from logic contracts:</p>
+<ul>
+<li>The <strong>Proxy Contract</strong> stores all relevant variables and holds the address of the logic contract.</li>
+<li>All functions are stored in the <strong>logic contract</strong>, executed through delegatecall. When modifications to the smart contract program are needed, simply redirecting the proxy contract to a new logic contract completes the version update.</li>
+</ul>
 <hr>
 <h1 id="references">References</h1>
 <ul>
-<li><a href="https://docs.soliditylang.org/en/latest/introduction-to-smart-contracts.html#gas">Introduction to Smart Contracts: Gas</a></li>
-<li><a href="https://ethereum.org/zh-tw/developers/docs/gas/">GAS AND FEES</a></li>
+<li><a href="https://github.com/AmazingAng/WTF-Solidity/tree/main/22_Call">WTF-Solidity: 22_Call</a></li>
 </ul>
 
 
@@ -259,13 +334,13 @@ Therefore, the total fee can be rewritten as:
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2023/08/19/postgres-view-and-materialized-view/" data-toggle="tooltip" data-placement="top" title="淺談 PostgreSQL 資料庫中的 View 及 Materialized View">&larr;
+                        <a href="/2024/01/15/erc20/" data-toggle="tooltip" data-placement="top" title="What is ERC20?">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2024/01/11/ethereum-improvement-proposals/" data-toggle="tooltip" data-placement="top" title="What is Ethereum Improvement Proposals (EIPs)?">Next
+                        <a href="/2024/03/03/maximal-extractable-value/" data-toggle="tooltip" data-placement="top" title="What is Maximal Extractable Value (MEV)?">Next
                             Post &rarr;</a>
                     </li>
                     
