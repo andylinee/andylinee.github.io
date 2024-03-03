@@ -9,13 +9,6 @@
     <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>What is Ethereum Gas Fee?</title>
-      <link>http://localhost:1313/2024/03/03/ethereum-gas-fee/</link>
-      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2024/03/03/ethereum-gas-fee/</guid>
-      <description>Introduction to Gas On Ethereum, all transactions involve executing specific operations that change the state of the network, such as transferring account balances, deploying new contracts, or interacting with existing contracts. These operations consume computational resources, leading to a cost known as &amp;ldquo;Gas.&amp;rdquo; Users initiating transactions on Ethereum need to pay a fee for these computational resources in the form of Gas. Gas measures the amount of computational resources required to execute a transaction.</description>
-    </item>
-    <item>
       <title>What is Ethereum Improvement Proposals (EIPs)?</title>
       <link>http://localhost:1313/2024/03/03/ethereum-improvement-proposals/</link>
       <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
@@ -27,14 +20,21 @@
       <link>http://localhost:1313/2024/03/03/maximal-extractable-value/</link>
       <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/2024/03/03/maximal-extractable-value/</guid>
+      <description>What is ERC20? ERC20 is a standard interface defined for &amp;ldquo;Fungible Tokens&amp;rdquo;, which are exchangeable tokens. It is one of the most common ERC standards used in applications such as cryptocurrencies, voting governance tokens, and staking tokens. When developers create applications on the Ethereum platform, they need to issue tokens to provide services like points and general currency. The ERC20 standard includes concepts on how to issue tokens, transfer tokens between parties, authorize third-party usage, etc.</description>
+    </item>
+    <item>
+      <title>What is Maximal Extractable Value (MEV)?</title>
+      <link>http://localhost:1313/2024/03/03/maximal-extractable-value/</link>
+      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2024/03/03/maximal-extractable-value/</guid>
       <description>Introduction to Maximal Extractable Value (MEV) Maximal Extractable Value (MEV) is a concept that has garnered significant attention in the cryptocurrency ecosystem, particularly in the context of Ethereum. MEV refers to the maximum value that can be extracted from block production beyond standard block rewards and gas fees. It involves manipulating transaction order and execution on the blockchain to gain additional value, impacting both transaction participants and miners.&#xA;Issues caused by MEV MEV can lead to several issues:</description>
     </item>
     <item>
-      <title>Permissionless DeFi Lending Protocol：Euler Finance</title>
-      <link>http://localhost:1313/2024/03/01/euler-finance/</link>
-      <pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2024/03/01/euler-finance/</guid>
-      <description>&amp;ldquo;This article was published on 2021/12/29. The Euler v2 has already launched on 2024 Feb. Readers are advised to take note and understand.&amp;rdquo;&#xA;In 2020, before the DeFi Summer initiated the craze for Decentralized Finance (DeFi), DeFi applications primarily focused on lending protocols. This included prominent projects like Maker and Compound, which were based on mainstream tokens and stablecoin lending protocols, along with emerging platforms like Aave and Curve. However, listing a token on a lending protocol required a permissioned listing mechanism to reduce user asset risks.</description>
+      <title>What is Ethereum Gas Fee?</title>
+      <link>http://localhost:1313/2024/03/02/ethereum-gas-fee/</link>
+      <pubDate>Sat, 02 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2024/03/02/ethereum-gas-fee/</guid>
+      <description>Introduction to Gas On Ethereum, all transactions involve executing specific operations that change the state of the network, such as transferring account balances, deploying new contracts, or interacting with existing contracts. These operations consume computational resources, leading to a cost known as &amp;ldquo;Gas.&amp;rdquo; Users initiating transactions on Ethereum need to pay a fee for these computational resources in the form of Gas. Gas measures the amount of computational resources required to execute a transaction.</description>
     </item>
     <item>
       <title>淺談 PostgreSQL 資料庫中的 View 及 Materialized View</title>
@@ -77,6 +77,13 @@
       <pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/2023/04/29/chatgpt-prompt-engineering/</guid>
       <description>從 2022 年底 ChatGPT 問世之後，開始出現許多分享如何使用 ChatGPT 改善工作流程、提升個人生產力、甚至快速打造產品賺錢，但要能夠發揮 ChatGPT 最大的價值就必須要有好的提示能力，也就是這半年內才興起的新技能 「Prompt Engineering」（提示工程）。除了在各大社群媒體上有許多實際的經驗分享，也有如 Learn Prompting 這樣提供詳細教學的網站。而終於在前天（2023/04/27）由知名機器學習大師吳恩達 Andrew Ng 所創辦的 DeepLearning.AI 和 OpneAI 共同推出 Prompt Engineering 的線上課程，此課程專門為使用 OpenAI API 串接服務的開發者所開設，課程為免費，長度約為1小時。&#xA;這堂由 DeepLearning.AI 創辦人吳恩達 Andrew Ng 和 OpenAI 的 Isa Fulford 共同講授的「ChatGPT Prompt Engineering for Developers」課程，在 DeepLearning.AI 網站上免費提供給想要串接 OpenAI API 的開發者學習，瞭解如何正確使用「Prompt」（提示詞）來和 GPT 模型互動，進而在所開發的服務中整合 GPT 模型，課程搭配 Jupyter notebook 提供範例程式碼讓學員能即時驗證。 這堂長度為1小時左右的課程內容涵蓋了以下幾個部分：&#xA;Prompt 的原則 迭代的 prompt 開發流程 ChatGPT 的能力 使用 ChatGPT 打造 Chatbot 以下為筆者整理的課堂筆記，推薦有興趣的讀者撥出一小時去看完整的課程，肯定會有不少收穫。&#xA;大型語言模型 一開始先介紹目前主流的兩種 大型語言模型（Large Language Models, LLMs），分別為 Base LLM 及 Instruction Tune LLM。 Base LLM 主要是透過由網路上或其他來源所搜集的文本訓練資料，訓練來預測下一個字詞。Instruction Tune LLM 則是透過針對指示或好的意圖去對模型進行微調（fine-tune），也就是所謂的 RLHF（Reinforcement Learning with Human Feedback），而因此 Instruction Tune LLM 所生成內容通常會更有用、誠實且無害。而 ChatGPT 就是屬於 RLHF 的 LLM。</description>
+    </item>
+    <item>
+      <title>Permissionless DeFi Lending Protocol：Euler Finance</title>
+      <link>http://localhost:1313/2023/04/12/euler-finance/</link>
+      <pubDate>Wed, 12 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2023/04/12/euler-finance/</guid>
+      <description>&amp;ldquo;This article was published on 2021/12/29. The Euler v2 has already launched on 2024 Feb. Readers are advised to take note and understand.&amp;rdquo;&#xA;In 2020, before the DeFi Summer initiated the craze for Decentralized Finance (DeFi), DeFi applications primarily focused on lending protocols. This included prominent projects like Maker and Compound, which were based on mainstream tokens and stablecoin lending protocols, along with emerging platforms like Aave and Curve. However, listing a token on a lending protocol required a permissioned listing mechanism to reduce user asset risks.</description>
     </item>
     <item>
       <title>開放式 DeFi 借貸協議：Euler Finance</title>

@@ -9,13 +9,6 @@
     <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/blockchain/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>What is Ethereum Improvement Proposals (EIPs)?</title>
-      <link>http://localhost:1313/2024/03/03/ethereum-improvement-proposals/</link>
-      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2024/03/03/ethereum-improvement-proposals/</guid>
-      <description>Ethereum Improvement Proposals (EIPs) Introduction to EIPs An EIP is a design document used to describe proposals, define new features or processes for Ethereum, and propose improvements. Proposal initiators submit EIPs to the Ethereum community, providing clear technical specifications and rationale, engaging in discussions, documenting different opinions or suggestions. Only after consensus is reached, the proposal content is approved.&#xA;EIPs are mainly categorized into three types:&#xA;Standard Track EIP These describe significant changes to Ethereum&amp;rsquo;s implementation, such as modifying network protocols, block or transaction verification mechanisms, or application standards.</description>
-    </item>
-    <item>
       <title>What is Maximal Extractable Value (MEV)?</title>
       <link>http://localhost:1313/2024/03/03/maximal-extractable-value/</link>
       <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
@@ -23,10 +16,24 @@
       <description>Introduction to Maximal Extractable Value (MEV) Maximal Extractable Value (MEV) is a concept that has garnered significant attention in the cryptocurrency ecosystem, particularly in the context of Ethereum. MEV refers to the maximum value that can be extracted from block production beyond standard block rewards and gas fees. It involves manipulating transaction order and execution on the blockchain to gain additional value, impacting both transaction participants and miners.&#xA;Issues caused by MEV MEV can lead to several issues:</description>
     </item>
     <item>
+      <title>What is ERC20?</title>
+      <link>http://localhost:1313/2024/01/15/erc20/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2024/01/15/erc20/</guid>
+      <description>What is ERC20? ERC20 is a standard interface defined for &amp;ldquo;Fungible Tokens&amp;rdquo;, which are exchangeable tokens. It is one of the most common ERC standards used in applications such as cryptocurrencies, voting governance tokens, and staking tokens. When developers create applications on the Ethereum platform, they need to issue tokens to provide services like points and general currency. The ERC20 standard includes concepts on how to issue tokens, transfer tokens between parties, authorize third-party usage, etc.</description>
+    </item>
+    <item>
+      <title>What is Ethereum Improvement Proposals (EIPs)?</title>
+      <link>http://localhost:1313/2024/01/11/ethereum-improvement-proposals/</link>
+      <pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2024/01/11/ethereum-improvement-proposals/</guid>
+      <description>Ethereum Improvement Proposals (EIPs) Introduction to EIPs An EIP is a design document used to describe proposals, define new features or processes for Ethereum, and propose improvements. Proposal initiators submit EIPs to the Ethereum community, providing clear technical specifications and rationale, engaging in discussions, documenting different opinions or suggestions. Only after consensus is reached, the proposal content is approved.&#xA;EIPs are mainly categorized into three types:&#xA;Standard Track EIP These describe significant changes to Ethereum&amp;rsquo;s implementation, such as modifying network protocols, block or transaction verification mechanisms, or application standards.</description>
+    </item>
+    <item>
       <title>What is Ethereum Gas Fee?</title>
-      <link>http://localhost:1313/2024/03/02/ethereum-gas-fee/</link>
-      <pubDate>Sat, 02 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/2024/03/02/ethereum-gas-fee/</guid>
+      <link>http://localhost:1313/2024/01/10/ethereum-gas-fee/</link>
+      <pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2024/01/10/ethereum-gas-fee/</guid>
       <description>Introduction to Gas On Ethereum, all transactions involve executing specific operations that change the state of the network, such as transferring account balances, deploying new contracts, or interacting with existing contracts. These operations consume computational resources, leading to a cost known as &amp;ldquo;Gas.&amp;rdquo; Users initiating transactions on Ethereum need to pay a fee for these computational resources in the form of Gas. Gas measures the amount of computational resources required to execute a transaction.</description>
     </item>
     <item>

@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="What is Maximal Extractable Value (MEV)?" />
-    <meta property="og:title" content="What is Maximal Extractable Value (MEV)?" />
-    <meta property="twitter:title" content="What is Maximal Extractable Value (MEV)?" />
+    <meta name="title" content="What is ERC20?" />
+    <meta property="og:title" content="What is ERC20?" />
+    <meta property="twitter:title" content="What is ERC20?" />
     
 
     
-    <meta name="description" content="Maximal Extractable Value (MEV) is a concept that has garnered significant attention in the cryptocurrency ecosystem, particularly in the context of Ethereum. MEV refers to the maximum value that can be extracted from block production beyond standard block rewards and gas fees. It involves manipulating transaction order and execution on the blockchain to gain additional value, impacting both transaction participants and miners.">
-    <meta property="og:description" content="Maximal Extractable Value (MEV) is a concept that has garnered significant attention in the cryptocurrency ecosystem, particularly in the context of Ethereum. MEV refers to the maximum value that can be extracted from block production beyond standard block rewards and gas fees. It involves manipulating transaction order and execution on the blockchain to gain additional value, impacting both transaction participants and miners." />
-    <meta property="twitter:description" content="Maximal Extractable Value (MEV) is a concept that has garnered significant attention in the cryptocurrency ecosystem, particularly in the context of Ethereum. MEV refers to the maximum value that can be extracted from block production beyond standard block rewards and gas fees. It involves manipulating transaction order and execution on the blockchain to gain additional value, impacting both transaction participants and miners." />
+    <meta name="description" content="ERC20 is a standard interface defined for Fungible Tokens, which are exchangeable tokens. It is one of the most common ERC standards used in applications such as cryptocurrencies, voting governance tokens, and staking tokens. When developers create applications on the Ethereum platform, they need to issue tokens to provide services like points and general currency. The ERC20 standard includes concepts on how to issue tokens, transfer tokens between parties, authorize third-party usage, etc. Developers can utilize ERC20 to issue tokens specific to their services.">
+    <meta property="og:description" content="ERC20 is a standard interface defined for Fungible Tokens, which are exchangeable tokens. It is one of the most common ERC standards used in applications such as cryptocurrencies, voting governance tokens, and staking tokens. When developers create applications on the Ethereum platform, they need to issue tokens to provide services like points and general currency. The ERC20 standard includes concepts on how to issue tokens, transfer tokens between parties, authorize third-party usage, etc. Developers can utilize ERC20 to issue tokens specific to their services." />
+    <meta property="twitter:description" content="ERC20 is a standard interface defined for Fungible Tokens, which are exchangeable tokens. It is one of the most common ERC standards used in applications such as cryptocurrencies, voting governance tokens, and staking tokens. When developers create applications on the Ethereum platform, they need to issue tokens to provide services like points and general currency. The ERC20 standard includes concepts on how to issue tokens, transfer tokens between parties, authorize third-party usage, etc. Developers can utilize ERC20 to issue tokens specific to their services." />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Andylinee_keyword">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>What is Maximal Extractable Value (MEV)? | Pivot the Life</title>
+    <title>What is ERC20? | Pivot the Life</title>
 
-    <link rel="canonical" href="/2024/03/03/maximal-extractable-value/">
+    <link rel="canonical" href="/2024/01/15/erc20/">
 
     
     
@@ -191,7 +191,7 @@
                         </a>
                         
                     </div>
-                    <h1>What is Maximal Extractable Value (MEV)?</h1>
+                    <h1>What is ERC20?</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -200,7 +200,7 @@
                                 Andylinee
                              
                             on 
-                            Sunday, March 3, 2024
+                            Monday, January 15, 2024
                             
                             
                             
@@ -226,87 +226,74 @@
                 post-container">
 
                 
-                <h1 id="introduction-to-maximal-extractable-value-mev">Introduction to Maximal Extractable Value (MEV)</h1>
-<p><strong>Maximal Extractable Value (MEV)</strong> is a concept that has garnered significant attention in the cryptocurrency ecosystem, particularly in the context of Ethereum. MEV refers to the maximum value that can be extracted from block production beyond standard block rewards and gas fees. It involves manipulating transaction order and execution on the blockchain to gain additional value, impacting both transaction participants and miners.</p>
+                <h1 id="what-is-erc20">What is ERC20?</h1>
+<p>ERC20 is a standard interface defined for <strong>&ldquo;Fungible Tokens&rdquo;</strong>, which are exchangeable tokens. It is one of the most common ERC standards used in applications such as cryptocurrencies, voting governance tokens, and staking tokens. When developers create applications on the Ethereum platform, they need to issue tokens to provide services like points and general currency. The ERC20 standard includes concepts on how to issue tokens, transfer tokens between parties, authorize third-party usage, etc. Developers can utilize ERC20 to issue tokens specific to their services.</p>
 <hr>
-<h1 id="issues-caused-by-mev">Issues caused by MEV</h1>
-<p>MEV can lead to several issues:</p>
+<h1 id="erc-standard">ERC Standard</h1>
+<p>The ERC20 standard specifies the implementation of <strong>functions</strong> and <strong>events</strong>. It is crucial to note that when a function call fails, the caller must handle the failure exception and not assume that the function call will always succeed. For example, handling cases where transfers fail is essential.</p>
+<h2 id="functions">Functions</h2>
+<h3 id="name">name</h3>
+<p>Returns the name of the token. This function is solely for enhancing usability and ease of reference, making it non-essential. Therefore, it cannot be assumed that every ERC20 contract implements this functionality.</p>
 <ul>
-<li><strong>Unfair treatment of transaction participants</strong>: Miners have the power to choose which transactions to include in a block, potentially favoring some transactions over others, resulting in losses for certain participants.</li>
-<li><strong>Market instability</strong>: MEV operations can influence transaction execution, causing abnormal price fluctuations in the market.</li>
-<li><strong>Network efficiency problems</strong>: MEV can lead to transaction congestion, increased fees, and reduced network performance as participants compete for block inclusion.</li>
+<li>Implementation: <code>function name() public view returns (string) {}</code></li>
 </ul>
-<hr>
-<h1 id="types-of-mev">Types of MEV</h1>
-<p>Maximal Extractable Value (MEV) primarily falls into two categories:</p>
+<h3 id="symbol">symbol</h3>
+<p>Returns the symbol of the token. Similar to the name function, this serves to enhance usability and ease of reference, making it non-essential. It cannot be assumed that every ERC20 contract includes this functionality.</p>
 <ul>
-<li><strong>Transaction Order Manipulation</strong>: Miners benefit by altering transaction sequences, inserting their own transactions before or after others to gain advantages.
-
-  <img src="/img/2024-03-03-maximal-extractable-value/mev-01.png" alt="Transaction Order Manipulation">
-
-
-For instance, in a scenario where only the fastest 100 transactions can successfully mint an NFT, a user like Carol, who has a special arrangement with a miner, can ensure that her mint transaction is placed before others through transaction sequencing manipulation.</li>
-<li><strong>AMM Trade Front-Running</strong>: Miners exploit Automated Market Maker (AMM) trades to force users to execute transactions at unfavorable prices. The profit extracted by miners is the difference between the user&rsquo;s expected price and the worst price at which the trade is executed.
-
-  <img src="/img/2024-03-03-maximal-extractable-value/mev-02-1.png" alt="Front-run">
-
-
-For example, if Alice expects to exchange 1 $WBTC for 21,500 $USDT but the AMM price fluctuates, she may set a worst acceptable price of 20,500 $USDT. A miner like Eve can preemptively insert a trade to sell $WBTC before Alice&rsquo;s transaction, causing the price to drop to 20,500 $USDT, forcing Alice to trade at that lower price. Subsequently, Eve can buy back $WBTC at a price lower than 20,500 $USDT, completing a profitable arbitrage by buying low and selling high.
-
-  <img src="/img/2024-03-03-maximal-extractable-value/mev-02-2.png" alt="Arbitrage">
-
-</li>
+<li>Implementation: <code>function symbol() public view returns (string) {}</code></li>
 </ul>
-<hr>
-<h1 id="mev-solutions">MEV Solutions</h1>
-<p>To address the issues caused by Maximal Extractable Value (MEV), the community and developers have proposed various solutions. One significant solution is based on the concept of bundle auctions, exemplified by Flashbots. By introducing roles like <strong>Searcher</strong> and <strong>Relay</strong> in a public bidding environment, this approach aims to make MEV competition more transparent and efficient
-Basic Process of this Mechanism:</p>
-<ol>
-<li>Allow Searchers to Identify MEV Opportunities</li>
-<li>Compete through Bundle Formation</li>
-<li>Relay the Bundles to Block Producers</li>
-</ol>
-<h2 id="flashbot-in-pow-and-pos-consensus-mechanisms">Flashbot in POW and POS Consensus Mechanisms</h2>
-<h3 id="flashbot-in-the-pow-era">Flashbot in the POW Era</h3>
-<p>Flashbot transforms MEV into a public market where miners collaborate with professional MEV Searchers to share MEV profits. This collaboration involves intense competition between miners and MEV Searchers. While this setup allows each party to focus on their expertise without interference, it still presents centralization drawbacks as all MEV Searcher arbitrage trades must pass through a centralized Flashbot server, which could potentially manipulate opportunities or scrutinize trades.
-In the POW consensus mechanism, MEV Searchers must trust that miners will not seize their bundle contents. If such an incident occurs, Searchers can only counteract through off-chain mechanisms like providing evidence to have the miner blacklisted by Flashbot or raising awareness on platforms like Twitter. Generally, miners adhere to the rules as disrupting the relationship with MEV Searchers for short-term gains could lead to a loss of future opportunities, making it unfavorable for them.
-Efforts are ongoing to enhance MEV solutions and protect users from unfair practices within the cryptocurrency ecosystem. These initiatives aim to strike a balance between efficiency, transparency, and fairness in transaction processing.</p>
-<h3 id="flashbot-in-the-pos-era">Flashbot in the POS Era</h3>
-<p>Transitioning to a Proof of Stake (POS) consensus mechanism allows individuals to participate as validators by staking ETH to earn block production opportunities. This shift has lowered the threshold for block production, attracting more participants and diluting the chances of block production. Unlike in Proof of Work (POW), where miners invest significantly to operate long-standing mining pools, validators in POS only occasionally secure block production opportunities. Despite this, with the average annual return from block rewards and MEV calculated at 10%, validators still have a strong incentive to compete for MEV opportunities with MEV Searchers.
-In a collaborative scenario between validators and MEV Searchers, each validator earning 10% APR would yield 3.2 ETH in profit. However, by seizing a 10 ETH arbitrage opportunity, the APR could reach 31.25%. This implies that as long as a validator captures more than 3.2 ETH of MEV, their APR can exceed 10%.
-The evolution of MEV solutions reflects ongoing efforts within the cryptocurrency space to address challenges and enhance fairness and efficiency in transaction processing. These developments aim to strike a balance between incentivizing participation and safeguarding against exploitative practices.
-
-  <img src="/img/2024-03-03-maximal-extractable-value/pos-flashbot.png" alt="Flashbot in POS">
-
-</p>
-<h3 id="mev-boost">mev-boost</h3>
-<p>To address the challenges in the Proof of Stake (POS) mechanism, Flashbot&rsquo;s architecture requires adjustments to align with new trust relationships and the POS mechanism, giving rise to mev-boost. mev-boost divides the intermediary role between MEV Searchers and miners in Flashbot into two roles: Builder and Relay. The basic process involves:</p>
-<ol>
-<li>MEV Searcher hands the bundle to the Builder.</li>
-<li>The Builder selects several bundles from multiple bundles to form a block and passes it to the Relay.</li>
-<li>Validators then choose one block from multiple blocks submitted by Relays.
-
-  <img src="/img/2024-03-03-maximal-extractable-value/mev-boost.png" alt="mev-boost">
-
-</li>
-</ol>
-<h4 id="roles-relationship">Roles Relationship:</h4>
+<h3 id="decimal">decimal</h3>
+<p>Returns the position of the decimal point for the token. For example, if denoted as N, the quantity of the token will be considered as the basic unit only after dividing by (10**N), with values below N representing decimal points.
+This function is for enhancing usability and is non-essential; hence, not all ERC20 contracts are required to implement this feature.</p>
 <ul>
-<li><strong>Builder</strong>: Responsible for selecting the most advantageous bundle combination within a block&rsquo;s limited space, aiming for Validator selection.</li>
-<li><strong>Relay</strong>: In the POS consensus mechanism, where MEV Searchers and Builders cannot trust Validators, Validators in mev-boost must first commit to &ldquo;I will propose your block&rdquo; to receive the actual block content. The Relay acts as an intermediary between the Builder and Validator, coordinating this process by safeguarding block content until receiving the Validator&rsquo;s commitment before passing the block created by the Builder to the Validator.</li>
+<li>Implementation: <code>function decimals() public view returns (uint8) {}</code></li>
 </ul>
-<h4 id="tripartite-relationship">Tripartite Relationship:</h4>
+<h3 id="totalsupply">totalSupply</h3>
+<p>Returns the total supply of the token.</p>
 <ul>
-<li>MEV Searchers compete with each other.</li>
-<li>Builders compete with each other.</li>
-<li>Validators select the most advantageous block.</li>
+<li>Implementation: <code>function totalSupply() public view returns (uint256) {}</code></li>
 </ul>
-<p>The evolution of solutions like mev-boost reflects ongoing efforts within the cryptocurrency space to enhance fairness, efficiency, and transparency in transaction processing. These developments aim to strike a balance between incentivizing participation and safeguarding against exploitative practices.</p>
+<h3 id="balanceof">balanceOf</h3>
+<p>Returns the token balance of the <code>_owner</code> account.</p>
+<ul>
+<li>Implementation: <code>function balanceOf(address _owner) public view returns (uint256 balance) {}</code></li>
+</ul>
+<h3 id="transfer">transfer</h3>
+<p>Transfers <code>_value</code> amount of tokens from the &ldquo;function caller&rdquo; to the recipient <code>_to</code>. This function always triggers a <code>Transfer</code> event. If the balance of the &ldquo;function caller&rdquo; is insufficient, an error should be thrown.</p>
+<ul>
+<li>Implementation: <code>function transfer(address _to, uint256 _value) public returns (bool success) {}</code></li>
+</ul>
+<h3 id="transferfrom">transferFrom</h3>
+<p>When there is an authorized limit, this function can be used to transfer tokens from another account. It transfers the <code>_value</code> amount of tokens from the sender <code>_from</code> to the recipient <code>_to</code>, triggering the <code>Transfer</code> event.
+This function is triggered after authorization (approve) of a third-party contract or account, allowing them to utilize one&rsquo;s limit.</p>
+<ul>
+<li>Implementation: <code>function transferFrom(address _from, address _to, uint256 _value) public returns (bool success) {}</code></li>
+</ul>
+<h3 id="approve">approve</h3>
+<p>The function caller authorizes the <code>_spender</code> to utilize an allocated limit of <code>_value</code>. If called repeatedly, the new limit will directly overwrite the old one.</p>
+<ul>
+<li>Implementation: <code>function approve(address _spender, uint256 _value) public returns (bool success) {}</code></li>
+</ul>
+<h3 id="allowance">allowance</h3>
+<p>Queries the remaining usage limit remaining that the authorizer <code>_owner</code> has granted to the authorized <code>_spender</code>.</p>
+<ul>
+<li>Implementation: <code>function allowance(address _owner, address _spender) public view returns (uint256 remaining) {}</code></li>
+</ul>
+<h2 id="events">Events</h2>
+<h3 id="transfer-1">transfer</h3>
+<p>When a transfer of tokens occurs, the Transfer event must be triggered, regardless of the quantity of tokens being transferred. It records the transfer of the token quantity <code>_value</code> from the sender&rsquo;s address <code>_from</code> to the receiver&rsquo;s address <code>_to</code>.</p>
+<ul>
+<li>Implementation: <code>event Transfer(address indexed _from, address indexed _to, uint256 _value) {}</code></li>
+</ul>
+<h3 id="approval">approval</h3>
+<p>When the approve function is successfully called with <code>approve(address _spender, uint256 _value)</code>, the <code>Approval</code> event must be triggered. It records that the token owner <code>_owner</code> authorizes the token quantity <code>_value</code> to the authorized party <code>_spender</code>.</p>
+<ul>
+<li>Implementation: <code>event Approval(address indexed _owner, address indexed _spender, uint256 _value) {}</code></li>
+</ul>
 <hr>
 <h1 id="references">References</h1>
 <ul>
-<li><a href="https://ethereum.org/en/developers/docs/mev/">MAXIMAL EXTRACTABLE VALUE (MEV)</a></li>
-<li><a href="https://medium.com/taipei-ethereum-meetup/after-the-merge-mev-309e836698cf">MEV（一）：The Merge 後的 MEV</a></li>
+<li><a href="https://eips.ethereum.org/EIPS/eip-20">ERC-20: Token Standard</a></li>
 </ul>
 
 
@@ -317,10 +304,15 @@ The evolution of MEV solutions reflects ongoing efforts within the cryptocurrenc
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2024/01/15/erc20/" data-toggle="tooltip" data-placement="top" title="What is ERC20?">&larr;
+                        <a href="/2024/01/10/ethereum-gas-fee/" data-toggle="tooltip" data-placement="top" title="What is Ethereum Gas Fee?">&larr;
                             Previous Post</a>
                     </li>
                     
+                    
+                    <li class="next">
+                        <a href="/2024/03/03/maximal-extractable-value/" data-toggle="tooltip" data-placement="top" title="What is Maximal Extractable Value (MEV)?">Next
+                            Post &rarr;</a>
+                    </li>
                     
                 </ul>
                 
