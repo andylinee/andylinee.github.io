@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="What is Ethereum Improvement Proposals (EIPs)?" />
-    <meta property="og:title" content="What is Ethereum Improvement Proposals (EIPs)?" />
-    <meta property="twitter:title" content="What is Ethereum Improvement Proposals (EIPs)?" />
+    <meta name="title" content="What is Maximal Extractable Value (MEV)?" />
+    <meta property="og:title" content="What is Maximal Extractable Value (MEV)?" />
+    <meta property="twitter:title" content="What is Maximal Extractable Value (MEV)?" />
     
 
     
-    <meta name="description" content="The article delves into Ethereum Improvement Proposals (EIPs), essential for proposing, debating, and implementing changes within the Ethereum community. It highlights the significance of EIPs in documenting Ethereum&#39;s evolution and governance processes. Specifically, it explores the impact of prominent EIPs like EIP1559, which revolutionized transaction fee mechanisms. The article emphasizes how EIPs, including ERC standards, play a pivotal role in enhancing Ethereum&#39;s functionality and fostering community collaboration for continuous network development.">
-    <meta property="og:description" content="The article delves into Ethereum Improvement Proposals (EIPs), essential for proposing, debating, and implementing changes within the Ethereum community. It highlights the significance of EIPs in documenting Ethereum&#39;s evolution and governance processes. Specifically, it explores the impact of prominent EIPs like EIP1559, which revolutionized transaction fee mechanisms. The article emphasizes how EIPs, including ERC standards, play a pivotal role in enhancing Ethereum&#39;s functionality and fostering community collaboration for continuous network development." />
-    <meta property="twitter:description" content="The article delves into Ethereum Improvement Proposals (EIPs), essential for proposing, debating, and implementing changes within the Ethereum community. It highlights the significance of EIPs in documenting Ethereum&#39;s evolution and governance processes. Specifically, it explores the impact of prominent EIPs like EIP1559, which revolutionized transaction fee mechanisms. The article emphasizes how EIPs, including ERC standards, play a pivotal role in enhancing Ethereum&#39;s functionality and fostering community collaboration for continuous network development." />
+    <meta name="description" content="Maximal Extractable Value (MEV) is a concept that has garnered significant attention in the cryptocurrency ecosystem, particularly in the context of Ethereum. MEV refers to the maximum value that can be extracted from block production beyond standard block rewards and gas fees. It involves manipulating transaction order and execution on the blockchain to gain additional value, impacting both transaction participants and miners.">
+    <meta property="og:description" content="Maximal Extractable Value (MEV) is a concept that has garnered significant attention in the cryptocurrency ecosystem, particularly in the context of Ethereum. MEV refers to the maximum value that can be extracted from block production beyond standard block rewards and gas fees. It involves manipulating transaction order and execution on the blockchain to gain additional value, impacting both transaction participants and miners." />
+    <meta property="twitter:description" content="Maximal Extractable Value (MEV) is a concept that has garnered significant attention in the cryptocurrency ecosystem, particularly in the context of Ethereum. MEV refers to the maximum value that can be extracted from block production beyond standard block rewards and gas fees. It involves manipulating transaction order and execution on the blockchain to gain additional value, impacting both transaction participants and miners." />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Andylinee_keyword">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>What is Ethereum Improvement Proposals (EIPs)? | Pivot the Life</title>
+    <title>What is Maximal Extractable Value (MEV)? | Pivot the Life</title>
 
-    <link rel="canonical" href="/2024/03/03/ethereum-improvement-proposals/">
+    <link rel="canonical" href="/2024/03/03/maximal-extractable-value/">
 
     
     
@@ -191,7 +191,7 @@
                         </a>
                         
                     </div>
-                    <h1>What is Ethereum Improvement Proposals (EIPs)?</h1>
+                    <h1>What is Maximal Extractable Value (MEV)?</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -226,70 +226,82 @@
                 post-container">
 
                 
-                <h1 id="ethereum-improvement-proposals-eips">Ethereum Improvement Proposals (EIPs)</h1>
-<h2 id="introduction-to-eips">Introduction to EIPs</h2>
-<p>An <a href="https://eips.ethereum.org/">EIP</a> is a design document used to describe proposals, define new features or processes for Ethereum, and propose improvements. Proposal initiators submit EIPs to the Ethereum community, providing clear technical specifications and rationale, engaging in discussions, documenting different opinions or suggestions. Only after consensus is reached, the proposal content is approved.</p>
-<p>EIPs are mainly categorized into three types:</p>
-<h3 id="standard-track-eip">Standard Track EIP</h3>
-<p>These describe significant changes to Ethereum&rsquo;s implementation, such as modifying network protocols, block or transaction verification mechanisms, or application standards. Standard Track EIPs must include:</p>
-<ol>
-<li>Design document</li>
-<li>Implementation</li>
-<li>Updates to the formal specification, divided into four types:
-<ul>
-<li><strong>Core</strong>: Involves changes to the consensus layer, like adding new OPcodes, EIP1559 fee adjustments, The Merge. These EIPs require agreement from all clients before scheduling network upgrades.</li>
-<li><strong>Networking</strong>: Focuses on improvements to devp2p, Light Ethereum Subprotocol, whisper, and swarm network protocol specifications.</li>
-<li><strong>Interface</strong>: Enhancements to client API/RPC specifications and standards, language-level standards, EVM instruction improvements, and contract ABI definitions.</li>
-<li><strong>ERC</strong>: Standards and specifications at the application layer, like contract standards, library or package formats, wallet formats.</li>
-</ul>
-</li>
-</ol>
-<h3 id="meta-eip-process-eip">Meta EIP (Process EIP)</h3>
-<p>Process-oriented EIPs describe improvements to Ethereum processes beyond the protocol itself mentioned in Standard Track EIPs. These require community consensus and are crucial for developers and users.</p>
-<h3 id="information-eip">Information EIP</h3>
-<p>Informational EIPs focus on design themes for Ethereum and provide general guidelines or information to the community without proposing new features. These do not require community consensus; developers and users may not need to adhere strictly to Informational EIPs.</p>
+                <h1 id="introduction-to-maximal-extractable-value-mev">Introduction to Maximal Extractable Value (MEV)</h1>
+<p><strong>Maximal Extractable Value (MEV)</strong> is a concept that has garnered significant attention in the cryptocurrency ecosystem, particularly in the context of Ethereum. MEV refers to the maximum value that can be extracted from block production beyond standard block rewards and gas fees. It involves manipulating transaction order and execution on the blockchain to gain additional value, impacting both transaction participants and miners.</p>
 <hr>
-<h2 id="the-importance-of-eip">The Importance of EIP</h2>
+<h1 id="issues-caused-by-mev">Issues caused by MEV</h1>
+<p>MEV can lead to several issues:</p>
 <ul>
-<li>EIP plays a crucial role in documenting changes on Ethereum, serving as the method for proposing, debating, and adopting modifications within the Ethereum community.</li>
-<li>Each network upgrade on Ethereum includes a series of EIPs that must be implemented by clients on the Ethereum blockchain network. This ensures consensus among clients on the mainnet.</li>
-<li>Apart from providing improved technical specifications, EIPs also serve as units for Ethereum governance. Anyone can initiate an EIP proposal, which is then debated by relevant stakeholders in the Ethereum community to decide whether to adopt the proposal as a standard or include it in the next network upgrade.</li>
-</ul>
-<h3 id="prominent-case---eip1559">Prominent Case - EIP1559</h3>
-<p><a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md">EIP1559</a> is one of the most significant EIPs for Ethereum in recent years, altering the way transaction fees are collected on Ethereum. EIP1559 was included in the Ethereum London Upgrade in September 2021.</p>
-<h4 id="issues-addressed-by-eip1559">Issues Addressed by EIP1559</h4>
-<ol>
-<li>Transaction Fee Competition:
-<ul>
-<li>When the number of pending transactions in Ethereum exceeds the blockchain&rsquo;s processing limit, block validators prioritize transactions with higher fees for inclusion, letting market pricing mechanisms determine &ldquo;whose transactions get processed first.&rdquo;</li>
-<li>Users aim for quick processing while minimizing fees, leading to the need to &ldquo;predict&rdquo; blockchain congestion to squeeze transactions into the next block with minimal fees.</li>
-<li>However, high transaction demand can drive fees up until many users can no longer afford them, resulting in validators profiting from these excess fees, which is not an optimal distribution of benefits.</li>
-</ul>
-</li>
-<li>Lack of Block Resource Flexibility:
-<ul>
-<li>Transaction demand on the blockchain fluctuates significantly, especially during events like ICOs or NFT sales, causing fees to skyrocket unexpectedly. For users unwilling to pay such high fees, this situation essentially paralyzes the blockchain network temporarily. Therefore, there is a need to address peak resource scheduling issues on the blockchain.</li>
-</ul>
-</li>
-</ol>
-<h3 id="final-solution-of-eip1559">Final Solution of EIP1559</h3>
-<p>After extensive community discussions, the final solution adopted for EIP1559 is an automated fee adjustment system based on demand. The fee comprises a base fee plus a tip. The block size limit is doubled, allowing miners to fill entire blocks. However, the block&rsquo;s fullness determines the base fee for the next block, with a ±12.5% fee adjustment range per block.
-The core concept of EIP1559 is to eliminate the need for users to monitor the Mempool actively. Instead, users can adjust fees based on the previous block&rsquo;s fees, significantly increasing the likelihood of transaction execution in the next block. For example:</p>
-<ul>
-<li>If the base fee is initially 20 Gwei and the current block is half full at 15M gas, the base fee for the next block remains at 20 Gwei.</li>
-<li>If the current block is empty, the base fee for the next block decreases to 17.5 Gwei.</li>
-<li>If the current block is full at 30M gas, the base fee for the next block increases to 22.5 Gwei.</li>
+<li><strong>Unfair treatment of transaction participants</strong>: Miners have the power to choose which transactions to include in a block, potentially favoring some transactions over others, resulting in losses for certain participants.</li>
+<li><strong>Market instability</strong>: MEV operations can influence transaction execution, causing abnormal price fluctuations in the market.</li>
+<li><strong>Network efficiency problems</strong>: MEV can lead to transaction congestion, increased fees, and reduced network performance as participants compete for block inclusion.</li>
 </ul>
 <hr>
-<h1 id="ethereum-request-for-comments-ercs">Ethereum Request for Comments (ERCs)</h1>
-<h2 id="introduction-to-ercs">Introduction to ERCs</h2>
-<p><a href="https://github.com/ethereum/ERCs">ERC</a> belongs to the Standard Track EIP category, focusing on improvements to application layer standards and specifications, such as new token interfaces and proxy patterns. Strictly speaking, ERC is a type of EIP that does not require changes to the consensus layer. Therefore, once a good standard is agreed upon, implementation can begin.</p>
-<h2 id="common-ercs-include">Common ERCs include:</h2>
+<h1 id="types-of-mev">Types of MEV</h1>
+<p>Maximal Extractable Value (MEV) primarily falls into two categories:</p>
 <ul>
-<li><strong><a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-20/">ERC-20</a></strong>: Defines a standard interface for &ldquo;Fungible Tokens,&rdquo; used for governance tokens, collateral tokens, virtual currencies, etc.</li>
-<li><strong><a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-721/">ERC-721</a></strong>: Defines a standard interface for &ldquo;Non-Fungible Tokens,&rdquo; used for copyright or usage rights of creative works.</li>
-<li><strong><a href="https://ethereum.org/en/developers/docs/standards/tokens/erc-1155/">ERC-1155</a></strong>: Defines a standard interface for &ldquo;Fungible &amp; Non-Fungible Tokens&rdquo; simultaneously.</li>
+<li><strong>Transaction Order Manipulation</strong>: Miners benefit by altering transaction sequences, inserting their own transactions before or after others to gain advantages.
+
+  <img src="/img/2024-03-03-maximal-extractable-value/mev-01.png" alt="Transaction Order Manipulation">
+
+
+For instance, in a scenario where only the fastest 100 transactions can successfully mint an NFT, a user like Carol, who has a special arrangement with a miner, can ensure that her mint transaction is placed before others through transaction sequencing manipulation.</li>
+<li><strong>AMM Trade Front-Running</strong>: Miners exploit Automated Market Maker (AMM) trades to force users to execute transactions at unfavorable prices. The profit extracted by miners is the difference between the user&rsquo;s expected price and the worst price at which the trade is executed.
+
+  <img src="/img/2024-03-03-maximal-extractable-value/mev-02-1.png" alt="Front-run">
+
+
+For example, if Alice expects to exchange 1 $WBTC for 21,500 $USDT but the AMM price fluctuates, she may set a worst acceptable price of 20,500 $USDT. A miner like Eve can preemptively insert a trade to sell $WBTC before Alice&rsquo;s transaction, causing the price to drop to 20,500 $USDT, forcing Alice to trade at that lower price. Subsequently, Eve can buy back $WBTC at a price lower than 20,500 $USDT, completing a profitable arbitrage by buying low and selling high.
+
+  <img src="/img/2024-03-03-maximal-extractable-value/mev-02-2.png" alt="Arbitrage">
+
+</li>
 </ul>
+<hr>
+<h1 id="mev-solutions">MEV Solutions</h1>
+<p>To address the issues caused by Maximal Extractable Value (MEV), the community and developers have proposed various solutions. One significant solution is based on the concept of bundle auctions, exemplified by Flashbots. By introducing roles like <strong>Searcher</strong> and <strong>Relay</strong> in a public bidding environment, this approach aims to make MEV competition more transparent and efficient
+Basic Process of this Mechanism:</p>
+<ol>
+<li>Allow Searchers to Identify MEV Opportunities</li>
+<li>Compete through Bundle Formation</li>
+<li>Relay the Bundles to Block Producers</li>
+</ol>
+<h2 id="flashbot-in-pow-and-pos-consensus-mechanisms">Flashbot in POW and POS Consensus Mechanisms</h2>
+<h3 id="flashbot-in-the-pow-era">Flashbot in the POW Era</h3>
+<p>Flashbot transforms MEV into a public market where miners collaborate with professional MEV Searchers to share MEV profits. This collaboration involves intense competition between miners and MEV Searchers. While this setup allows each party to focus on their expertise without interference, it still presents centralization drawbacks as all MEV Searcher arbitrage trades must pass through a centralized Flashbot server, which could potentially manipulate opportunities or scrutinize trades.
+In the POW consensus mechanism, MEV Searchers must trust that miners will not seize their bundle contents. If such an incident occurs, Searchers can only counteract through off-chain mechanisms like providing evidence to have the miner blacklisted by Flashbot or raising awareness on platforms like Twitter. Generally, miners adhere to the rules as disrupting the relationship with MEV Searchers for short-term gains could lead to a loss of future opportunities, making it unfavorable for them.
+Efforts are ongoing to enhance MEV solutions and protect users from unfair practices within the cryptocurrency ecosystem. These initiatives aim to strike a balance between efficiency, transparency, and fairness in transaction processing.</p>
+<h3 id="flashbot-in-the-pos-era">Flashbot in the POS Era</h3>
+<p>Transitioning to a Proof of Stake (POS) consensus mechanism allows individuals to participate as validators by staking ETH to earn block production opportunities. This shift has lowered the threshold for block production, attracting more participants and diluting the chances of block production. Unlike in Proof of Work (POW), where miners invest significantly to operate long-standing mining pools, validators in POS only occasionally secure block production opportunities. Despite this, with the average annual return from block rewards and MEV calculated at 10%, validators still have a strong incentive to compete for MEV opportunities with MEV Searchers.
+In a collaborative scenario between validators and MEV Searchers, each validator earning 10% APR would yield 3.2 ETH in profit. However, by seizing a 10 ETH arbitrage opportunity, the APR could reach 31.25%. This implies that as long as a validator captures more than 3.2 ETH of MEV, their APR can exceed 10%.
+The evolution of MEV solutions reflects ongoing efforts within the cryptocurrency space to address challenges and enhance fairness and efficiency in transaction processing. These developments aim to strike a balance between incentivizing participation and safeguarding against exploitative practices.
+
+  <img src="/img/2024-03-03-maximal-extractable-value/pos-flashbot.png" alt="Flashbot in POS">
+
+</p>
+<h3 id="mev-boost">mev-boost</h3>
+<p>To address the challenges in the Proof of Stake (POS) mechanism, Flashbot&rsquo;s architecture requires adjustments to align with new trust relationships and the POS mechanism, giving rise to mev-boost. mev-boost divides the intermediary role between MEV Searchers and miners in Flashbot into two roles: Builder and Relay. The basic process involves:</p>
+<ol>
+<li>MEV Searcher hands the bundle to the Builder.</li>
+<li>The Builder selects several bundles from multiple bundles to form a block and passes it to the Relay.</li>
+<li>Validators then choose one block from multiple blocks submitted by Relays.
+
+  <img src="/img/2024-03-03-maximal-extractable-value/mev-boost.png" alt="mev-boost">
+
+</li>
+</ol>
+<h4 id="roles-relationship">Roles Relationship:</h4>
+<ul>
+<li><strong>Builder</strong>: Responsible for selecting the most advantageous bundle combination within a block&rsquo;s limited space, aiming for Validator selection.</li>
+<li><strong>Relay</strong>: In the POS consensus mechanism, where MEV Searchers and Builders cannot trust Validators, Validators in mev-boost must first commit to &ldquo;I will propose your block&rdquo; to receive the actual block content. The Relay acts as an intermediary between the Builder and Validator, coordinating this process by safeguarding block content until receiving the Validator&rsquo;s commitment before passing the block created by the Builder to the Validator.</li>
+</ul>
+<h4 id="tripartite-relationship">Tripartite Relationship:</h4>
+<ul>
+<li>MEV Searchers compete with each other.</li>
+<li>Builders compete with each other.</li>
+<li>Validators select the most advantageous block.</li>
+</ul>
+<p>The evolution of solutions like mev-boost reflects ongoing efforts within the cryptocurrency space to enhance fairness, efficiency, and transparency in transaction processing. These developments aim to strike a balance between incentivizing participation and safeguarding against exploitative practices.</p>
 
 
                 
@@ -299,13 +311,13 @@ The core concept of EIP1559 is to eliminate the need for users to monitor the Me
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2024/03/03/maximal-extractable-value/" data-toggle="tooltip" data-placement="top" title="What is Maximal Extractable Value (MEV)?">&larr;
+                        <a href="/2023/08/19/postgres-view-and-materialized-view/" data-toggle="tooltip" data-placement="top" title="淺談 PostgreSQL 資料庫中的 View 及 Materialized View">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2024/03/03/ethereum-gas-fee/" data-toggle="tooltip" data-placement="top" title="What is Ethereum Gas Fee?">Next
+                        <a href="/2024/03/03/ethereum-improvement-proposals/" data-toggle="tooltip" data-placement="top" title="What is Ethereum Improvement Proposals (EIPs)?">Next
                             Post &rarr;</a>
                     </li>
                     
