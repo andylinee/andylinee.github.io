@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reading on Pivot the life</title>
+    <link>http://localhost:1313/tags/reading/</link>
+    <description>Recent content in Reading on Pivot the life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 02 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/reading/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2023 年個人推薦書單</title>
+      <link>http://localhost:1313/2023/09/02/book-list-2023/</link>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2023/09/02/book-list-2023/</guid>
+      <description>筆者雖然不是一名閱讀狂熱份子，但仍會把握時間閱讀書籍，尤其是在工作或人生遇到瓶頸時，還是會傾向透過閱讀來獲得指引。本文整理了筆者過去曾經過讀過或是現在仍在閱讀的書籍，並搭配一些個人心得感想，和各位讀者分享，也歡迎各位踴躍分享自己的書單。&#xA;刷新未來：重新想像AI+HI智能革命下的商業與變革 創造：用非傳統方式做有價值的事 比賽，從心開始 金融與美好社會 巴比倫富翁的10大財富秘密 大數據的傲慢與偏見 激進市場 真相製造 </description>
+    </item>
+  </channel>
+</rss>

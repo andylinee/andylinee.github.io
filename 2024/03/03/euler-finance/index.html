@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Pivot the life">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://andylinee.github.io//img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="https://andylinee.github.io//img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="Permissionless DeFi Lending Protocol：Euler Finance" />
+    <meta property="og:title" content="Permissionless DeFi Lending Protocol：Euler Finance" />
+    <meta property="twitter:title" content="Permissionless DeFi Lending Protocol：Euler Finance" />
+    
+
+    
+    <meta name="description" content="Before the DeFi Summer of 2020, DeFi applications mainly focused on lending protocols like Maker and Compound. Aave and Curve emerged as newer projects. Euler XYZ introduced the open lending protocol Euler, enabling any token with a WETH pair on Uniswap V3 to be listed. Euler enhances liquidity and risk reduction, launching on the mainnet on December 13, 2021, as per the official whitepaper.">
+    <meta property="og:description" content="Before the DeFi Summer of 2020, DeFi applications mainly focused on lending protocols like Maker and Compound. Aave and Curve emerged as newer projects. Euler XYZ introduced the open lending protocol Euler, enabling any token with a WETH pair on Uniswap V3 to be listed. Euler enhances liquidity and risk reduction, launching on the mainnet on December 13, 2021, as per the official whitepaper." />
+    <meta property="twitter:description" content="Before the DeFi Summer of 2020, DeFi applications mainly focused on lending protocols like Maker and Compound. Aave and Curve emerged as newer projects. Euler XYZ introduced the open lending protocol Euler, enabling any token with a WETH pair on Uniswap V3 to be listed. Euler enhances liquidity and risk reduction, launching on the mainnet on December 13, 2021, as per the official whitepaper." />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Andylinee_keyword">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Permissionless DeFi Lending Protocol：Euler Finance | Pivot the Life</title>
+
+    <link rel="canonical" href="/2024/03/03/euler-finance/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Pivot the life</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/ai/">ai</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/blockchain/">blockchain</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/software-engineering/">software engineering</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/archive//">ARCHIVE</a></li>
+                    
+                        <li><a href="/notes//">NOTES</a></li>
+                    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/defi" title="DeFi">
+                            DeFi
+                        </a>
+                        
+                        <a class="tag" href="/tags/crypto" title="Crypto">
+                            Crypto
+                        </a>
+                        
+                        <a class="tag" href="/tags/blockchain" title="Blockchain">
+                            Blockchain
+                        </a>
+                        
+                        <a class="tag" href="/tags/lending-platform" title="Lending Platform">
+                            Lending Platform
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3" title="加密貨幣">
+                            加密貨幣
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E5%8D%80%E5%A1%8A%E9%8F%88" title="區塊鏈">
+                            區塊鏈
+                        </a>
+                        
+                    </div>
+                    <h1>Permissionless DeFi Lending Protocol：Euler Finance</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                Andylinee
+                             
+                            on 
+                            Sunday, March 3, 2024
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <blockquote>
+<p>&ldquo;This article was published on 2021/12/29. The <a href="https://docs.euler.finance/euler-v2-lite-paper/">Euler v2</a> has already launched on 2024 Feb. Readers are advised to take note and understand.&rdquo;</p>
+</blockquote>
+<p>
+  <img src="/img/2023-04-11-euler-finance/dashboard.png" alt="Euler Dapp">
+
+
+In 2020, before the DeFi Summer initiated the craze for Decentralized Finance (DeFi), DeFi applications primarily focused on lending protocols. This included prominent projects like Maker and Compound, which were based on mainstream tokens and stablecoin lending protocols, along with emerging platforms like Aave and Curve. However, listing a token on a lending protocol required a permissioned listing mechanism to reduce user asset risks. The development team at Euler XYZ introduced the <strong>permissionless lending protocol <a href="https://www.euler.finance/#/">Euler</a></strong>, allowing tokens with trading pairs on Uniswap V3 to be listed on the lending market. Through a series of mechanisms, Euler enhances liquidity and reduces risks. Euler was launched on the mainnet on December 13, 2021. This article is based on the <a href="https://docs.euler.finance/getting-started/white-paper">official whitepaper</a> and aims to introduce the operation of the new open lending protocol Euler.</p>
+<h1 id="team-overview">Team Overview</h1>
+<p>Euler Finance is an permissionless lending protocol developed by the Euler XYZ team, founded by three individuals. The CEO, <a href="https://twitter.com/euler_mab">Michael Bentley</a>, previously served as an evolutionary biologist at the University of Oxford. The other two co-founders are <a href="https://hoytech.com/">Doug Hoyte</a> and <a href="https://www.linkedin.com/in/jack-prior-0b36a942/">Jack Prior</a>, who are also developers at Euler XYZ. Additionally, <a href="https://twitter.com/MickdeG010">Mick de Graaf</a>, an advisor to the team, is a co-founder of DEFIED.io, a decentralized asset management platform on the Ethereum chain, and previously served as the Chief Developer at <a href="https://www.piedao.org/">PieDAO</a>, an on-chain index fund.
+In August 2021, Euler secured an $8 million Series A funding round led by <a href="https://www.paradigm.xyz/">Paradigm</a>, with other investors including Lemniscap and individual investors from well-known blockchain projects such as The Daily Gwei, Bankless, Synthetix, Coinbase, and Product Hunt.</p>
+<h1 id="six-innovative-featrues">Six innovative featrues</h1>
+<p>Euler Finance has six unique features compared to traditional DeFi lending protocols, which are introduced below to help readers better understand Euler Finance.
+
+  <img src="/img/2023-04-11-euler-finance/difference.png" alt="Euler&amp;rsquo;s Six innovative featrues">
+
+</p>
+<h2 id="permissionless-listing">Permissionless listing</h2>
+<p>Euler Protocol allows users to decide which assets can be listed on the lending protocol, and users can add any assets that have WETH trading pairs on Uniswap v3 to Euler Finance. Through the multi-tier asset classification mechanism, Euler Finance reduces user asset risk.</p>
+<h2 id="asset-tiers">Asset tiers</h2>
+<p>Although Euler Finance allows users to add assets to the lending protocol, it poses a significant system risk. Therefore, Euler Finance introduces a multi-tier asset classification design, where assets are classified based on risk, to protect Euler Finance protocol and users.</p>
+<ul>
+<li>Isolation Tier Assets: Isolation tier assets can be used for general lending, but cannot be used as collateral to borrow other assets. Isolation tier assets cannot be used with other assets in the same collateral pool for lending. For example, if a user holds $USDC and $DAI as collateral and wants to borrow isolation tier asset $ABC, they can only borrow $ABC. If they want to borrow another asset $XYZ later, they need to use another Euler Finance account to operate.</li>
+<li>Cross Tier Assets: Cross tier assets can be used for general lending, but cannot be used as collateral to borrow other assets. However, cross tier assets can be used with other assets for borrowing. For example, if a user holds $USDC and $DAI as collateral and wants to borrow cross tier assets $ABC and $XYZ, they can use the same Euler Finance account to operate.</li>
+<li>Collateral Tier Assets: Collateral tier assets can be used for general lending and cross-lending, and can also be used as collateral. For example, if a user deposits collateral tier assets $USDC and $DAI, they can use them to borrow collateral tier assets $UNI and $LINK, and use the same Euler Finance account to operate.</li>
+</ul>
+<p>Euler Finance&rsquo;s native governance token $EUL holders can vote to release assets from isolation tier and promote them to cross tier or collateral tier through the governance mechanism. This helps to improve Euler Finance&rsquo;s capital efficiency, but also exposes users to greater risk. Balancing these factors will help maximize $EUL holders&rsquo; interests.</p>
+<h2 id="reactive-interest-rates">Reactive interest rates</h2>
+<p>In Compound and Aave, interest rates are set using static linear (or segmented linear) interest rate models to affect the cost of borrowing in the lending protocol. In general, when the demand for borrowing increases or the supply of funds decreases, interest rates rise; when the supply of funds increases or the demand for borrowing decreases, interest rates fall. While a static model can work well if the parameters are correctly set, if the parameters are incorrect, it can lead to borrowing costs that are too high or too low.</p>
+<p>To avoid the need to choose the correct parameters for each borrowing market, Euler uses a PID controller to amplify (dampen) interest rate changes when interest rates are above (below) the target utilization rate threshold. This produces responsive interest rates that adapt to the market situation of the target asset in real-time, without the need for continuous governance to intervene.</p>
+<h2 id="mev-resistant-liquidations">MEV-resistant liquidations</h2>
+<p>In Compound and Aave, asset liquidations are performed by discounting the collateral by a fixed percentage (usually 5-10%) and providing the borrower&rsquo;s collateral to the liquidator as an incentive to liquidate. Potential liquidators often only have access to the liquidation reward through the &ldquo;Priority Gas Auction&rdquo; (PGA) mechanism, which exposes the liquidation reward to what is known as <strong>Miner Extractable Value (MEV)</strong>. This mechanism is not friendly to large borrowers and does not incentivize small liquidations.</p>
+<p>To address these issues, Euler does not use a fixed discount rate, but instead uses a Dutch auction and provides a discount acceleration mechanism for liquidity providers. Euler allows borrowers to adjust their risk after the value of their debt exceeds the value of their collateral, and liquidators can earn more discounts as the difference between the two increases. Additionally, Euler provides a discount acceleration mechanism (discount booster) for liquidity providers, allowing them to earn profits before miners and front-runners in the Dutch auction.</p>
+<h2 id="protected-collateral">Protected collateral</h2>
+<p>In Compound and Aave, collateral deposited in lending protocols can always be borrowed. However, in the Euler protocol, collateral can be deposited but not used for borrowing. This type of collateral is termed &ldquo;protected.&rdquo; These protected collaterals do not earn interest for users but eliminate the risk of borrower default. Users can withdraw the collateral assets at any time, preventing borrowers from using tokens to influence governance decisions or take short positions</p>
+<h3 id="multi-collateral-stability-pools">Multi-collateral stability pools</h3>
+<p>In other lending protocols, liquidation typically relies on external liquidity sources. However, this method faces challenges such as inaccurate pricing due to factors like slippage, swap fees, extreme volatility, price smoothing algorithms (e.g., TWAP on Euler), and delayed new price releases.</p>
+<p>To address these issues, Euler allows lenders to support liquidation by providing liquidity to stability pools associated with each lending market. Liquidity providers in these pools earn interest by depositing eTokens while awaiting liquidation. This setup prevents manipulation attempts during the unstaking period and enables immediate internal liquidation when a borrower defaults. The liquidity from stability pools is used to cancel the borrower&rsquo;s debt and return discounted collateral to the pool after deducting fees.</p>
+<p>This approach extends the concept of stability pools pioneered by Liquidity protocols into a multi-collateral form on Euler. The primary advantage of using stability pools is the ability to handle liquidation promptly when a borrower defaults, without relying on external liquidity sources</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>The innovative features of Euler focus on the perspectives of both lenders, borrowers, and liquidators. Through mechanisms like permissionless listing, optimized liquidation processes, and responsive interest rates, Euler caters to the diverse needs of participants in the lending market. Additionally, by utilizing multi-collateral stability pools, lenders can ultimately passively convert all their eTokens into liquidation collateral assets</p>
+<p>Although these innovative characteristics open new perspectives in the lending protocol domain, aspects such as the low liquidity of long-tail assets with $WETH pairs on Uniswap and the feasibility of Euler&rsquo;s operational mechanism are still worth continued observation. Furthermore, Euler is set to launch its native governance token $EUL, which can be used for voting on asset levels, collateral ratios, borrowing rates, and other protocol parameters</p>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://docs.euler.finance/getting-started/white-paper">Euler Finance White Paper</a></li>
+<li><a href="https://blog.euler.finance/series-a-led-by-paradigm-62004afe3bf6">Euler｜Series A Led by Paradigm</a></li>
+<li><a href="https://www.coindesk.com/business/2021/12/13/euler-finance-launches-new-defi-lending-platform-in-crowded-market/">CoinDesk｜Euler Finance Launches New DeFi Lending Platform in Crowded Market</a></li>
+</ul>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2023/08/19/postgres-view-and-materialized-view/" data-toggle="tooltip" data-placement="top" title="淺談 PostgreSQL 資料庫中的 View 及 Materialized View">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:andylin0404@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    <li>
+                        <a href="https://twitter.com/andylinee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://medium.com/@andylinee">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-medium fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Pivot the life" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Pivot the life 2024
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

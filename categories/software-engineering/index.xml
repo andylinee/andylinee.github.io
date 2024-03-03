@@ -6,66 +6,35 @@
     <description>Recent content in Software Engineering on Pivot the life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://andylinee.github.io/categories/software-engineering/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andylinee.github.io/categories/software-engineering/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>淺談 PostgreSQL 資料庫中的 View 及 Materialized View</title>
       <link>https://andylinee.github.io/2023/08/19/postgres-view-and-materialized-view/</link>
       <pubDate>Sat, 19 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://andylinee.github.io/2023/08/19/postgres-view-and-materialized-view/</guid>
-      <description>在 PostgreSQL 資料庫中，View 和 Materialized View 是非常有用的工具，它們能夠幫助開發者更加靈活地處理資料並優化查詢效能。現在讓我們透過一些具體的 SQL 語法案例，了解如何在 PostgreSQL 中使用這兩種資料庫檢視表。
-View 在 PostgreSQL 中，View 是透過 SELECT 語句定義的虛擬表。它本身不儲存任何資料，而是作為保存的查詢，可以像正常的表一樣引用它。每次查詢 view 時，都會執行底層的 SELECT 語句，並且結果會以表格呈現。
-View 在簡化複雜查詢、封裝業務邏輯和為資料提供更友善的界面有很大的好處。然而，View 也可能會對性能造成影響，尤其是對於複雜查詢或大型資料集，因為每次使用 view 時都會執行查詢。
-假設我們有一張資料表 employees，包含了員工的資料，包括姓名、部門、職位和薪水。現在我們想要創建一個 view，只顯示部門為 Sales 的員工資料：
--- 創建名稱為 sales_employees 的 view CREATE VIEW sales_employees AS SELECT * FROM employees WHERE department = &amp;#39;Sales&amp;#39;; 現在，我們可以透過以下方式查詢 sales_employees view，來獲取所有部門為 Sales 的員工資料：
-SELECT * FROM sales_employees; Materialized View 在 PostgreSQL 中，Materialized View 和一般的 View 類似，但 Materialized View 還將底層 SELECT 語句的結果集作為實際資料儲存在硬碟上。這代表只有在創建或更新 Materialized View 時才會執行查詢，並且因為資料被儲存起來，會讓後續的查詢速度更快。</description>
+      <description>在 PostgreSQL 資料庫中，View 和 Materialized View 是非常有用的工具，它們能夠幫助開發者更加靈活地處理資料並優化查詢效能。現在讓我們透過一些具體的 SQL 語法案例，了解如何在 PostgreSQL 中使用這兩種資料庫檢視表。&#xA;View 在 PostgreSQL 中，View 是透過 SELECT 語句定義的虛擬表。它本身不儲存任何資料，而是作為保存的查詢，可以像正常的表一樣引用它。每次查詢 view 時，都會執行底層的 SELECT 語句，並且結果會以表格呈現。&#xA;View 在簡化複雜查詢、封裝業務邏輯和為資料提供更友善的界面有很大的好處。然而，View 也可能會對性能造成影響，尤其是對於複雜查詢或大型資料集，因為每次使用 view 時都會執行查詢。&#xA;假設我們有一張資料表 employees，包含了員工的資料，包括姓名、部門、職位和薪水。現在我們想要創建一個 view，只顯示部門為 Sales 的員工資料：&#xA;-- 創建名稱為 sales_employees 的 view CREATE VIEW sales_employees AS SELECT * FROM employees WHERE department = &amp;#39;Sales&amp;#39;; 現在，我們可以透過以下方式查詢 sales_employees view，來獲取所有部門為 Sales 的員工資料：&#xA;SELECT * FROM sales_employees; Materialized View 在 PostgreSQL 中，Materialized View 和一般的 View 類似，但 Materialized View 還將底層 SELECT 語句的結果集作為實際資料儲存在硬碟上。這代表只有在創建或更新 Materialized View 時才會執行查詢，並且因為資料被儲存起來，會讓後續的查詢速度更快。</description>
     </item>
-    
     <item>
       <title>初探 Python 中的 typing 模組 - 強化型別提示與依賴注入</title>
       <link>https://andylinee.github.io/2023/08/07/python-typing/</link>
       <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://andylinee.github.io/2023/08/07/python-typing/</guid>
-      <description>Python 作為一種動態語言，優雅簡潔的語法使得開發者可以快速地撰寫程式碼。然而，在大型專案或團隊合作中，強化程式碼的可讀性、可維護性和錯誤檢測是至關重要的。Python 的 typing 模組在這方面扮演了重要的角色，它允許我們為 Python 程式碼添加靜態型別提示（Type Hints），讓 IDE 和靜態類型檢查工具能更容易協助開發者發現錯誤和改進程式碼。
-什麼是 typing 模組？ typing 模組是 Python 3.5 以後加入的內建模組，它提供了一組用於指定變數、函式回傳值、函式參數等型別提示的工具。儘管 Python 依然是動態型別的語言，typing 模組能夠為我們的程式碼帶來更豐富的型別資訊，讓開發者在撰寫程式碼時更容易瞭解資料的形式與用途。
-使用 Type Hints 增強型別提示 在 Python 中，型別提示是指在變數、函式參數和回傳值等地方添加型別資訊，以便在開發過程中更容易理解程式碼的意圖。typing 模組中的 Type Hints 提供了各種內建型別（如 int、str、list 等）以及用於創建自定義型別的工具。以下是一些 Type Hints 的常見用法和案例：
-基本型別提示 from typing import List def get_square_root(number: float) -&amp;gt; float: return number ** 0.5 # Usage numbers_list: List[int] = [1, 4, 9, 16] result = get_square_root(25) print(result) # Output：5.0 在這個例子中，我們使用 float 和 List[int] 等 Type Hints 指定了函式參數和變數的型別，讓開發者知道這些資料的類型，提高程式碼的可讀性。</description>
+      <description>Python 作為一種動態語言，優雅簡潔的語法使得開發者可以快速地撰寫程式碼。然而，在大型專案或團隊合作中，強化程式碼的可讀性、可維護性和錯誤檢測是至關重要的。Python 的 typing 模組在這方面扮演了重要的角色，它允許我們為 Python 程式碼添加靜態型別提示（Type Hints），讓 IDE 和靜態類型檢查工具能更容易協助開發者發現錯誤和改進程式碼。&#xA;什麼是 typing 模組？ typing 模組是 Python 3.5 以後加入的內建模組，它提供了一組用於指定變數、函式回傳值、函式參數等型別提示的工具。儘管 Python 依然是動態型別的語言，typing 模組能夠為我們的程式碼帶來更豐富的型別資訊，讓開發者在撰寫程式碼時更容易瞭解資料的形式與用途。&#xA;使用 Type Hints 增強型別提示 在 Python 中，型別提示是指在變數、函式參數和回傳值等地方添加型別資訊，以便在開發過程中更容易理解程式碼的意圖。typing 模組中的 Type Hints 提供了各種內建型別（如 int、str、list 等）以及用於創建自定義型別的工具。以下是一些 Type Hints 的常見用法和案例：&#xA;基本型別提示 from typing import List def get_square_root(number: float) -&amp;gt; float: return number ** 0.5 # Usage numbers_list: List[int] = [1, 4, 9, 16] result = get_square_root(25) print(result) # Output：5.0 在這個例子中，我們使用 float 和 List[int] 等 Type Hints 指定了函式參數和變數的型別，讓開發者知道這些資料的類型，提高程式碼的可讀性。</description>
     </item>
-    
     <item>
       <title>編寫安全可靠的程式碼：NASA「十個原則」的經驗教訓</title>
       <link>https://andylinee.github.io/2023/06/05/how-nasa-writes-space-proof-code/</link>
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://andylinee.github.io/2023/06/05/how-nasa-writes-space-proof-code/</guid>
-      <description>&amp;ldquo;註：本文是透過 YouTube &amp;amp; Article Summary powered by ChatGPT 及 OpenAI 翻譯後編輯而成。&amp;rdquo;
-影片：how NASA writes space-proof code
-說明 作為軟體開發者，最糟糕的其中一種情況就是在正式環境的程式碼掛掉。但如果你的正式環境是外太空，反參照指標（null pointer dereference）、釋放後使用等問題可能導致衛星失去控制，隨之飄向無盡的虛空。為了避免這種情況，NASA 制定了一系列規則，重點是使他們的程式碼易於靜態分析。我將討論的規則實際上源自 NASA 稱之為「十個原則」的一組規則。一位 NASA 可靠的軟體開發者 Gerard Holzman 承認，其中一些規則有些嚴格，但在需要極高安全性的情境中，他認為這種權衡是值得的。NASA 將程式碼限制為簡單的控制流結構，這意味著他們不使用 goto 語句、set jump 或 long jump，也不使用遞迴（recursion）。遞迴或呼叫自身的函式會創造出非常難以理解的迴圈程式碼控制流程圖，遞迴程式碼可能導致運行失控，尤其在嵌入式系統中容易導致崩潰。
-十個原則 原則一：簡單的控制流結構（imple Control Flow） NASA 限制了一些結構的使用，如 goto 語句、set jump 和 long jump，以及遞迴。這些限制有助於避免複雜和難以理解的程式碼路徑，減少系統崩潰和運行失控的風險。
-原則二：迴圈的固定上限（Limit All Loops） 為了防止無限迴圈和運行失控，NASA 對所有迴圈設定了固定的上限。即使在遍歷鏈結串列等情況下，終止條件似乎是任意的，設定上限確保了程式碼的可預測性和穩定性。
-原則三：不要用 Heap 記憶體（Don&amp;rsquo;t use the Heap） NASA 建議僅使用 Stack 記憶體，而不使用 Heap 記憶體，因為記憶體錯誤和問題通常源於 Heap 的使用和垃圾回收（Garbage Collection）機制。靜態程式碼分析無法對這些系統進行驗證。通過完全避免使用 Heap 記憶體，並對 Stack 記憶體的使用量設定上限，可以精確預測程式碼所需的記憶體量，消除使用後的錯誤和記憶體洩漏。</description>
+      <description>&amp;ldquo;註：本文是透過 YouTube &amp;amp; Article Summary powered by ChatGPT 及 OpenAI 翻譯後編輯而成。&amp;rdquo;&#xA;影片：how NASA writes space-proof code&#xA;說明 作為軟體開發者，最糟糕的其中一種情況就是在正式環境的程式碼掛掉。但如果你的正式環境是外太空，反參照指標（null pointer dereference）、釋放後使用等問題可能導致衛星失去控制，隨之飄向無盡的虛空。為了避免這種情況，NASA 制定了一系列規則，重點是使他們的程式碼易於靜態分析。我將討論的規則實際上源自 NASA 稱之為「十個原則」的一組規則。一位 NASA 可靠的軟體開發者 Gerard Holzman 承認，其中一些規則有些嚴格，但在需要極高安全性的情境中，他認為這種權衡是值得的。NASA 將程式碼限制為簡單的控制流結構，這意味著他們不使用 goto 語句、set jump 或 long jump，也不使用遞迴（recursion）。遞迴或呼叫自身的函式會創造出非常難以理解的迴圈程式碼控制流程圖，遞迴程式碼可能導致運行失控，尤其在嵌入式系統中容易導致崩潰。&#xA;十個原則 原則一：簡單的控制流結構（imple Control Flow） NASA 限制了一些結構的使用，如 goto 語句、set jump 和 long jump，以及遞迴。這些限制有助於避免複雜和難以理解的程式碼路徑，減少系統崩潰和運行失控的風險。&#xA;原則二：迴圈的固定上限（Limit All Loops） 為了防止無限迴圈和運行失控，NASA 對所有迴圈設定了固定的上限。即使在遍歷鏈結串列等情況下，終止條件似乎是任意的，設定上限確保了程式碼的可預測性和穩定性。&#xA;原則三：不要用 Heap 記憶體（Don&amp;rsquo;t use the Heap） NASA 建議僅使用 Stack 記憶體，而不使用 Heap 記憶體，因為記憶體錯誤和問題通常源於 Heap 的使用和垃圾回收（Garbage Collection）機制。靜態程式碼分析無法對這些系統進行驗證。通過完全避免使用 Heap 記憶體，並對 Stack 記憶體的使用量設定上限，可以精確預測程式碼所需的記憶體量，消除使用後的錯誤和記憶體洩漏。</description>
     </item>
-    
     <item>
       <title>《The Effective Engineer》 作者於 Google 演講的筆記</title>
       <link>https://andylinee.github.io/2023/05/14/the-effective-engineer/</link>
       <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://andylinee.github.io/2023/05/14/the-effective-engineer/</guid>
-      <description>&amp;ldquo;註：本文是透過 YouTube &amp;amp; Article Summary powered by ChatGPT 及 OpenAI API 來進行影片摘要及翻譯而產生。&amp;rdquo;
-《The Effective Engineer》的作者 Edward Lau 在這場於 Google 的演講中分享如何成為更有效率的工程師。講者提出了五個高效活動：優化學習、投資工具、專注高影響力項目、有效協作和發展領導技能。講者強調，努力不一定等於影響力，工程師應該專注於高影響力活動，以最大化其影響力。此外還討論了其他策略，例如優化調試流程、積極迭代驗證想法、簡化程式碼、系統和產品複雜度，以及建立優秀的工程文化。透過專注於這些策略，工程師可以有更好的生產力，並對其組織產生更大的影響。
-高槓桿活動：優化學習、投資工具、專注高影響力項目、有效協作和發展領導技能 在今天快節奏和不斷變化的世界中，工程師們不斷尋找提高工作效率和效率的方法。在這場於 Google 的演講中，曾經在谷歌和各種新創公司工作過的經驗豐富的工程師 Edward Lau 分享了他如何成為更有效的工程師的見解。他首先問聽眾是否曾長時間工作、在周末工作或參與與未啟動或沒有影響的項目。然後，他介紹了 槓桿（leverage） 的概念，即為所投入的時間產生的影響。他認為，努力並不一定取決於影響力，工程師應特別注意高槓桿的活動，以最大程度地改變他們的影響力。Edward 介紹了工程師的五個高槓桿活動，分別是 優化學習、投資工具、專注高影響力項目、有效協作 和 發展領導技能。
-優化學習 第一個是優化學習，Edward 認為這是一項 複利投資，可以隨著時間的推移帶來顯著的收益。他建議工程師透過閱讀書籍、參加課程、開展副業和參加演講來獲得自己的學習和成長。透過投資自己的學習，工程師可以變得更加學問淵博和熟練，從而可以進行更高影響力的工作。
-投資工具 第二個高槓桿活動是 投資於增加迭代速度的工具。Edward 認為，即使是迭代速度的微小改進也可以對生產力產生重大影響。他建議工程師投資於可以自動化手動任務和加速開發流程的工具。透過減少完成任務所需的時間，工程師可以專注於更高影響力的工作，並在更短的時間內產生更多的產出。
-專注高影響力項目 第三個高槓桿活動是專注於高影響力的項目。Edward 認為，工程師應該 優先考慮具有潛在產生重大影響的項目，並避免那些不太可能產生影響的項目。他建議工程師問自己是否在項目上花費的時間值得，以及項目是否具有高槓桿。透過專注於高影響力的項目，工程師可以產生更有意義的工作，並對組織產生更大的影響。
-有效協作 第四個高槓桿活動是有效地與他人合作。Edward 認為，有效的合作可以帶來更好的結果和更高的影響力。他建議工程師清晰地溝通、積極傾聽並與同事建立良好的關係。透過與他人良好地合作，工程師可以有更高的生產力，並對組織產生更大的影響。
-發展領導技能 第五個也是最後一個高槓桿活動是發展領導技能。Edward 認為，領導技能對於想要對組織產生重大影響的工程師至關重要。他建議工程師 發展溝通、授權和決策等技能，成為有效的領導者。透過發展領導技能，工程師可以提升工作效率，並對組織產生更大的影響。
-其他策略 除了這五個高槓桿活動外，演講者還討論了其他可以使工程師更有效的策略。其中一種策略是 優化自己的 debug 流程，以提高迭代速度。透過簡化 debug 過程，工程師可以減少修復錯誤所需的時間，並在更短的時間內產生更多的產出。
-另一種策略是 積極迭代驗證想法。Edward 以 Etsy 在其搜尋結果頁面上實現無限滾動的失敗嘗試為例。透過將假設分解為更小的可測試假設，Etsy 能夠對其理論建立信心，並成功地重新設計了其產品頁面。透過積極迭代地驗證想法，工程師可以產生更好的工作，並對組織產生更大的影響。
-Edward 還強調了透過簡化程式碼、系統和產品複雜性來最小化操作負擔的重要性。透過減少他們工作的複雜性，工程師可以在更短的時間內產生更多的產出，並對組織產生更大的影響。
-最後，Edward 討論了 建立優秀的工程文化 的重要性。優秀的工程文化對於吸引和留住重視高槓桿活動、學習機會和專注於構建新功能而不是維護舊功能的優秀工程師至關重要。透過建立優秀的工程文化，組織可以吸引和留住頂尖人才，並產生更好的工作。</description>
+      <description>&amp;ldquo;註：本文是透過 YouTube &amp;amp; Article Summary powered by ChatGPT 及 OpenAI API 來進行影片摘要及翻譯而產生。&amp;rdquo;&#xA;《The Effective Engineer》的作者 Edward Lau 在這場於 Google 的演講中分享如何成為更有效率的工程師。講者提出了五個高效活動：優化學習、投資工具、專注高影響力項目、有效協作和發展領導技能。講者強調，努力不一定等於影響力，工程師應該專注於高影響力活動，以最大化其影響力。此外還討論了其他策略，例如優化調試流程、積極迭代驗證想法、簡化程式碼、系統和產品複雜度，以及建立優秀的工程文化。透過專注於這些策略，工程師可以有更好的生產力，並對其組織產生更大的影響。&#xA;高槓桿活動：優化學習、投資工具、專注高影響力項目、有效協作和發展領導技能 在今天快節奏和不斷變化的世界中，工程師們不斷尋找提高工作效率和效率的方法。在這場於 Google 的演講中，曾經在谷歌和各種新創公司工作過的經驗豐富的工程師 Edward Lau 分享了他如何成為更有效的工程師的見解。他首先問聽眾是否曾長時間工作、在周末工作或參與與未啟動或沒有影響的項目。然後，他介紹了 槓桿（leverage） 的概念，即為所投入的時間產生的影響。他認為，努力並不一定取決於影響力，工程師應特別注意高槓桿的活動，以最大程度地改變他們的影響力。Edward 介紹了工程師的五個高槓桿活動，分別是 優化學習、投資工具、專注高影響力項目、有效協作 和 發展領導技能。&#xA;優化學習 第一個是優化學習，Edward 認為這是一項 複利投資，可以隨著時間的推移帶來顯著的收益。他建議工程師透過閱讀書籍、參加課程、開展副業和參加演講來獲得自己的學習和成長。透過投資自己的學習，工程師可以變得更加學問淵博和熟練，從而可以進行更高影響力的工作。&#xA;投資工具 第二個高槓桿活動是 投資於增加迭代速度的工具。Edward 認為，即使是迭代速度的微小改進也可以對生產力產生重大影響。他建議工程師投資於可以自動化手動任務和加速開發流程的工具。透過減少完成任務所需的時間，工程師可以專注於更高影響力的工作，並在更短的時間內產生更多的產出。&#xA;專注高影響力項目 第三個高槓桿活動是專注於高影響力的項目。Edward 認為，工程師應該 優先考慮具有潛在產生重大影響的項目，並避免那些不太可能產生影響的項目。他建議工程師問自己是否在項目上花費的時間值得，以及項目是否具有高槓桿。透過專注於高影響力的項目，工程師可以產生更有意義的工作，並對組織產生更大的影響。&#xA;有效協作 第四個高槓桿活動是有效地與他人合作。Edward 認為，有效的合作可以帶來更好的結果和更高的影響力。他建議工程師清晰地溝通、積極傾聽並與同事建立良好的關係。透過與他人良好地合作，工程師可以有更高的生產力，並對組織產生更大的影響。&#xA;發展領導技能 第五個也是最後一個高槓桿活動是發展領導技能。Edward 認為，領導技能對於想要對組織產生重大影響的工程師至關重要。他建議工程師 發展溝通、授權和決策等技能，成為有效的領導者。透過發展領導技能，工程師可以提升工作效率，並對組織產生更大的影響。&#xA;其他策略 除了這五個高槓桿活動外，演講者還討論了其他可以使工程師更有效的策略。其中一種策略是 優化自己的 debug 流程，以提高迭代速度。透過簡化 debug 過程，工程師可以減少修復錯誤所需的時間，並在更短的時間內產生更多的產出。&#xA;另一種策略是 積極迭代驗證想法。Edward 以 Etsy 在其搜尋結果頁面上實現無限滾動的失敗嘗試為例。透過將假設分解為更小的可測試假設，Etsy 能夠對其理論建立信心，並成功地重新設計了其產品頁面。透過積極迭代地驗證想法，工程師可以產生更好的工作，並對組織產生更大的影響。&#xA;Edward 還強調了透過簡化程式碼、系統和產品複雜性來最小化操作負擔的重要性。透過減少他們工作的複雜性，工程師可以在更短的時間內產生更多的產出，並對組織產生更大的影響。&#xA;最後，Edward 討論了 建立優秀的工程文化 的重要性。優秀的工程文化對於吸引和留住重視高槓桿活動、學習機會和專注於構建新功能而不是維護舊功能的優秀工程師至關重要。透過建立優秀的工程文化，組織可以吸引和留住頂尖人才，並產生更好的工作。</description>
     </item>
-    
   </channel>
 </rss>

@@ -6,33 +6,21 @@
     <description>Recent content in AI on Pivot the life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://andylinee.github.io/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andylinee.github.io/categories/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>《使用 ChatGPT API 開發系統》課程筆記</title>
       <link>https://andylinee.github.io/2023/06/04/building-systems-with-chatgpt-api/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://andylinee.github.io/2023/06/04/building-systems-with-chatgpt-api/</guid>
-      <description>在 4 月底上線的「ChatGPT Prompt Engineering for Developers」課程中（可參考之前的筆記），DeepLearning.AI 創辦人吳恩達 Andrew Ng 和 OpenAI 的 Isa Fulford 分享了如何正確且有效的對 ChatGPT 進行 「提示」（prompt）。然而，要開發一個系統會需要由許多 prompts 組成並對大型語言模型（LLM）進行多次調用。 因此，在這次新推出的《Building Systems with the ChatGPT API》的課程中，將會分享如何使用 LLM 來開發複雜的應用程式，並以打造一個全流程的客服輔助系統作為範例來進行講解。
-這堂「Building Systems with the ChatGPTAPI」線上課程，在 DeepLearning.AI 網站上免費提供給想要使用 ChatGPT API 的打造系統的開發者學習，瞭解使用 ChatGPT API 打造系統服務時需要注意的細節及實作方式，課程搭配 Jupyter notebook 提供範例程式碼讓學員能即時驗證。
-這堂長度為1小時左右的課程內容涵蓋了以下幾個部分：
-評估輸入：分類（Classification）、審查（Moderation） 處理輸入：思想鏈推理（Chain of Thought Reasoning）、提示鏈（Chaining Prompts） 檢查輸出 打造一個全流程的系統 評估成效（Evaluation） 以下為筆者整理的課堂筆記，推薦有興趣的讀者撥出一小時去看完整的課程，肯定會有不少收穫。
-大型語言模型、API 格式、Token 在課程開頭，先簡單介紹了監督式學習（Supervised Learning）和大型語言模型（LLM）。
-監督式學習 在訓練監督式學習的模型主要有三大步驟：
-取得標記資料 使用這些資料來訓練 AI 模型 部署並調用模型 語言模型就是透過監督式學習來反覆預測下一個字詞，如下圖： 而在上一堂課中曾介紹過大型語言模型主要分為兩種：Base LLM 及 Instruction Tuned LLM，可以透過以下步驟來將 Base LLM 轉換成 Instruction Tuned LLM：</description>
+      <description>在 4 月底上線的「ChatGPT Prompt Engineering for Developers」課程中（可參考之前的筆記），DeepLearning.AI 創辦人吳恩達 Andrew Ng 和 OpenAI 的 Isa Fulford 分享了如何正確且有效的對 ChatGPT 進行 「提示」（prompt）。然而，要開發一個系統會需要由許多 prompts 組成並對大型語言模型（LLM）進行多次調用。 因此，在這次新推出的《Building Systems with the ChatGPT API》的課程中，將會分享如何使用 LLM 來開發複雜的應用程式，並以打造一個全流程的客服輔助系統作為範例來進行講解。&#xA;這堂「Building Systems with the ChatGPTAPI」線上課程，在 DeepLearning.AI 網站上免費提供給想要使用 ChatGPT API 的打造系統的開發者學習，瞭解使用 ChatGPT API 打造系統服務時需要注意的細節及實作方式，課程搭配 Jupyter notebook 提供範例程式碼讓學員能即時驗證。&#xA;這堂長度為1小時左右的課程內容涵蓋了以下幾個部分：&#xA;評估輸入：分類（Classification）、審查（Moderation） 處理輸入：思想鏈推理（Chain of Thought Reasoning）、提示鏈（Chaining Prompts） 檢查輸出 打造一個全流程的系統 評估成效（Evaluation） 以下為筆者整理的課堂筆記，推薦有興趣的讀者撥出一小時去看完整的課程，肯定會有不少收穫。&#xA;大型語言模型、API 格式、Token 在課程開頭，先簡單介紹了監督式學習（Supervised Learning）和大型語言模型（LLM）。&#xA;監督式學習 在訓練監督式學習的模型主要有三大步驟：&#xA;取得標記資料 使用這些資料來訓練 AI 模型 部署並調用模型 語言模型就是透過監督式學習來反覆預測下一個字詞，如下圖： 而在上一堂課中曾介紹過大型語言模型主要分為兩種：Base LLM 及 Instruction Tuned LLM，可以透過以下步驟來將 Base LLM 轉換成 Instruction Tuned LLM：</description>
     </item>
-    
     <item>
       <title>為開發者開設的 ChatGPT Prompt Engineering 線上課程</title>
       <link>https://andylinee.github.io/2023/04/29/chatgpt-prompt-engineering/</link>
       <pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://andylinee.github.io/2023/04/29/chatgpt-prompt-engineering/</guid>
-      <description>從 2022 年底 ChatGPT 問世之後，開始出現許多分享如何使用 ChatGPT 改善工作流程、提升個人生產力、甚至快速打造產品賺錢，但要能夠發揮 ChatGPT 最大的價值就必須要有好的提示能力，也就是這半年內才興起的新技能 「Prompt Engineering」（提示工程）。除了在各大社群媒體上有許多實際的經驗分享，也有如 Learn Prompting 這樣提供詳細教學的網站。而終於在前天（2023/04/27）由知名機器學習大師吳恩達 Andrew Ng 所創辦的 DeepLearning.AI 和 OpneAI 共同推出 Prompt Engineering 的線上課程，此課程專門為使用 OpenAI API 串接服務的開發者所開設，課程為免費，長度約為1小時。
-這堂由 DeepLearning.AI 創辦人吳恩達 Andrew Ng 和 OpenAI 的 Isa Fulford 共同講授的「ChatGPT Prompt Engineering for Developers」課程，在 DeepLearning.AI 網站上免費提供給想要串接 OpenAI API 的開發者學習，瞭解如何正確使用「Prompt」（提示詞）來和 GPT 模型互動，進而在所開發的服務中整合 GPT 模型，課程搭配 Jupyter notebook 提供範例程式碼讓學員能即時驗證。 這堂長度為1小時左右的課程內容涵蓋了以下幾個部分：
-Prompt 的原則 迭代的 prompt 開發流程 ChatGPT 的能力 使用 ChatGPT 打造 Chatbot 以下為筆者整理的課堂筆記，推薦有興趣的讀者撥出一小時去看完整的課程，肯定會有不少收穫。
-大型語言模型 一開始先介紹目前主流的兩種 大型語言模型（Large Language Models, LLMs），分別為 Base LLM 及 Instruction Tune LLM。 Base LLM 主要是透過由網路上或其他來源所搜集的文本訓練資料，訓練來預測下一個字詞。Instruction Tune LLM 則是透過針對指示或好的意圖去對模型進行微調（fine-tune），也就是所謂的 RLHF（Reinforcement Learning with Human Feedback），而因此 Instruction Tune LLM 所生成內容通常會更有用、誠實且無害。而 ChatGPT 就是屬於 RLHF 的 LLM。</description>
+      <description>從 2022 年底 ChatGPT 問世之後，開始出現許多分享如何使用 ChatGPT 改善工作流程、提升個人生產力、甚至快速打造產品賺錢，但要能夠發揮 ChatGPT 最大的價值就必須要有好的提示能力，也就是這半年內才興起的新技能 「Prompt Engineering」（提示工程）。除了在各大社群媒體上有許多實際的經驗分享，也有如 Learn Prompting 這樣提供詳細教學的網站。而終於在前天（2023/04/27）由知名機器學習大師吳恩達 Andrew Ng 所創辦的 DeepLearning.AI 和 OpneAI 共同推出 Prompt Engineering 的線上課程，此課程專門為使用 OpenAI API 串接服務的開發者所開設，課程為免費，長度約為1小時。&#xA;這堂由 DeepLearning.AI 創辦人吳恩達 Andrew Ng 和 OpenAI 的 Isa Fulford 共同講授的「ChatGPT Prompt Engineering for Developers」課程，在 DeepLearning.AI 網站上免費提供給想要串接 OpenAI API 的開發者學習，瞭解如何正確使用「Prompt」（提示詞）來和 GPT 模型互動，進而在所開發的服務中整合 GPT 模型，課程搭配 Jupyter notebook 提供範例程式碼讓學員能即時驗證。 這堂長度為1小時左右的課程內容涵蓋了以下幾個部分：&#xA;Prompt 的原則 迭代的 prompt 開發流程 ChatGPT 的能力 使用 ChatGPT 打造 Chatbot 以下為筆者整理的課堂筆記，推薦有興趣的讀者撥出一小時去看完整的課程，肯定會有不少收穫。&#xA;大型語言模型 一開始先介紹目前主流的兩種 大型語言模型（Large Language Models, LLMs），分別為 Base LLM 及 Instruction Tune LLM。 Base LLM 主要是透過由網路上或其他來源所搜集的文本訓練資料，訓練來預測下一個字詞。Instruction Tune LLM 則是透過針對指示或好的意圖去對模型進行微調（fine-tune），也就是所謂的 RLHF（Reinforcement Learning with Human Feedback），而因此 Instruction Tune LLM 所生成內容通常會更有用、誠實且無害。而 ChatGPT 就是屬於 RLHF 的 LLM。</description>
     </item>
-    
   </channel>
 </rss>

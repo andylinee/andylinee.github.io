@@ -6,20 +6,14 @@
     <description>Recent content in PostgreSQL on Pivot the life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://andylinee.github.io/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://andylinee.github.io/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>淺談 PostgreSQL 資料庫中的 View 及 Materialized View</title>
       <link>https://andylinee.github.io/2023/08/19/postgres-view-and-materialized-view/</link>
       <pubDate>Sat, 19 Aug 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://andylinee.github.io/2023/08/19/postgres-view-and-materialized-view/</guid>
-      <description>在 PostgreSQL 資料庫中，View 和 Materialized View 是非常有用的工具，它們能夠幫助開發者更加靈活地處理資料並優化查詢效能。現在讓我們透過一些具體的 SQL 語法案例，了解如何在 PostgreSQL 中使用這兩種資料庫檢視表。
-View 在 PostgreSQL 中，View 是透過 SELECT 語句定義的虛擬表。它本身不儲存任何資料，而是作為保存的查詢，可以像正常的表一樣引用它。每次查詢 view 時，都會執行底層的 SELECT 語句，並且結果會以表格呈現。
-View 在簡化複雜查詢、封裝業務邏輯和為資料提供更友善的界面有很大的好處。然而，View 也可能會對性能造成影響，尤其是對於複雜查詢或大型資料集，因為每次使用 view 時都會執行查詢。
-假設我們有一張資料表 employees，包含了員工的資料，包括姓名、部門、職位和薪水。現在我們想要創建一個 view，只顯示部門為 Sales 的員工資料：
--- 創建名稱為 sales_employees 的 view CREATE VIEW sales_employees AS SELECT * FROM employees WHERE department = &amp;#39;Sales&amp;#39;; 現在，我們可以透過以下方式查詢 sales_employees view，來獲取所有部門為 Sales 的員工資料：
-SELECT * FROM sales_employees; Materialized View 在 PostgreSQL 中，Materialized View 和一般的 View 類似，但 Materialized View 還將底層 SELECT 語句的結果集作為實際資料儲存在硬碟上。這代表只有在創建或更新 Materialized View 時才會執行查詢，並且因為資料被儲存起來，會讓後續的查詢速度更快。</description>
+      <description>在 PostgreSQL 資料庫中，View 和 Materialized View 是非常有用的工具，它們能夠幫助開發者更加靈活地處理資料並優化查詢效能。現在讓我們透過一些具體的 SQL 語法案例，了解如何在 PostgreSQL 中使用這兩種資料庫檢視表。&#xA;View 在 PostgreSQL 中，View 是透過 SELECT 語句定義的虛擬表。它本身不儲存任何資料，而是作為保存的查詢，可以像正常的表一樣引用它。每次查詢 view 時，都會執行底層的 SELECT 語句，並且結果會以表格呈現。&#xA;View 在簡化複雜查詢、封裝業務邏輯和為資料提供更友善的界面有很大的好處。然而，View 也可能會對性能造成影響，尤其是對於複雜查詢或大型資料集，因為每次使用 view 時都會執行查詢。&#xA;假設我們有一張資料表 employees，包含了員工的資料，包括姓名、部門、職位和薪水。現在我們想要創建一個 view，只顯示部門為 Sales 的員工資料：&#xA;-- 創建名稱為 sales_employees 的 view CREATE VIEW sales_employees AS SELECT * FROM employees WHERE department = &amp;#39;Sales&amp;#39;; 現在，我們可以透過以下方式查詢 sales_employees view，來獲取所有部門為 Sales 的員工資料：&#xA;SELECT * FROM sales_employees; Materialized View 在 PostgreSQL 中，Materialized View 和一般的 View 類似，但 Materialized View 還將底層 SELECT 語句的結果集作為實際資料儲存在硬碟上。這代表只有在創建或更新 Materialized View 時才會執行查詢，並且因為資料被儲存起來，會讓後續的查詢速度更快。</description>
     </item>
-    
   </channel>
 </rss>
