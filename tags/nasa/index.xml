@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NASA on Pivot the life</title>
-    <link>https://andylinee.github.io/tags/nasa/</link>
+    <link>http://localhost:1313/tags/nasa/</link>
     <description>Recent content in NASA on Pivot the life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Jun 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://andylinee.github.io/tags/nasa/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/nasa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>編寫安全可靠的程式碼：NASA「十個原則」的經驗教訓</title>
-      <link>https://andylinee.github.io/2023/06/05/how-nasa-writes-space-proof-code/</link>
+      <link>http://localhost:1313/2023/06/05/how-nasa-writes-space-proof-code/</link>
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/06/05/how-nasa-writes-space-proof-code/</guid>
+      <guid>http://localhost:1313/2023/06/05/how-nasa-writes-space-proof-code/</guid>
       <description>&amp;ldquo;註：本文是透過 YouTube &amp;amp; Article Summary powered by ChatGPT 及 OpenAI 翻譯後編輯而成。&amp;rdquo;&#xA;影片：how NASA writes space-proof code&#xA;說明 作為軟體開發者，最糟糕的其中一種情況就是在正式環境的程式碼掛掉。但如果你的正式環境是外太空，反參照指標（null pointer dereference）、釋放後使用等問題可能導致衛星失去控制，隨之飄向無盡的虛空。為了避免這種情況，NASA 制定了一系列規則，重點是使他們的程式碼易於靜態分析。我將討論的規則實際上源自 NASA 稱之為「十個原則」的一組規則。一位 NASA 可靠的軟體開發者 Gerard Holzman 承認，其中一些規則有些嚴格，但在需要極高安全性的情境中，他認為這種權衡是值得的。NASA 將程式碼限制為簡單的控制流結構，這意味著他們不使用 goto 語句、set jump 或 long jump，也不使用遞迴（recursion）。遞迴或呼叫自身的函式會創造出非常難以理解的迴圈程式碼控制流程圖，遞迴程式碼可能導致運行失控，尤其在嵌入式系統中容易導致崩潰。&#xA;十個原則 原則一：簡單的控制流結構（imple Control Flow） NASA 限制了一些結構的使用，如 goto 語句、set jump 和 long jump，以及遞迴。這些限制有助於避免複雜和難以理解的程式碼路徑，減少系統崩潰和運行失控的風險。&#xA;原則二：迴圈的固定上限（Limit All Loops） 為了防止無限迴圈和運行失控，NASA 對所有迴圈設定了固定的上限。即使在遍歷鏈結串列等情況下，終止條件似乎是任意的，設定上限確保了程式碼的可預測性和穩定性。&#xA;原則三：不要用 Heap 記憶體（Don&amp;rsquo;t use the Heap） NASA 建議僅使用 Stack 記憶體，而不使用 Heap 記憶體，因為記憶體錯誤和問題通常源於 Heap 的使用和垃圾回收（Garbage Collection）機制。靜態程式碼分析無法對這些系統進行驗證。通過完全避免使用 Heap 記憶體，並對 Stack 記憶體的使用量設定上限，可以精確預測程式碼所需的記憶體量，消除使用後的錯誤和記憶體洩漏。</description>
     </item>
   </channel>

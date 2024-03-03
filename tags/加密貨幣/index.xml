@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>加密貨幣 on Pivot the life</title>
-    <link>https://andylinee.github.io/tags/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/</link>
+    <link>http://localhost:1313/tags/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/</link>
     <description>Recent content in 加密貨幣 on Pivot the life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://andylinee.github.io/tags/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Permissionless DeFi Lending Protocol：Euler Finance</title>
-      <link>https://andylinee.github.io/2024/03/03/euler-finance/</link>
+      <link>http://localhost:1313/2024/03/03/euler-finance/</link>
       <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2024/03/03/euler-finance/</guid>
+      <guid>http://localhost:1313/2024/03/03/euler-finance/</guid>
       <description>&amp;ldquo;This article was published on 2021/12/29. The Euler v2 has already launched on 2024 Feb. Readers are advised to take note and understand.&amp;rdquo;&#xA;In 2020, before the DeFi Summer initiated the craze for Decentralized Finance (DeFi), DeFi applications primarily focused on lending protocols. This included prominent projects like Maker and Compound, which were based on mainstream tokens and stablecoin lending protocols, along with emerging platforms like Aave and Curve. However, listing a token on a lending protocol required a permissioned listing mechanism to reduce user asset risks.</description>
     </item>
     <item>
       <title>開放式 DeFi 借貸協議：Euler Finance</title>
-      <link>https://andylinee.github.io/2023/04/11/euler-finance/</link>
+      <link>http://localhost:1313/2023/04/11/euler-finance/</link>
       <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/04/11/euler-finance/</guid>
+      <guid>http://localhost:1313/2023/04/11/euler-finance/</guid>
       <description>&amp;ldquo;本文發表於 2021/12/29，有部分服務及數字已不合時宜，請讀者注意及包涵。&amp;rdquo;&#xA;在 2020 年 DeFi Summer 開啟去中心化金融（Decentralized Finance, DeFi）熱潮之前，DeFi 的應用主要以借貸協議為主，包含 DeFi 元老級項目 Maker、Compound 等以主流幣與穩定幣為主的放貸協議，以及後起之秀 Aave 及 Curve。然而，項目方或社群想要將某個代幣上架到放貸協議需要透過許可制的上市機制，藉此來降低用戶資產的安全風險。開發團隊 Euler XYZ 則推出了開放式借貸協議 Euler，只要在 Uniswap V3 有 WETH 交易對的代幣都能上架到借貸市場，並透過一系列機制提升流動性且降低風險，目前 Euler 已於 2021/12/13 於主網上線。本文將會以官方白皮書為基礎，跟各位介紹全新的開放式借貸協議 Euler 的運作。&#xA;團隊簡介 Euler Finance 是由 Euler XYZ 團隊所開發的開放式借貸協議，共同創辦人有三位，CEO 是曾在英國牛津大學擔任演化生物學家的 Michael Bentley；另外兩位分別是 Doug Hoyte 及 Jack Prior，目前也是 Euler XYZ 團隊的開發者；此外，團隊的顧問 Mick de Graaf 為 Ethereum 鏈上去中心化資產管理平台 DEFIED.io 的共同創辦人，也曾在鏈上指數基金 PieDAO 擔任首席開發者。&#xA;Euler 也在今年（2021）8 月完成由 Paradigm 領投的 800 萬美元 A 輪融資，其他參投方包含 Lemniscap 及來自區塊鏈知名項目的個人投資者，如 The Daily Gwei、Bankless、Synthetix、Coinbase、Product Hunt 等項目的創辦人及 CEO。</description>
     </item>
     <item>
       <title>胡一天演講筆記：《低流動性資產的微證券化與分佈式金融科技》</title>
-      <link>https://andylinee.github.io/2023/04/10/thomas-hu-lecture/</link>
+      <link>http://localhost:1313/2023/04/10/thomas-hu-lecture/</link>
       <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/04/10/thomas-hu-lecture/</guid>
+      <guid>http://localhost:1313/2023/04/10/thomas-hu-lecture/</guid>
       <description>上週六下午到台大管院參加一場由源鉑資本（Kyber Capital）執行長胡一天的專題演講《低流動性資產的微證券化與分佈式金融科技》，身為一名從 2017 年就開始拜讀其專欄文章的粉絲，必須把握難得的公開演說場合親睹風采。&#xA;胡執行長在這場不到一小時的演講中從特殊狀況投資（Special Situations Investing）、美國商用房地產市場情況，再到區塊鏈技術、DeFi 中的 AMM 及 Lending Pool，最後以對央行數位貨幣 CBDC的看法收尾。&#xA;雖然在提到特殊狀況投資及商用房地產交易的部分，有許多專業知識當下無法直接理解，但也讓自己更加瞭解到金融市場是如此盤根錯節。前情提要之後，胡執行長接著分享其對於將商用房地產這類的低流動性資產透過區塊鏈技術進行證券化的可能性，將房地產交易的模式轉換成智能合約語言，再結合傳統金融的交易模式，打造出能夠讓更多人參與投資的全新房地產交易平台。&#xA;最後胡執行長分享其對於 CBDC 的看法，由於一但政府發行 CBDC，相當於所有人都能直接向央行開戶，此時不論大眾或法人對於銀行存款的忠誠度將會下降，銀行存款將不再是銀行業者的穩定募資管道，將會改變銀行業的融資結構，因此，胡執行長認為在能夠推出有效因應措施之前，美國發展 CBDC 的速度應該不會太快。&#xA;&amp;ldquo;胡一天：區塊鏈是一種新的「資產證券化」的工具。&amp;rdquo;&#xA;在會後的 Q&amp;amp;A 環節中，有位官股金控的風控長問到 STO 相關的問題，也提到國泰金控正在申請 STO 相關的執照（在昨天的其他場活動中國泰區塊鏈團隊負責人也有提到），而胡執行長認為區塊鏈是一種新的「資產證券化」的工具，不論是 DeFi、NFT、STO，都帶來全新的營銷方法以及風險分銷手段的進化，但也提醒到，過去在傳統金融中推行資產證券化的過程中曾發生許多風險，未來在區塊鏈的發展過程中應該要提前規避掉相關風險，避免重蹈覆測。</description>
     </item>
     <item>
       <title>DeFi 是金錢樂高，而 NFTs 則是媒體樂高</title>
-      <link>https://andylinee.github.io/2023/04/09/nft-is-media-lego/</link>
+      <link>http://localhost:1313/2023/04/09/nft-is-media-lego/</link>
       <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/04/09/nft-is-media-lego/</guid>
+      <guid>http://localhost:1313/2023/04/09/nft-is-media-lego/</guid>
       <description>&amp;ldquo;本文發表於 2020/09/07，有部分內容可能已不合時宜，請讀者注意及包涵。&amp;rdquo;&#xA;近日在區塊鏈及加密貨幣領域裡最夯的題目非 DeFi 莫屬，但已有數年發展歷史的 NFT（Non-Fungible Token, 非同質化代幣）也再度受到市場矚目。之前創辦區塊鏈公司 Mediachain（於 2017 年被 Spotify 收購）、現為加密貨幣產業創投公司 Variant Fund 創辦人的 JesseWalden 近日在 Twitter 上發表對於 NFT 的看法，認為相對於「DeFi 是金錢樂高」，NFT 則會是「媒體樂高」，本文為這則推文的繁體中文翻譯。&#xA;&amp;hellip;&#xA;我常說我上一家新創公司 Mediachain 的許多目標現在都透過 NFTs 被實現。在內部，我們把 Mediachain 視為一個「標準內容註冊管理機構」，每一個獨一無二的作品都會得到一個可以附加元資料上去的標準 ID。&#xA;元資料可能是創作者、內容簡介、上線歷史資料、發行機構等著作資料。開發者可以使用這項資訊來打造更豐富的媒體體驗，也讓更多的價值（財務上及情境上）流向創作者及消費者。&#xA;元資料可能是創作者、內容簡介、上線歷史資料、發行機構等著作資料。開發者可以使用這項資訊來打造更豐富的媒體體驗，也讓更多的價值（財務上及情境上）流向創作者及消費者。&#xA;就像代幣及智慧合約作為金錢樂高，讓開發者可以隨意的組建及重新混合。&#xA;NFTs 也將成為媒體樂高，讓開發者在可程式化的內容庫之上打造下一個 Spotify 或 Netflix，為創作者保護其版權及價值。&#xA;這些想法也可以在這篇由我當時的共同創辦人 Denis Nazarov 寫的舊文中看到。&#xA;&amp;hellip;&#xA;本文為筆者對 Jesse Walden 的英文 tweet 進行翻譯，若有錯誤，請見諒並不吝給予指正，謝謝：）</description>
     </item>
     <item>
       <title>以樂高積木來認識 DeFi</title>
-      <link>https://andylinee.github.io/2023/04/09/defi-lego-intro/</link>
+      <link>http://localhost:1313/2023/04/09/defi-lego-intro/</link>
       <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/04/09/defi-lego-intro/</guid>
+      <guid>http://localhost:1313/2023/04/09/defi-lego-intro/</guid>
       <description>&amp;ldquo;本文發表於 2020/09/02，有部分服務及數字已不合時宜，請讀者注意及包涵。&amp;rdquo;&#xA;DeFi 是什麼 DeFi（Decentralized Finance）指的是以分散管理權、資訊透明、基於區塊鏈的方式來提供金融服務，常被翻譯成「去中心化金融」，但筆者認為「分散式金融」能更貼切的描述其運作方式。DeFi 相較於傳統金融產業，其改善了交易速度慢、成本高、易遭駭客攻擊或被政府濫用等問題。目前的 DeFi 服務種類包含了穩定幣、交易所、借貸平台、合成資產、衍生性商品等，而這些資產、智慧合約和協議能像樂高一樣被自由組合，也因此被稱為「DeFi 樂高」。&#xA;此文將以這篇論文所提出的 DeFi 樂高架構來分析到底什麼是 DeFi？以及上述提到的各種 DeFi 服務。&#xA;DeFi 樂高 在這篇論文中，作者將目前 DeFi 的各種服務分成上圖的五層架構，由最底層至最上層分別為：結算層（Settlement Layer）、資產層（Asset Layer）、協議層（Protocol Layer）、應用層（Application Layer）、聚合層（Aggregation Layer）。最底層的結算層為區塊鏈及其原生的協議資產，在 DeFi 領域主要是以太坊 Ethereum 為主；在清算層之上發行的代幣即為資產層，除了區塊鏈原生協議代幣如以太幣 ETH，還有可分割代幣（Fungible Token，如 ERC-20）及不可分割代幣（Non-fungible Token，如 ERC-721）等不同性質及用途的代幣種類；位於資產層上方的協議層則為特定使用案例提供標準協議，如去中心化交易所、債市、衍生性商品、鏈上資產管理等；在協議層之上則是連接到個別協議並以用戶為導向的應用程式組成的應用層；而在最上層的聚合層則作為應用層的擴充，提供各項聚合服務。&#xA;資產代幣化 在此架構中位於最底下的兩層主要就是由 Ethereum 為主的區塊鏈及在其之上所發行之代幣所組成，而提到代幣就必須先來介紹資產代幣化（Asset Tokenization），用一句話來說明，就是將任何資產放上區塊鏈。除了原生於以太坊的以太幣 ETH，還有發行基礎為提供支付利息、股利或提供貨物商品等承諾的代幣，這類型的代幣又可再依照其抵押資產的型態分為鏈下抵押、鏈上抵押及無抵押。鏈下抵押的意思是代幣的標的資產被儲存在託管服務中，例如錨定美元的穩定幣 USDT 及 USDC、以黃金價格支撐的 DGX 或是可在以太坊上交易比特幣的 WBTC，鏈下抵押代幣的問題在於需要透過額外的審查及預防來確保標的資產可以隨時被取得，但這樣會造成高成本及非完全透明的缺點。鏈上抵押的意思則是資產被鎖在區塊鏈上，通常是放在智慧合約裡，如 Maker 的 DAI 穩定幣，其優點是高度透明、規則由智慧合約保護且被半自動執行，缺點則是容易受到抵押資產的價格波動所影響。而無抵押代幣的交易對手風險則是最高的。&#xA;去中心化交易所協議（Decentralized Exchange Protocol） 過去大部分的加密貨幣交易都是透過中心化交易所來完成，然而中心化交易所存在著一些問題，我們必須先將資產存入交易所才能在中心化交易所進行交易，如此便需要信任交易所不會為非作歹，若遇到不誠實或是不夠專業的交易所，則可能造成用戶資產損失。因此有了去中心化交易所的出現，不需再將資產存到交易所中，交易直接透過智慧合約來原子執行（atomic execution）。而去中心化交易所也有各種不同的協議，以下分別介紹：&#xA;去中心化掛單簿交易所（Decentralized Order book Exchange） 以智慧合約為基礎的流動池（Smart Contract-based Liquidity Pools） 以智慧合約為基礎的儲備聚合（Smart Contract-based Reserve Aggregation） P2P 及場外交易（OTC） 去中心化掛單簿交易所和傳統股市交易一樣使用掛單簿來撮合交易，可分為鏈上掛單簿（on-chain order book）及鏈下掛單簿（off-chain order book）。鏈上掛單簿是將每筆掛單都放上智慧合約，不需要第三方 host，但每筆動作（結算、創建掛單、取消掛單）都需要上鏈手續費，且需等待時間確認。鏈下掛單簿則由中繼器 Relayer 收集掛單並維護掛單簿，以提供報價，但不會負責媒合及交易，而 Relayer 會依照協議（e.</description>
     </item>
   </channel>

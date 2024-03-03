@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ethereum on Pivot the life</title>
+    <link>http://localhost:1313/tags/ethereum/</link>
+    <description>Recent content in Ethereum on Pivot the life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ethereum/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is Ethereum Improvement Proposals (EIPs)?</title>
+      <link>http://localhost:1313/2024/03/03/ethereum-improvement-proposals/</link>
+      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2024/03/03/ethereum-improvement-proposals/</guid>
+      <description>Ethereum Improvement Proposals (EIPs) Introduction to EIPs An EIP is a design document used to describe proposals, define new features or processes for Ethereum, and propose improvements. Proposal initiators submit EIPs to the Ethereum community, providing clear technical specifications and rationale, engaging in discussions, documenting different opinions or suggestions. Only after consensus is reached, the proposal content is approved.&#xA;EIPs are mainly categorized into three types:&#xA;Standard Track EIP These describe significant changes to Ethereum&amp;rsquo;s implementation, such as modifying network protocols, block or transaction verification mechanisms, or application standards.</description>
+    </item>
+  </channel>
+</rss>

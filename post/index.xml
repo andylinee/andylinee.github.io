@@ -2,87 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Pivot the life</title>
-    <link>https://andylinee.github.io/post/</link>
+    <link>http://localhost:1313/post/</link>
     <description>Recent content in Posts on Pivot the life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://andylinee.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Permissionless DeFi Lending Protocol：Euler Finance</title>
-      <link>https://andylinee.github.io/2024/03/03/euler-finance/</link>
+      <link>http://localhost:1313/2024/03/03/euler-finance/</link>
       <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2024/03/03/euler-finance/</guid>
+      <guid>http://localhost:1313/2024/03/03/euler-finance/</guid>
       <description>&amp;ldquo;This article was published on 2021/12/29. The Euler v2 has already launched on 2024 Feb. Readers are advised to take note and understand.&amp;rdquo;&#xA;In 2020, before the DeFi Summer initiated the craze for Decentralized Finance (DeFi), DeFi applications primarily focused on lending protocols. This included prominent projects like Maker and Compound, which were based on mainstream tokens and stablecoin lending protocols, along with emerging platforms like Aave and Curve. However, listing a token on a lending protocol required a permissioned listing mechanism to reduce user asset risks.</description>
     </item>
     <item>
+      <title>What is Ethereum Improvement Proposals (EIPs)?</title>
+      <link>http://localhost:1313/2024/03/03/ethereum-improvement-proposals/</link>
+      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2024/03/03/ethereum-improvement-proposals/</guid>
+      <description>Ethereum Improvement Proposals (EIPs) Introduction to EIPs An EIP is a design document used to describe proposals, define new features or processes for Ethereum, and propose improvements. Proposal initiators submit EIPs to the Ethereum community, providing clear technical specifications and rationale, engaging in discussions, documenting different opinions or suggestions. Only after consensus is reached, the proposal content is approved.&#xA;EIPs are mainly categorized into three types:&#xA;Standard Track EIP These describe significant changes to Ethereum&amp;rsquo;s implementation, such as modifying network protocols, block or transaction verification mechanisms, or application standards.</description>
+    </item>
+    <item>
       <title>淺談 PostgreSQL 資料庫中的 View 及 Materialized View</title>
-      <link>https://andylinee.github.io/2023/08/19/postgres-view-and-materialized-view/</link>
+      <link>http://localhost:1313/2023/08/19/postgres-view-and-materialized-view/</link>
       <pubDate>Sat, 19 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/08/19/postgres-view-and-materialized-view/</guid>
+      <guid>http://localhost:1313/2023/08/19/postgres-view-and-materialized-view/</guid>
       <description>在 PostgreSQL 資料庫中，View 和 Materialized View 是非常有用的工具，它們能夠幫助開發者更加靈活地處理資料並優化查詢效能。現在讓我們透過一些具體的 SQL 語法案例，了解如何在 PostgreSQL 中使用這兩種資料庫檢視表。&#xA;View 在 PostgreSQL 中，View 是透過 SELECT 語句定義的虛擬表。它本身不儲存任何資料，而是作為保存的查詢，可以像正常的表一樣引用它。每次查詢 view 時，都會執行底層的 SELECT 語句，並且結果會以表格呈現。&#xA;View 在簡化複雜查詢、封裝業務邏輯和為資料提供更友善的界面有很大的好處。然而，View 也可能會對性能造成影響，尤其是對於複雜查詢或大型資料集，因為每次使用 view 時都會執行查詢。&#xA;假設我們有一張資料表 employees，包含了員工的資料，包括姓名、部門、職位和薪水。現在我們想要創建一個 view，只顯示部門為 Sales 的員工資料：&#xA;-- 創建名稱為 sales_employees 的 view CREATE VIEW sales_employees AS SELECT * FROM employees WHERE department = &amp;#39;Sales&amp;#39;; 現在，我們可以透過以下方式查詢 sales_employees view，來獲取所有部門為 Sales 的員工資料：&#xA;SELECT * FROM sales_employees; Materialized View 在 PostgreSQL 中，Materialized View 和一般的 View 類似，但 Materialized View 還將底層 SELECT 語句的結果集作為實際資料儲存在硬碟上。這代表只有在創建或更新 Materialized View 時才會執行查詢，並且因為資料被儲存起來，會讓後續的查詢速度更快。</description>
     </item>
     <item>
       <title>初探 Python 中的 typing 模組 - 強化型別提示與依賴注入</title>
-      <link>https://andylinee.github.io/2023/08/07/python-typing/</link>
+      <link>http://localhost:1313/2023/08/07/python-typing/</link>
       <pubDate>Mon, 07 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/08/07/python-typing/</guid>
+      <guid>http://localhost:1313/2023/08/07/python-typing/</guid>
       <description>Python 作為一種動態語言，優雅簡潔的語法使得開發者可以快速地撰寫程式碼。然而，在大型專案或團隊合作中，強化程式碼的可讀性、可維護性和錯誤檢測是至關重要的。Python 的 typing 模組在這方面扮演了重要的角色，它允許我們為 Python 程式碼添加靜態型別提示（Type Hints），讓 IDE 和靜態類型檢查工具能更容易協助開發者發現錯誤和改進程式碼。&#xA;什麼是 typing 模組？ typing 模組是 Python 3.5 以後加入的內建模組，它提供了一組用於指定變數、函式回傳值、函式參數等型別提示的工具。儘管 Python 依然是動態型別的語言，typing 模組能夠為我們的程式碼帶來更豐富的型別資訊，讓開發者在撰寫程式碼時更容易瞭解資料的形式與用途。&#xA;使用 Type Hints 增強型別提示 在 Python 中，型別提示是指在變數、函式參數和回傳值等地方添加型別資訊，以便在開發過程中更容易理解程式碼的意圖。typing 模組中的 Type Hints 提供了各種內建型別（如 int、str、list 等）以及用於創建自定義型別的工具。以下是一些 Type Hints 的常見用法和案例：&#xA;基本型別提示 from typing import List def get_square_root(number: float) -&amp;gt; float: return number ** 0.5 # Usage numbers_list: List[int] = [1, 4, 9, 16] result = get_square_root(25) print(result) # Output：5.0 在這個例子中，我們使用 float 和 List[int] 等 Type Hints 指定了函式參數和變數的型別，讓開發者知道這些資料的類型，提高程式碼的可讀性。</description>
     </item>
     <item>
       <title>編寫安全可靠的程式碼：NASA「十個原則」的經驗教訓</title>
-      <link>https://andylinee.github.io/2023/06/05/how-nasa-writes-space-proof-code/</link>
+      <link>http://localhost:1313/2023/06/05/how-nasa-writes-space-proof-code/</link>
       <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/06/05/how-nasa-writes-space-proof-code/</guid>
+      <guid>http://localhost:1313/2023/06/05/how-nasa-writes-space-proof-code/</guid>
       <description>&amp;ldquo;註：本文是透過 YouTube &amp;amp; Article Summary powered by ChatGPT 及 OpenAI 翻譯後編輯而成。&amp;rdquo;&#xA;影片：how NASA writes space-proof code&#xA;說明 作為軟體開發者，最糟糕的其中一種情況就是在正式環境的程式碼掛掉。但如果你的正式環境是外太空，反參照指標（null pointer dereference）、釋放後使用等問題可能導致衛星失去控制，隨之飄向無盡的虛空。為了避免這種情況，NASA 制定了一系列規則，重點是使他們的程式碼易於靜態分析。我將討論的規則實際上源自 NASA 稱之為「十個原則」的一組規則。一位 NASA 可靠的軟體開發者 Gerard Holzman 承認，其中一些規則有些嚴格，但在需要極高安全性的情境中，他認為這種權衡是值得的。NASA 將程式碼限制為簡單的控制流結構，這意味著他們不使用 goto 語句、set jump 或 long jump，也不使用遞迴（recursion）。遞迴或呼叫自身的函式會創造出非常難以理解的迴圈程式碼控制流程圖，遞迴程式碼可能導致運行失控，尤其在嵌入式系統中容易導致崩潰。&#xA;十個原則 原則一：簡單的控制流結構（imple Control Flow） NASA 限制了一些結構的使用，如 goto 語句、set jump 和 long jump，以及遞迴。這些限制有助於避免複雜和難以理解的程式碼路徑，減少系統崩潰和運行失控的風險。&#xA;原則二：迴圈的固定上限（Limit All Loops） 為了防止無限迴圈和運行失控，NASA 對所有迴圈設定了固定的上限。即使在遍歷鏈結串列等情況下，終止條件似乎是任意的，設定上限確保了程式碼的可預測性和穩定性。&#xA;原則三：不要用 Heap 記憶體（Don&amp;rsquo;t use the Heap） NASA 建議僅使用 Stack 記憶體，而不使用 Heap 記憶體，因為記憶體錯誤和問題通常源於 Heap 的使用和垃圾回收（Garbage Collection）機制。靜態程式碼分析無法對這些系統進行驗證。通過完全避免使用 Heap 記憶體，並對 Stack 記憶體的使用量設定上限，可以精確預測程式碼所需的記憶體量，消除使用後的錯誤和記憶體洩漏。</description>
     </item>
     <item>
       <title>《使用 ChatGPT API 開發系統》課程筆記</title>
-      <link>https://andylinee.github.io/2023/06/04/building-systems-with-chatgpt-api/</link>
+      <link>http://localhost:1313/2023/06/04/building-systems-with-chatgpt-api/</link>
       <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/06/04/building-systems-with-chatgpt-api/</guid>
+      <guid>http://localhost:1313/2023/06/04/building-systems-with-chatgpt-api/</guid>
       <description>在 4 月底上線的「ChatGPT Prompt Engineering for Developers」課程中（可參考之前的筆記），DeepLearning.AI 創辦人吳恩達 Andrew Ng 和 OpenAI 的 Isa Fulford 分享了如何正確且有效的對 ChatGPT 進行 「提示」（prompt）。然而，要開發一個系統會需要由許多 prompts 組成並對大型語言模型（LLM）進行多次調用。 因此，在這次新推出的《Building Systems with the ChatGPT API》的課程中，將會分享如何使用 LLM 來開發複雜的應用程式，並以打造一個全流程的客服輔助系統作為範例來進行講解。&#xA;這堂「Building Systems with the ChatGPTAPI」線上課程，在 DeepLearning.AI 網站上免費提供給想要使用 ChatGPT API 的打造系統的開發者學習，瞭解使用 ChatGPT API 打造系統服務時需要注意的細節及實作方式，課程搭配 Jupyter notebook 提供範例程式碼讓學員能即時驗證。&#xA;這堂長度為1小時左右的課程內容涵蓋了以下幾個部分：&#xA;評估輸入：分類（Classification）、審查（Moderation） 處理輸入：思想鏈推理（Chain of Thought Reasoning）、提示鏈（Chaining Prompts） 檢查輸出 打造一個全流程的系統 評估成效（Evaluation） 以下為筆者整理的課堂筆記，推薦有興趣的讀者撥出一小時去看完整的課程，肯定會有不少收穫。&#xA;大型語言模型、API 格式、Token 在課程開頭，先簡單介紹了監督式學習（Supervised Learning）和大型語言模型（LLM）。&#xA;監督式學習 在訓練監督式學習的模型主要有三大步驟：&#xA;取得標記資料 使用這些資料來訓練 AI 模型 部署並調用模型 語言模型就是透過監督式學習來反覆預測下一個字詞，如下圖： 而在上一堂課中曾介紹過大型語言模型主要分為兩種：Base LLM 及 Instruction Tuned LLM，可以透過以下步驟來將 Base LLM 轉換成 Instruction Tuned LLM：</description>
     </item>
     <item>
       <title>《The Effective Engineer》 作者於 Google 演講的筆記</title>
-      <link>https://andylinee.github.io/2023/05/14/the-effective-engineer/</link>
+      <link>http://localhost:1313/2023/05/14/the-effective-engineer/</link>
       <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/05/14/the-effective-engineer/</guid>
+      <guid>http://localhost:1313/2023/05/14/the-effective-engineer/</guid>
       <description>&amp;ldquo;註：本文是透過 YouTube &amp;amp; Article Summary powered by ChatGPT 及 OpenAI API 來進行影片摘要及翻譯而產生。&amp;rdquo;&#xA;《The Effective Engineer》的作者 Edward Lau 在這場於 Google 的演講中分享如何成為更有效率的工程師。講者提出了五個高效活動：優化學習、投資工具、專注高影響力項目、有效協作和發展領導技能。講者強調，努力不一定等於影響力，工程師應該專注於高影響力活動，以最大化其影響力。此外還討論了其他策略，例如優化調試流程、積極迭代驗證想法、簡化程式碼、系統和產品複雜度，以及建立優秀的工程文化。透過專注於這些策略，工程師可以有更好的生產力，並對其組織產生更大的影響。&#xA;高槓桿活動：優化學習、投資工具、專注高影響力項目、有效協作和發展領導技能 在今天快節奏和不斷變化的世界中，工程師們不斷尋找提高工作效率和效率的方法。在這場於 Google 的演講中，曾經在谷歌和各種新創公司工作過的經驗豐富的工程師 Edward Lau 分享了他如何成為更有效的工程師的見解。他首先問聽眾是否曾長時間工作、在周末工作或參與與未啟動或沒有影響的項目。然後，他介紹了 槓桿（leverage） 的概念，即為所投入的時間產生的影響。他認為，努力並不一定取決於影響力，工程師應特別注意高槓桿的活動，以最大程度地改變他們的影響力。Edward 介紹了工程師的五個高槓桿活動，分別是 優化學習、投資工具、專注高影響力項目、有效協作 和 發展領導技能。&#xA;優化學習 第一個是優化學習，Edward 認為這是一項 複利投資，可以隨著時間的推移帶來顯著的收益。他建議工程師透過閱讀書籍、參加課程、開展副業和參加演講來獲得自己的學習和成長。透過投資自己的學習，工程師可以變得更加學問淵博和熟練，從而可以進行更高影響力的工作。&#xA;投資工具 第二個高槓桿活動是 投資於增加迭代速度的工具。Edward 認為，即使是迭代速度的微小改進也可以對生產力產生重大影響。他建議工程師投資於可以自動化手動任務和加速開發流程的工具。透過減少完成任務所需的時間，工程師可以專注於更高影響力的工作，並在更短的時間內產生更多的產出。&#xA;專注高影響力項目 第三個高槓桿活動是專注於高影響力的項目。Edward 認為，工程師應該 優先考慮具有潛在產生重大影響的項目，並避免那些不太可能產生影響的項目。他建議工程師問自己是否在項目上花費的時間值得，以及項目是否具有高槓桿。透過專注於高影響力的項目，工程師可以產生更有意義的工作，並對組織產生更大的影響。&#xA;有效協作 第四個高槓桿活動是有效地與他人合作。Edward 認為，有效的合作可以帶來更好的結果和更高的影響力。他建議工程師清晰地溝通、積極傾聽並與同事建立良好的關係。透過與他人良好地合作，工程師可以有更高的生產力，並對組織產生更大的影響。&#xA;發展領導技能 第五個也是最後一個高槓桿活動是發展領導技能。Edward 認為，領導技能對於想要對組織產生重大影響的工程師至關重要。他建議工程師 發展溝通、授權和決策等技能，成為有效的領導者。透過發展領導技能，工程師可以提升工作效率，並對組織產生更大的影響。&#xA;其他策略 除了這五個高槓桿活動外，演講者還討論了其他可以使工程師更有效的策略。其中一種策略是 優化自己的 debug 流程，以提高迭代速度。透過簡化 debug 過程，工程師可以減少修復錯誤所需的時間，並在更短的時間內產生更多的產出。&#xA;另一種策略是 積極迭代驗證想法。Edward 以 Etsy 在其搜尋結果頁面上實現無限滾動的失敗嘗試為例。透過將假設分解為更小的可測試假設，Etsy 能夠對其理論建立信心，並成功地重新設計了其產品頁面。透過積極迭代地驗證想法，工程師可以產生更好的工作，並對組織產生更大的影響。&#xA;Edward 還強調了透過簡化程式碼、系統和產品複雜性來最小化操作負擔的重要性。透過減少他們工作的複雜性，工程師可以在更短的時間內產生更多的產出，並對組織產生更大的影響。&#xA;最後，Edward 討論了 建立優秀的工程文化 的重要性。優秀的工程文化對於吸引和留住重視高槓桿活動、學習機會和專注於構建新功能而不是維護舊功能的優秀工程師至關重要。透過建立優秀的工程文化，組織可以吸引和留住頂尖人才，並產生更好的工作。</description>
     </item>
     <item>
       <title>為開發者開設的 ChatGPT Prompt Engineering 線上課程</title>
-      <link>https://andylinee.github.io/2023/04/29/chatgpt-prompt-engineering/</link>
+      <link>http://localhost:1313/2023/04/29/chatgpt-prompt-engineering/</link>
       <pubDate>Sat, 29 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/04/29/chatgpt-prompt-engineering/</guid>
+      <guid>http://localhost:1313/2023/04/29/chatgpt-prompt-engineering/</guid>
       <description>從 2022 年底 ChatGPT 問世之後，開始出現許多分享如何使用 ChatGPT 改善工作流程、提升個人生產力、甚至快速打造產品賺錢，但要能夠發揮 ChatGPT 最大的價值就必須要有好的提示能力，也就是這半年內才興起的新技能 「Prompt Engineering」（提示工程）。除了在各大社群媒體上有許多實際的經驗分享，也有如 Learn Prompting 這樣提供詳細教學的網站。而終於在前天（2023/04/27）由知名機器學習大師吳恩達 Andrew Ng 所創辦的 DeepLearning.AI 和 OpneAI 共同推出 Prompt Engineering 的線上課程，此課程專門為使用 OpenAI API 串接服務的開發者所開設，課程為免費，長度約為1小時。&#xA;這堂由 DeepLearning.AI 創辦人吳恩達 Andrew Ng 和 OpenAI 的 Isa Fulford 共同講授的「ChatGPT Prompt Engineering for Developers」課程，在 DeepLearning.AI 網站上免費提供給想要串接 OpenAI API 的開發者學習，瞭解如何正確使用「Prompt」（提示詞）來和 GPT 模型互動，進而在所開發的服務中整合 GPT 模型，課程搭配 Jupyter notebook 提供範例程式碼讓學員能即時驗證。 這堂長度為1小時左右的課程內容涵蓋了以下幾個部分：&#xA;Prompt 的原則 迭代的 prompt 開發流程 ChatGPT 的能力 使用 ChatGPT 打造 Chatbot 以下為筆者整理的課堂筆記，推薦有興趣的讀者撥出一小時去看完整的課程，肯定會有不少收穫。&#xA;大型語言模型 一開始先介紹目前主流的兩種 大型語言模型（Large Language Models, LLMs），分別為 Base LLM 及 Instruction Tune LLM。 Base LLM 主要是透過由網路上或其他來源所搜集的文本訓練資料，訓練來預測下一個字詞。Instruction Tune LLM 則是透過針對指示或好的意圖去對模型進行微調（fine-tune），也就是所謂的 RLHF（Reinforcement Learning with Human Feedback），而因此 Instruction Tune LLM 所生成內容通常會更有用、誠實且無害。而 ChatGPT 就是屬於 RLHF 的 LLM。</description>
     </item>
     <item>
       <title>開放式 DeFi 借貸協議：Euler Finance</title>
-      <link>https://andylinee.github.io/2023/04/11/euler-finance/</link>
+      <link>http://localhost:1313/2023/04/11/euler-finance/</link>
       <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/04/11/euler-finance/</guid>
+      <guid>http://localhost:1313/2023/04/11/euler-finance/</guid>
       <description>&amp;ldquo;本文發表於 2021/12/29，有部分服務及數字已不合時宜，請讀者注意及包涵。&amp;rdquo;&#xA;在 2020 年 DeFi Summer 開啟去中心化金融（Decentralized Finance, DeFi）熱潮之前，DeFi 的應用主要以借貸協議為主，包含 DeFi 元老級項目 Maker、Compound 等以主流幣與穩定幣為主的放貸協議，以及後起之秀 Aave 及 Curve。然而，項目方或社群想要將某個代幣上架到放貸協議需要透過許可制的上市機制，藉此來降低用戶資產的安全風險。開發團隊 Euler XYZ 則推出了開放式借貸協議 Euler，只要在 Uniswap V3 有 WETH 交易對的代幣都能上架到借貸市場，並透過一系列機制提升流動性且降低風險，目前 Euler 已於 2021/12/13 於主網上線。本文將會以官方白皮書為基礎，跟各位介紹全新的開放式借貸協議 Euler 的運作。&#xA;團隊簡介 Euler Finance 是由 Euler XYZ 團隊所開發的開放式借貸協議，共同創辦人有三位，CEO 是曾在英國牛津大學擔任演化生物學家的 Michael Bentley；另外兩位分別是 Doug Hoyte 及 Jack Prior，目前也是 Euler XYZ 團隊的開發者；此外，團隊的顧問 Mick de Graaf 為 Ethereum 鏈上去中心化資產管理平台 DEFIED.io 的共同創辦人，也曾在鏈上指數基金 PieDAO 擔任首席開發者。&#xA;Euler 也在今年（2021）8 月完成由 Paradigm 領投的 800 萬美元 A 輪融資，其他參投方包含 Lemniscap 及來自區塊鏈知名項目的個人投資者，如 The Daily Gwei、Bankless、Synthetix、Coinbase、Product Hunt 等項目的創辦人及 CEO。</description>
     </item>
     <item>
       <title>胡一天演講筆記：《低流動性資產的微證券化與分佈式金融科技》</title>
-      <link>https://andylinee.github.io/2023/04/10/thomas-hu-lecture/</link>
+      <link>http://localhost:1313/2023/04/10/thomas-hu-lecture/</link>
       <pubDate>Mon, 10 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/04/10/thomas-hu-lecture/</guid>
+      <guid>http://localhost:1313/2023/04/10/thomas-hu-lecture/</guid>
       <description>上週六下午到台大管院參加一場由源鉑資本（Kyber Capital）執行長胡一天的專題演講《低流動性資產的微證券化與分佈式金融科技》，身為一名從 2017 年就開始拜讀其專欄文章的粉絲，必須把握難得的公開演說場合親睹風采。&#xA;胡執行長在這場不到一小時的演講中從特殊狀況投資（Special Situations Investing）、美國商用房地產市場情況，再到區塊鏈技術、DeFi 中的 AMM 及 Lending Pool，最後以對央行數位貨幣 CBDC的看法收尾。&#xA;雖然在提到特殊狀況投資及商用房地產交易的部分，有許多專業知識當下無法直接理解，但也讓自己更加瞭解到金融市場是如此盤根錯節。前情提要之後，胡執行長接著分享其對於將商用房地產這類的低流動性資產透過區塊鏈技術進行證券化的可能性，將房地產交易的模式轉換成智能合約語言，再結合傳統金融的交易模式，打造出能夠讓更多人參與投資的全新房地產交易平台。&#xA;最後胡執行長分享其對於 CBDC 的看法，由於一但政府發行 CBDC，相當於所有人都能直接向央行開戶，此時不論大眾或法人對於銀行存款的忠誠度將會下降，銀行存款將不再是銀行業者的穩定募資管道，將會改變銀行業的融資結構，因此，胡執行長認為在能夠推出有效因應措施之前，美國發展 CBDC 的速度應該不會太快。&#xA;&amp;ldquo;胡一天：區塊鏈是一種新的「資產證券化」的工具。&amp;rdquo;&#xA;在會後的 Q&amp;amp;A 環節中，有位官股金控的風控長問到 STO 相關的問題，也提到國泰金控正在申請 STO 相關的執照（在昨天的其他場活動中國泰區塊鏈團隊負責人也有提到），而胡執行長認為區塊鏈是一種新的「資產證券化」的工具，不論是 DeFi、NFT、STO，都帶來全新的營銷方法以及風險分銷手段的進化，但也提醒到，過去在傳統金融中推行資產證券化的過程中曾發生許多風險，未來在區塊鏈的發展過程中應該要提前規避掉相關風險，避免重蹈覆測。</description>
     </item>
     <item>
       <title>DeFi 是金錢樂高，而 NFTs 則是媒體樂高</title>
-      <link>https://andylinee.github.io/2023/04/09/nft-is-media-lego/</link>
+      <link>http://localhost:1313/2023/04/09/nft-is-media-lego/</link>
       <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/04/09/nft-is-media-lego/</guid>
+      <guid>http://localhost:1313/2023/04/09/nft-is-media-lego/</guid>
       <description>&amp;ldquo;本文發表於 2020/09/07，有部分內容可能已不合時宜，請讀者注意及包涵。&amp;rdquo;&#xA;近日在區塊鏈及加密貨幣領域裡最夯的題目非 DeFi 莫屬，但已有數年發展歷史的 NFT（Non-Fungible Token, 非同質化代幣）也再度受到市場矚目。之前創辦區塊鏈公司 Mediachain（於 2017 年被 Spotify 收購）、現為加密貨幣產業創投公司 Variant Fund 創辦人的 JesseWalden 近日在 Twitter 上發表對於 NFT 的看法，認為相對於「DeFi 是金錢樂高」，NFT 則會是「媒體樂高」，本文為這則推文的繁體中文翻譯。&#xA;&amp;hellip;&#xA;我常說我上一家新創公司 Mediachain 的許多目標現在都透過 NFTs 被實現。在內部，我們把 Mediachain 視為一個「標準內容註冊管理機構」，每一個獨一無二的作品都會得到一個可以附加元資料上去的標準 ID。&#xA;元資料可能是創作者、內容簡介、上線歷史資料、發行機構等著作資料。開發者可以使用這項資訊來打造更豐富的媒體體驗，也讓更多的價值（財務上及情境上）流向創作者及消費者。&#xA;元資料可能是創作者、內容簡介、上線歷史資料、發行機構等著作資料。開發者可以使用這項資訊來打造更豐富的媒體體驗，也讓更多的價值（財務上及情境上）流向創作者及消費者。&#xA;就像代幣及智慧合約作為金錢樂高，讓開發者可以隨意的組建及重新混合。&#xA;NFTs 也將成為媒體樂高，讓開發者在可程式化的內容庫之上打造下一個 Spotify 或 Netflix，為創作者保護其版權及價值。&#xA;這些想法也可以在這篇由我當時的共同創辦人 Denis Nazarov 寫的舊文中看到。&#xA;&amp;hellip;&#xA;本文為筆者對 Jesse Walden 的英文 tweet 進行翻譯，若有錯誤，請見諒並不吝給予指正，謝謝：）</description>
     </item>
     <item>
       <title>以樂高積木來認識 DeFi</title>
-      <link>https://andylinee.github.io/2023/04/09/defi-lego-intro/</link>
+      <link>http://localhost:1313/2023/04/09/defi-lego-intro/</link>
       <pubDate>Sun, 09 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://andylinee.github.io/2023/04/09/defi-lego-intro/</guid>
+      <guid>http://localhost:1313/2023/04/09/defi-lego-intro/</guid>
       <description>&amp;ldquo;本文發表於 2020/09/02，有部分服務及數字已不合時宜，請讀者注意及包涵。&amp;rdquo;&#xA;DeFi 是什麼 DeFi（Decentralized Finance）指的是以分散管理權、資訊透明、基於區塊鏈的方式來提供金融服務，常被翻譯成「去中心化金融」，但筆者認為「分散式金融」能更貼切的描述其運作方式。DeFi 相較於傳統金融產業，其改善了交易速度慢、成本高、易遭駭客攻擊或被政府濫用等問題。目前的 DeFi 服務種類包含了穩定幣、交易所、借貸平台、合成資產、衍生性商品等，而這些資產、智慧合約和協議能像樂高一樣被自由組合，也因此被稱為「DeFi 樂高」。&#xA;此文將以這篇論文所提出的 DeFi 樂高架構來分析到底什麼是 DeFi？以及上述提到的各種 DeFi 服務。&#xA;DeFi 樂高 在這篇論文中，作者將目前 DeFi 的各種服務分成上圖的五層架構，由最底層至最上層分別為：結算層（Settlement Layer）、資產層（Asset Layer）、協議層（Protocol Layer）、應用層（Application Layer）、聚合層（Aggregation Layer）。最底層的結算層為區塊鏈及其原生的協議資產，在 DeFi 領域主要是以太坊 Ethereum 為主；在清算層之上發行的代幣即為資產層，除了區塊鏈原生協議代幣如以太幣 ETH，還有可分割代幣（Fungible Token，如 ERC-20）及不可分割代幣（Non-fungible Token，如 ERC-721）等不同性質及用途的代幣種類；位於資產層上方的協議層則為特定使用案例提供標準協議，如去中心化交易所、債市、衍生性商品、鏈上資產管理等；在協議層之上則是連接到個別協議並以用戶為導向的應用程式組成的應用層；而在最上層的聚合層則作為應用層的擴充，提供各項聚合服務。&#xA;資產代幣化 在此架構中位於最底下的兩層主要就是由 Ethereum 為主的區塊鏈及在其之上所發行之代幣所組成，而提到代幣就必須先來介紹資產代幣化（Asset Tokenization），用一句話來說明，就是將任何資產放上區塊鏈。除了原生於以太坊的以太幣 ETH，還有發行基礎為提供支付利息、股利或提供貨物商品等承諾的代幣，這類型的代幣又可再依照其抵押資產的型態分為鏈下抵押、鏈上抵押及無抵押。鏈下抵押的意思是代幣的標的資產被儲存在託管服務中，例如錨定美元的穩定幣 USDT 及 USDC、以黃金價格支撐的 DGX 或是可在以太坊上交易比特幣的 WBTC，鏈下抵押代幣的問題在於需要透過額外的審查及預防來確保標的資產可以隨時被取得，但這樣會造成高成本及非完全透明的缺點。鏈上抵押的意思則是資產被鎖在區塊鏈上，通常是放在智慧合約裡，如 Maker 的 DAI 穩定幣，其優點是高度透明、規則由智慧合約保護且被半自動執行，缺點則是容易受到抵押資產的價格波動所影響。而無抵押代幣的交易對手風險則是最高的。&#xA;去中心化交易所協議（Decentralized Exchange Protocol） 過去大部分的加密貨幣交易都是透過中心化交易所來完成，然而中心化交易所存在著一些問題，我們必須先將資產存入交易所才能在中心化交易所進行交易，如此便需要信任交易所不會為非作歹，若遇到不誠實或是不夠專業的交易所，則可能造成用戶資產損失。因此有了去中心化交易所的出現，不需再將資產存到交易所中，交易直接透過智慧合約來原子執行（atomic execution）。而去中心化交易所也有各種不同的協議，以下分別介紹：&#xA;去中心化掛單簿交易所（Decentralized Order book Exchange） 以智慧合約為基礎的流動池（Smart Contract-based Liquidity Pools） 以智慧合約為基礎的儲備聚合（Smart Contract-based Reserve Aggregation） P2P 及場外交易（OTC） 去中心化掛單簿交易所和傳統股市交易一樣使用掛單簿來撮合交易，可分為鏈上掛單簿（on-chain order book）及鏈下掛單簿（off-chain order book）。鏈上掛單簿是將每筆掛單都放上智慧合約，不需要第三方 host，但每筆動作（結算、創建掛單、取消掛單）都需要上鏈手續費，且需等待時間確認。鏈下掛單簿則由中繼器 Relayer 收集掛單並維護掛單簿，以提供報價，但不會負責媒合及交易，而 Relayer 會依照協議（e.</description>
     </item>
   </channel>
