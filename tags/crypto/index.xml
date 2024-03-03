@@ -16,6 +16,13 @@
       <description>&amp;ldquo;This article was published on 2021/12/29. The Euler v2 has already launched on 2024 Feb. Readers are advised to take note and understand.&amp;rdquo;&#xA;In 2020, before the DeFi Summer initiated the craze for Decentralized Finance (DeFi), DeFi applications primarily focused on lending protocols. This included prominent projects like Maker and Compound, which were based on mainstream tokens and stablecoin lending protocols, along with emerging platforms like Aave and Curve. However, listing a token on a lending protocol required a permissioned listing mechanism to reduce user asset risks.</description>
     </item>
     <item>
+      <title>What is Ethereum Gas Fee?</title>
+      <link>http://localhost:1313/2024/03/03/ethereum-gas-fee/</link>
+      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2024/03/03/ethereum-gas-fee/</guid>
+      <description>Introduction to Gas On Ethereum, all transactions involve executing specific operations that change the state of the network, such as transferring account balances, deploying new contracts, or interacting with existing contracts. These operations consume computational resources, leading to a cost known as &amp;ldquo;Gas.&amp;rdquo; Users initiating transactions on Ethereum need to pay a fee for these computational resources in the form of Gas. Gas measures the amount of computational resources required to execute a transaction.</description>
+    </item>
+    <item>
       <title>What is Ethereum Improvement Proposals (EIPs)?</title>
       <link>http://localhost:1313/2024/03/03/ethereum-improvement-proposals/</link>
       <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>

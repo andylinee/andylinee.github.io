@@ -9,6 +9,13 @@
     <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ethereum/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>What is Ethereum Gas Fee?</title>
+      <link>http://localhost:1313/2024/03/03/ethereum-gas-fee/</link>
+      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2024/03/03/ethereum-gas-fee/</guid>
+      <description>Introduction to Gas On Ethereum, all transactions involve executing specific operations that change the state of the network, such as transferring account balances, deploying new contracts, or interacting with existing contracts. These operations consume computational resources, leading to a cost known as &amp;ldquo;Gas.&amp;rdquo; Users initiating transactions on Ethereum need to pay a fee for these computational resources in the form of Gas. Gas measures the amount of computational resources required to execute a transaction.</description>
+    </item>
+    <item>
       <title>What is Ethereum Improvement Proposals (EIPs)?</title>
       <link>http://localhost:1313/2024/03/03/ethereum-improvement-proposals/</link>
       <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
