@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="開放式 DeFi 借貸協議：Euler Finance" />
-    <meta property="og:title" content="開放式 DeFi 借貸協議：Euler Finance" />
-    <meta property="twitter:title" content="開放式 DeFi 借貸協議：Euler Finance" />
+    <meta name="title" content="Permissionless DeFi Lending Protocol：Euler Finance" />
+    <meta property="og:title" content="Permissionless DeFi Lending Protocol：Euler Finance" />
+    <meta property="twitter:title" content="Permissionless DeFi Lending Protocol：Euler Finance" />
     
 
     
-    <meta name="description" content="在 2020 年 DeFi Summer 開啟去中心化金融（Decentralized Finance, DeFi）熱潮之前，DeFi 的應用主要以借貸協議為主，包含 DeFi 元老級項目 Maker、Compound 等以主流幣與穩定幣為主的放貸協議，以及後起之秀 Aave 及 Curve。然而，項目方或社群想要將某個代幣上架到放貸協議需要透過許可制的上市機制，藉此來降低用戶資產的安全風險。開發團隊 Euler XYZ 則推出了開放式借貸協議 Euler，只要在 Uniswap V3 有 WETH 交易對的代幣都能上架到借貸市場，並透過一系列機制提升流動性且降低風險，目前 Euler 已於 2021/12/13 於主網上線。本文將會以官方白皮書為基礎，跟各位介紹全新的開放式借貸協議 Euler 的運作。">
-    <meta property="og:description" content="在 2020 年 DeFi Summer 開啟去中心化金融（Decentralized Finance, DeFi）熱潮之前，DeFi 的應用主要以借貸協議為主，包含 DeFi 元老級項目 Maker、Compound 等以主流幣與穩定幣為主的放貸協議，以及後起之秀 Aave 及 Curve。然而，項目方或社群想要將某個代幣上架到放貸協議需要透過許可制的上市機制，藉此來降低用戶資產的安全風險。開發團隊 Euler XYZ 則推出了開放式借貸協議 Euler，只要在 Uniswap V3 有 WETH 交易對的代幣都能上架到借貸市場，並透過一系列機制提升流動性且降低風險，目前 Euler 已於 2021/12/13 於主網上線。本文將會以官方白皮書為基礎，跟各位介紹全新的開放式借貸協議 Euler 的運作。" />
-    <meta property="twitter:description" content="在 2020 年 DeFi Summer 開啟去中心化金融（Decentralized Finance, DeFi）熱潮之前，DeFi 的應用主要以借貸協議為主，包含 DeFi 元老級項目 Maker、Compound 等以主流幣與穩定幣為主的放貸協議，以及後起之秀 Aave 及 Curve。然而，項目方或社群想要將某個代幣上架到放貸協議需要透過許可制的上市機制，藉此來降低用戶資產的安全風險。開發團隊 Euler XYZ 則推出了開放式借貸協議 Euler，只要在 Uniswap V3 有 WETH 交易對的代幣都能上架到借貸市場，並透過一系列機制提升流動性且降低風險，目前 Euler 已於 2021/12/13 於主網上線。本文將會以官方白皮書為基礎，跟各位介紹全新的開放式借貸協議 Euler 的運作。" />
+    <meta name="description" content="Before the DeFi Summer of 2020, DeFi applications mainly focused on lending protocols like Maker and Compound. Aave and Curve emerged as newer projects. Euler XYZ introduced the open lending protocol Euler, enabling any token with a WETH pair on Uniswap V3 to be listed. Euler enhances liquidity and risk reduction, launching on the mainnet on December 13, 2021, as per the official whitepaper.">
+    <meta property="og:description" content="Before the DeFi Summer of 2020, DeFi applications mainly focused on lending protocols like Maker and Compound. Aave and Curve emerged as newer projects. Euler XYZ introduced the open lending protocol Euler, enabling any token with a WETH pair on Uniswap V3 to be listed. Euler enhances liquidity and risk reduction, launching on the mainnet on December 13, 2021, as per the official whitepaper." />
+    <meta property="twitter:description" content="Before the DeFi Summer of 2020, DeFi applications mainly focused on lending protocols like Maker and Compound. Aave and Curve emerged as newer projects. Euler XYZ introduced the open lending protocol Euler, enabling any token with a WETH pair on Uniswap V3 to be listed. Euler enhances liquidity and risk reduction, launching on the mainnet on December 13, 2021, as per the official whitepaper." />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Andylinee_keyword">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>開放式 DeFi 借貸協議：Euler Finance | Pivot the Life</title>
+    <title>Permissionless DeFi Lending Protocol：Euler Finance | Pivot the Life</title>
 
-    <link rel="canonical" href="/2023/04/11/euler-finance/">
+    <link rel="canonical" href="/2024/03/01/euler-finance/">
 
     
     
@@ -203,7 +203,7 @@
                         </a>
                         
                     </div>
-                    <h1>開放式 DeFi 借貸協議：Euler Finance</h1>
+                    <h1>Permissionless DeFi Lending Protocol：Euler Finance</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -212,7 +212,7 @@
                                 Andylinee
                              
                             on 
-                            Tuesday, April 11, 2023
+                            Friday, March 1, 2024
                             
                             
                             
@@ -239,47 +239,47 @@
 
                 
                 <blockquote>
-<p>&ldquo;本文發表於 2021/12/29，有部分服務及數字已不合時宜，請讀者注意及包涵。&rdquo;</p>
+<p>&ldquo;This article was published on 2021/12/29. The <a href="https://docs.euler.finance/euler-v2-lite-paper/">Euler v2</a> has already launched on 2024 Feb. Readers are advised to take note and understand.&rdquo;</p>
 </blockquote>
 <p>
   <img src="/img/2023-04-11-euler-finance/dashboard.png" alt="Euler Dapp">
 
 
-在 2020 年 DeFi Summer 開啟去中心化金融（Decentralized Finance, DeFi）熱潮之前，DeFi 的應用主要以借貸協議為主，包含 DeFi 元老級項目 Maker、Compound 等以主流幣與穩定幣為主的放貸協議，以及後起之秀 Aave 及 Curve。然而，項目方或社群想要將某個代幣上架到放貸協議需要透過許可制的上市機制，藉此來降低用戶資產的安全風險。開發團隊 Euler XYZ 則推出了<strong>開放式借貸協議 <a href="https://www.euler.finance/#/">Euler</a></strong>，只要在 Uniswap V3 有 WETH 交易對的代幣都能上架到借貸市場，並透過一系列機制提升流動性且降低風險，目前 Euler 已於 2021/12/13 於主網上線。本文將會以<a href="https://docs.euler.finance/getting-started/white-paper">官方白皮書</a>為基礎，跟各位介紹全新的開放式借貸協議 Euler 的運作。</p>
-<h1 id="團隊簡介">團隊簡介</h1>
-<p>Euler Finance 是由 Euler XYZ 團隊所開發的開放式借貸協議，共同創辦人有三位，CEO 是曾在英國牛津大學擔任演化生物學家的 <a href="https://twitter.com/euler_mab">Michael Bentley</a>；另外兩位分別是 <a href="https://hoytech.com/">Doug Hoyte</a> 及 <a href="https://www.linkedin.com/in/jack-prior-0b36a942/">Jack Prior</a>，目前也是 Euler XYZ 團隊的開發者；此外，團隊的顧問 <a href="https://twitter.com/MickdeG010">Mick de Graaf</a> 為 Ethereum 鏈上去中心化資產管理平台 DEFIED.io 的共同創辦人，也曾在鏈上指數基金 <a href="https://www.piedao.org/">PieDAO</a> 擔任首席開發者。</p>
-<p>Euler 也在今年（2021）8 月完成由 <a href="https://www.paradigm.xyz/">Paradigm</a> 領投的 800 萬美元 A 輪融資，其他參投方包含 Lemniscap 及來自區塊鏈知名項目的個人投資者，如 The Daily Gwei、Bankless、Synthetix、Coinbase、Product Hunt 等項目的創辦人及 CEO。</p>
-<h1 id="六大創新特點">六大創新特點</h1>
-<p>Euler 和傳統 DeFi 借貸協議相比有許多創新的特性，以下介紹 Euler 的六大特性，讓各位能對 Euler 有更深的認識。
+In 2020, before the DeFi Summer initiated the craze for Decentralized Finance (DeFi), DeFi applications primarily focused on lending protocols. This included prominent projects like Maker and Compound, which were based on mainstream tokens and stablecoin lending protocols, along with emerging platforms like Aave and Curve. However, listing a token on a lending protocol required a permissioned listing mechanism to reduce user asset risks. The development team at Euler XYZ introduced the <strong>permissionless lending protocol <a href="https://www.euler.finance/#/">Euler</a></strong>, allowing tokens with trading pairs on Uniswap V3 to be listed on the lending market. Through a series of mechanisms, Euler enhances liquidity and reduces risks. Euler was launched on the mainnet on December 13, 2021. This article is based on the <a href="https://docs.euler.finance/getting-started/white-paper">official whitepaper</a> and aims to introduce the operation of the new open lending protocol Euler.</p>
+<h1 id="team-overview">Team Overview</h1>
+<p>Euler Finance is an permissionless lending protocol developed by the Euler XYZ team, founded by three individuals. The CEO, <a href="https://twitter.com/euler_mab">Michael Bentley</a>, previously served as an evolutionary biologist at the University of Oxford. The other two co-founders are <a href="https://hoytech.com/">Doug Hoyte</a> and <a href="https://www.linkedin.com/in/jack-prior-0b36a942/">Jack Prior</a>, who are also developers at Euler XYZ. Additionally, <a href="https://twitter.com/MickdeG010">Mick de Graaf</a>, an advisor to the team, is a co-founder of DEFIED.io, a decentralized asset management platform on the Ethereum chain, and previously served as the Chief Developer at <a href="https://www.piedao.org/">PieDAO</a>, an on-chain index fund.
+In August 2021, Euler secured an $8 million Series A funding round led by <a href="https://www.paradigm.xyz/">Paradigm</a>, with other investors including Lemniscap and individual investors from well-known blockchain projects such as The Daily Gwei, Bankless, Synthetix, Coinbase, and Product Hunt.</p>
+<h1 id="six-innovative-featrues">Six innovative featrues</h1>
+<p>Euler Finance has six unique features compared to traditional DeFi lending protocols, which are introduced below to help readers better understand Euler Finance.
 
-  <img src="/img/2023-04-11-euler-finance/difference.png" alt="Euler 的六大創新特點">
+  <img src="/img/2023-04-11-euler-finance/difference.png" alt="Euler&amp;rsquo;s Six innovative featrues">
 
 </p>
-<h2 id="permissionless-listing無許可上市機制">Permissionless listing（無許可上市機制）</h2>
-<p>Euler Protocol 讓用戶自行決定哪些資產可以被上架到借貸協議中，用戶可以添加任何在 Uniswap v3 上有 WETH 交易對的資產，到 Euler 借貸協議中。並透過下列介紹的多層資產分級機制，來降低用戶的資產風險。</p>
-<h2 id="asset-tiers多層資產等級">Asset tiers（多層資產等級）</h2>
-<p>然而透過無許可上市機制讓用戶自行添加資產到借貸協議，會造成很大的系統風險。因此，Euler 推出了多層資產等級的設計，依照資產的風險來分級，以保護 Euler 協議及用戶。</p>
+<h2 id="permissionless-listing">Permissionless listing</h2>
+<p>Euler Protocol allows users to decide which assets can be listed on the lending protocol, and users can add any assets that have WETH trading pairs on Uniswap v3 to Euler Finance. Through the multi-tier asset classification mechanism, Euler Finance reduces user asset risk.</p>
+<h2 id="asset-tiers">Asset tiers</h2>
+<p>Although Euler Finance allows users to add assets to the lending protocol, it poses a significant system risk. Therefore, Euler Finance introduces a multi-tier asset classification design, where assets are classified based on risk, to protect Euler Finance protocol and users.</p>
 <ul>
-<li>隔離層（Isolation-tier）資產：隔離層資產可以被用於一般借貸，但無法作為抵押品來借入其他資產。隔離層資產不能和其他資產一起使用同一個抵押品的池子來進行借貸。舉例來說，有個用戶擁有 USDC 及 DAI 作為抵押品，想要借入（borrow）隔離層資產 ABC，那就只能借入 ABC。如果之後想再借入另一個代幣 XYZ，則需要使用則需要使用 Euler 上的另一個帳戶來操作。</li>
-<li>跨層（Cross-tier）資產：跨層資產可被用於一般借貸，同樣也無法作為抵押品來借入其他資產。但與隔離層資產不同的是，可以跨層資產可以和其他資產一起被借出。舉例來說，有個用戶擁有 USDC 及 DAI 作為抵押品，想要借入（borrow）跨層資產 ABC 及 XYZ，可以使用 Euler 上的同一個帳戶來操作。</li>
-<li>抵押層（Collateral-tier）資產：抵押層資產可被用於一般借貸及交叉借貸，也可以作為抵押品使用。舉例來說，有個用戶存入抵押層資產 USDC 及 DAI，並使用它們來借入（borrow）抵押層資產 UNI 及 LINK，且使用同一個 Euler 帳戶來操作。</li>
+<li>Isolation Tier Assets: Isolation tier assets can be used for general lending, but cannot be used as collateral to borrow other assets. Isolation tier assets cannot be used with other assets in the same collateral pool for lending. For example, if a user holds $USDC and $DAI as collateral and wants to borrow isolation tier asset $ABC, they can only borrow $ABC. If they want to borrow another asset $XYZ later, they need to use another Euler Finance account to operate.</li>
+<li>Cross Tier Assets: Cross tier assets can be used for general lending, but cannot be used as collateral to borrow other assets. However, cross tier assets can be used with other assets for borrowing. For example, if a user holds $USDC and $DAI as collateral and wants to borrow cross tier assets $ABC and $XYZ, they can use the same Euler Finance account to operate.</li>
+<li>Collateral Tier Assets: Collateral tier assets can be used for general lending and cross-lending, and can also be used as collateral. For example, if a user deposits collateral tier assets $USDC and $DAI, they can use them to borrow collateral tier assets $UNI and $LINK, and use the same Euler Finance account to operate.</li>
 </ul>
-<p>Euler 協議的原生治理代幣 EUL 的持有人可以透過投票將資產從隔離層解放，並透過治理機制將其提升到跨層資產或抵押層資產。將資產向上提升層級有助於提高 Euler 的資本效率，但也可能讓用戶面臨更大的風險。平衡這些考量因素將有助於最大化 EUL 持有者的利益。</p>
-<h2 id="reactive-interest-rates響應式利率">Reactive interest rates（響應式利率）</h2>
-<p>在 Compound 和 Aave 中，都使用靜態線性（或或分段線性）利率模型來影響協議的借貸成本。廣義上來說，當資金池中借貸的需求增加或供應減少時，利率就會上升；反之，當供應增加或借貸需求減少時，利率就會下降。而靜態模型若能事先進行合適的參數化，效果會很好。但如果但如果參數化不正確，就會產生借貸成本過高或過低的問題。</p>
-<p>為了避免要對每個借貸市場選擇正確的參數的問題，Euler 使用 PID 控制器來放大（抑制）利率高於（低於）目標利用率水準時的利率變化率。這就產生了響應式的利率，即時適應標的資產的市場情況，而無需透過持續的治理來干預。</p>
-<h2 id="mev-resistant-liquidations抗-mev-的清算機制">MEV-resistant liquidations（抗 MEV 的清算機制）</h2>
-<p>在 Compound 及 Aave 中，資產清算是透過以固定百分比（通常為 5–10%）折價向清算人提供借款人的抵押品來激勵清算。潛在的清算人時常只能透過「Priority Gas Auction」（PGA）的機制來獲得清算獎金，這使得清算獎金暴露為所謂的 <strong>「礦工可提取價值」（MEV）</strong>。這種機制對大額借款人不友善，也無法激勵小額清算。</p>
-<p>為了改善以上的問題，Euler 不採用固定的折價百分比，而是採用荷蘭式拍賣及為流動性提供者的折價加速的機制。Euler 允許在借款人風險調整後的負債價值超過抵押品價值後，清算人能夠獲得的折價會隨著上述的差價變大而隨之增加。此外，Euler 也為流動性提供者提供折價加速機制（discount booster），讓流動性提供者能在礦工和搶跑者（front-runner）之前於荷蘭式拍賣中獲利。</p>
-<h2 id="protected-collateral-受保護的抵押品">Protected collateral （受保護的抵押品）</h2>
-<p>在 Compound 及 Aave 中，存入借貸協議的抵押品總是可以被借出。但在 Euler 協議，可以選擇允許抵押品被存入，但不能被用於借出。這種抵押品是「受保護的」，這些受保護的抵押品不會為用戶賺取利息，但將不存在借款人違約的風險，可以隨時領取抵押品資產，且有助於防止借款人使用代幣來影響治理決策或採取空頭倉位。</p>
-<h3 id="multi-collateral-stability-pools多抵押品的穩定池">Multi-collateral stability pools（多抵押品的穩定池）</h3>
-<p>在其他借貸協議中，清算的來源通常來自外部流動性，也就是說，清算人一般會從第三方交易獲取借款資產的還款額度，償還貸款並取得抵押品和清算獎金。這種方式的其中一個缺點是，用來確定借款人清算價格的價格來源並無法一直準確反應外部市場的匯率，這也代表清算人無法都以該價格進行清算。造成這種情況的原因包括滑價、swap 手續費、極端波動、使用價格平滑演算法（如 Euler 上的 TWAP）及新價格的延遲發布。</p>
-<p>為了解決這個問題，Euler 讓放款人可以透過向與每個借貸市場相關的穩定池提供流動性來支持清算。穩定池中的流動性提供者在等待清算被執行時，存入 eTokens 並賺取利息。一個 unstaking 期間防止流動性提供者透過將資產移入或移出，來試圖操弄系統。當清算被處理時，清算人使用穩定池的流動性來取消借款人的債務，並將折價的抵押品歸還給穩定池（扣除手續費後，剩下的為清算人所有）。穩定池的流動性提供者最終將他們的 eTokens 兌換成抵押資產的折價指數。</p>
-<p>這種方法可以被視為 Liquidity 協議開創的穩定池理念所延伸的多抵押形式。使用穩定池的主要優點是，在協議認為借款人違約時，可以使用內部流動性立即處理清算，而清算人不需要自己從第三方交易所獲取資產。</p>
-<h1 id="結論">結論</h1>
-<p>以上介紹了 Euler 創新的六大特點，以借貸雙方及清算人的立場出發，透過無許可上市機制、優化的清算機制、響應式利率等特性，來滿足借貸市場中不同角色的需求。並透過多抵押品穩定池，讓放款人最終能將其 eTokens 全部被動兌換成清算抵押資產。</p>
-<p>雖然以上的創新特性為借貸協議領域開啟新的視角，但 Uniswap 有 WETH 對的長尾資產的低流動性以及 Euler 運作機制的可行性，都還值得值續觀察。此外，Euler 也即將發行協議原生治理代幣 EUL，可用來投票決定協議上的資產層級、抵押率及借款率等參數。</p>
+<p>Euler Finance&rsquo;s native governance token $EUL holders can vote to release assets from isolation tier and promote them to cross tier or collateral tier through the governance mechanism. This helps to improve Euler Finance&rsquo;s capital efficiency, but also exposes users to greater risk. Balancing these factors will help maximize $EUL holders&rsquo; interests.</p>
+<h2 id="reactive-interest-rates">Reactive interest rates</h2>
+<p>In Compound and Aave, interest rates are set using static linear (or segmented linear) interest rate models to affect the cost of borrowing in the lending protocol. In general, when the demand for borrowing increases or the supply of funds decreases, interest rates rise; when the supply of funds increases or the demand for borrowing decreases, interest rates fall. While a static model can work well if the parameters are correctly set, if the parameters are incorrect, it can lead to borrowing costs that are too high or too low.</p>
+<p>To avoid the need to choose the correct parameters for each borrowing market, Euler uses a PID controller to amplify (dampen) interest rate changes when interest rates are above (below) the target utilization rate threshold. This produces responsive interest rates that adapt to the market situation of the target asset in real-time, without the need for continuous governance to intervene.</p>
+<h2 id="mev-resistant-liquidations">MEV-resistant liquidations</h2>
+<p>In Compound and Aave, asset liquidations are performed by discounting the collateral by a fixed percentage (usually 5-10%) and providing the borrower&rsquo;s collateral to the liquidator as an incentive to liquidate. Potential liquidators often only have access to the liquidation reward through the &ldquo;Priority Gas Auction&rdquo; (PGA) mechanism, which exposes the liquidation reward to what is known as <strong>Miner Extractable Value (MEV)</strong>. This mechanism is not friendly to large borrowers and does not incentivize small liquidations.</p>
+<p>To address these issues, Euler does not use a fixed discount rate, but instead uses a Dutch auction and provides a discount acceleration mechanism for liquidity providers. Euler allows borrowers to adjust their risk after the value of their debt exceeds the value of their collateral, and liquidators can earn more discounts as the difference between the two increases. Additionally, Euler provides a discount acceleration mechanism (discount booster) for liquidity providers, allowing them to earn profits before miners and front-runners in the Dutch auction.</p>
+<h2 id="protected-collateral">Protected collateral</h2>
+<p>In Compound and Aave, collateral deposited in lending protocols can always be borrowed. However, in the Euler protocol, collateral can be deposited but not used for borrowing. This type of collateral is termed &ldquo;protected.&rdquo; These protected collaterals do not earn interest for users but eliminate the risk of borrower default. Users can withdraw the collateral assets at any time, preventing borrowers from using tokens to influence governance decisions or take short positions</p>
+<h3 id="multi-collateral-stability-pools">Multi-collateral stability pools</h3>
+<p>In other lending protocols, liquidation typically relies on external liquidity sources. However, this method faces challenges such as inaccurate pricing due to factors like slippage, swap fees, extreme volatility, price smoothing algorithms (e.g., TWAP on Euler), and delayed new price releases.</p>
+<p>To address these issues, Euler allows lenders to support liquidation by providing liquidity to stability pools associated with each lending market. Liquidity providers in these pools earn interest by depositing eTokens while awaiting liquidation. This setup prevents manipulation attempts during the unstaking period and enables immediate internal liquidation when a borrower defaults. The liquidity from stability pools is used to cancel the borrower&rsquo;s debt and return discounted collateral to the pool after deducting fees.</p>
+<p>This approach extends the concept of stability pools pioneered by Liquidity protocols into a multi-collateral form on Euler. The primary advantage of using stability pools is the ability to handle liquidation promptly when a borrower defaults, without relying on external liquidity sources</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>The innovative features of Euler focus on the perspectives of both lenders, borrowers, and liquidators. Through mechanisms like permissionless listing, optimized liquidation processes, and responsive interest rates, Euler caters to the diverse needs of participants in the lending market. Additionally, by utilizing multi-collateral stability pools, lenders can ultimately passively convert all their eTokens into liquidation collateral assets</p>
+<p>Although these innovative characteristics open new perspectives in the lending protocol domain, aspects such as the low liquidity of long-tail assets with $WETH pairs on Uniswap and the feasibility of Euler&rsquo;s operational mechanism are still worth continued observation. Furthermore, Euler is set to launch its native governance token $EUL, which can be used for voting on asset levels, collateral ratios, borrowing rates, and other protocol parameters</p>
 <h1 id="reference">Reference</h1>
 <ul>
 <li><a href="https://docs.euler.finance/getting-started/white-paper">Euler Finance White Paper</a></li>
@@ -295,13 +295,13 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2023/04/10/thomas-hu-lecture/" data-toggle="tooltip" data-placement="top" title="胡一天演講筆記：《低流動性資產的微證券化與分佈式金融科技》">&larr;
+                        <a href="/2023/08/19/postgres-view-and-materialized-view/" data-toggle="tooltip" data-placement="top" title="淺談 PostgreSQL 資料庫中的 View 及 Materialized View">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2023/04/12/euler-finance/" data-toggle="tooltip" data-placement="top" title="Permissionless DeFi Lending Protocol：Euler Finance">Next
+                        <a href="/2024/03/03/maximal-extractable-value/" data-toggle="tooltip" data-placement="top" title="What is Maximal Extractable Value (MEV)?">Next
                             Post &rarr;</a>
                     </li>
                     
