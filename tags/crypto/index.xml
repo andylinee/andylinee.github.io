@@ -16,7 +16,14 @@
       <description>Introduction to Maximal Extractable Value (MEV) Maximal Extractable Value (MEV) is a concept that has garnered significant attention in the cryptocurrency ecosystem, particularly in the context of Ethereum. MEV refers to the maximum value that can be extracted from block production beyond standard block rewards and gas fees. It involves manipulating transaction order and execution on the blockchain to gain additional value, impacting both transaction participants and miners.&#xA;Issues caused by MEV MEV can lead to several issues:</description>
     </item>
     <item>
-      <title>Understanding call, staticcall and delegatecall in Solidity?</title>
+      <title>Understanding Receive function and Fallback function in Solidity</title>
+      <link>http://localhost:1313/2024/01/25/receive-fallback-delegatecall/</link>
+      <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/2024/01/25/receive-fallback-delegatecall/</guid>
+      <description>Solidity supports two types of callback functions, namely receive() and fallback(), primarily used for the following scenarios:&#xA;Receiving $ETH Handling function calls that do not exist in the contract Receive function: receive() receive() is a function called when a contract receives an $ETH transfer. A contract can have at most one receive() function. The declaration of receive() differs from other functions; it does not require the function keyword, cannot have any parameters, cannot return any value, and must include external and payable: receive() external payable { .</description>
+    </item>
+    <item>
+      <title>Understanding call, staticcall and delegatecall in Solidity</title>
       <link>http://localhost:1313/2024/01/20/call-staticcall-delegatecall/</link>
       <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/2024/01/20/call-staticcall-delegatecall/</guid>
